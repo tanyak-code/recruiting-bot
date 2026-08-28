@@ -1,0 +1,516 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Staff SWE — AI & Developer Tooling — Scribd</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f0f2f5;color:#1a1a1a}
+.header{background:#fff;border-bottom:1px solid #e0e0e0;padding:20px 32px;position:sticky;top:0;z-index:10}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.title{font-size:20px;font-weight:700;color:#111}.subtitle{font-size:13px;color:#666;margin-top:2px}
+.status{font-size:12px;font-weight:600;padding:4px 10px;border-radius:12px}
+.status.running{background:#fef9c3;color:#854d0e}.status.done{background:#dcfce7;color:#166534}
+.progress-bar-wrap{background:#e5e7eb;border-radius:4px;height:6px;margin-bottom:14px}
+.progress-bar{background:#2563eb;height:6px;border-radius:4px}
+.stats{display:flex;gap:12px;flex-wrap:wrap}
+.stat{padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.stat-4{background:#d4edda;color:#1a7f4b}.stat-3{background:#dbeafe;color:#1565c0}
+.stat-2{background:#fef3c7;color:#b45309}.stat-1{background:#fde8e8;color:#c0392b}
+.stat-total{background:#f3f4f6;color:#374151}
+.content{max-width:900px;margin:0 auto;padding:24px 16px}
+.section-heading{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#6b7280;margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid #e5e7eb}
+.card{border-radius:10px;padding:16px 20px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px}
+.candidate-info{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rank{font-size:12px;color:#9ca3af;font-weight:600;min-width:28px}
+.name{font-size:15px;font-weight:700;color:#111}.location{font-size:12px;color:#6b7280}
+.scores{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.brainner-score{font-size:12px;color:#6b7280;background:#f3f4f6;padding:3px 8px;border-radius:10px}
+.our-score{font-size:13px;font-weight:700;color:#fff;padding:4px 12px;border-radius:12px;white-space:nowrap}
+.card-body{display:flex;flex-direction:column;gap:10px}
+.field{display:flex;flex-direction:column;gap:3px}
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#9ca3af}
+.value{font-size:13px;color:#374151;line-height:1.5}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.two-col{grid-template-columns:1fr}.card-header{flex-direction:column}}
+</style></head><body>
+<div class="header">
+  <div class="header-top">
+    <div><div class="title">Staff SWE — AI & Developer Tooling — Scribd</div>
+    <div class="subtitle">Mitch's calibrated screening · Top 22 by Brainner score · 22/22 screened</div></div>
+    <span class="status done">✅ Complete</span>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+  <div class="stats">
+    <span class="stat stat-total">Total: 22</span>
+    <span class="stat stat-4">✅ 1</span>
+    <span class="stat stat-3">🔵 8</span>
+    <span class="stat stat-2">🟡 9</span>
+    <span class="stat stat-1">❌ 4</span>
+  </div>
+</div>
+<div class="content"><div class="section-heading">✅ Strong Yes — Move Forward (1)</div>
+
+    <div class="card" style="border-left:4px solid #1a7f4b;background:#d4edda;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#1</span>
+          <span class="name">Vaghesh Patel</span>
+          <span class="location">📍 Dallas, TX, US</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 77</span>
+          <span class="our-score" style="background:#1a7f4b;">✅ 4 — Strong Yes</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Senior Staff Engineer with 10+ years experience building developer platforms and AI tooling that other engineers depend on. Built Intel Developer Toolbox (multi-tenant cloud IDE and AI training platform), Intel Edge Software Catalog (unified platform for thousands of developers), and multi-agent AI systems with RAG integration. Has explicit Senior Staff title with clear cross-team leadership scope and enterprise platform ownership.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Intel Developer Toolbox - architected and led a multi-tenant cloud IDE and AI model training platform built on Kubernetes that enables customers to build, validate, and scale edge AI solutions</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">Missing explicit AWS and Terraform experience - shows broad cloud platform knowledge but no specific AWS production evidence despite having Azure and GCP listed</span></div>
+        </div>
+      </div>
+    </div>
+<div class="section-heading">🔵 Yes — Probe on Screen (8)</div>
+
+    <div class="card" style="border-left:4px solid #1565c0;background:#dbeafe;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#2</span>
+          <span class="name">Garrett Stranger</span>
+          <span class="location">📍 Portland, OR, US ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 100</span>
+          <span class="our-score" style="background:#1565c0;">🔵 3 — Yes</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Strong candidate with 7+ years experience who hits both hard requirements: clear developer tooling/platform background at Nike building CI/CD, observability, and internal platforms that other engineers depend on, plus production agentic engineering platform using Anthropic Claude SDK with MCP integrations processing 4,600+ pull requests. Missing explicit tech lead or staff-level scope signals despite strong cross-team influence work.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Built and shipped production agentic engineering platform at Nike using Anthropic Claude SDK, Go, Kubernetes with MCP integrations, processing 4,600+ pull requests and reducing dev cycle by 60% across 60+ engineers</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Portland, OR, US (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #1565c0;background:#dbeafe;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#3</span>
+          <span class="name">Yuri Goikhman</span>
+          <span class="location">📍 Burbank, CA, US ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 91</span>
+          <span class="our-score" style="background:#1565c0;">🔵 3 — Yes</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">10+ years experience with strong developer tooling/platform background - built AI-assisted development platform reducing delivery velocity by 50%, designed CI/CD foundations for 100+ engineers, and led platform engineering initiatives. Has required languages (Python, TypeScript, Java) and solid AI developer tooling experience with LLM-driven systems and MLOps pipelines. Missing explicit staff-level scope evidence despite title.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Built AI-assisted development platform integrating CI/CD pipelines and runtime safeguards that improved engineering delivery velocity by 50% across multiple teams - directly matches the AI developer tooling requirement</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Burbank, CA, US (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #1565c0;background:#dbeafe;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#4</span>
+          <span class="name">Derek Brans</span>
+          <span class="location">📍 Toronto, Ontario, CA ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 91</span>
+          <span class="our-score" style="background:#1565c0;">🔵 3 — Yes</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">20 years of experience with strong developer tooling background including building Google Tag Manager's Postscribe (used on millions of websites), visual schema editor at Google that reduced launch times from 3 months to 1 month, and ETL pipeline tooling. Built production RAG AI application at Consensys reducing information search time by 75%. Has Python/TypeScript, AWS experience, but missing explicit tech lead scope evidence despite staff title.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Created Postscribe at Krux, adopted by Google Tag Manager and now executing on millions of major websites - foundational developer tooling with massive adoption</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Toronto, Ontario, CA (Eastern Time). Staff title present but lacks explicit evidence of cross-team technical leadership, mentoring senior engineers, or driving org-wide initiatives required for score 4</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #1565c0;background:#dbeafe;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#5</span>
+          <span class="name">Vahid Kiani</span>
+          <span class="location">📍 Montreal, Quebec, CA ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 91</span>
+          <span class="our-score" style="background:#1565c0;">🔵 3 — Yes</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Meets all hard requirements: 10+ years experience, strong AI developer tooling background with RAG chatbot for interview transcripts and OpenAI API integrations, proficient in Python/TypeScript, platform work across multiple roles. Missing explicit staff/lead scope signal - described as leading projects but no team lead title or cross-team influence evidence.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Built production RAG chatbot using embeddings, FAISS vector retrieval, and conversational memory over interview transcripts - clear AI applied to developer/business workflows with specific technical implementation details</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Montreal, Quebec, CA (Eastern Time). Location concern resolved - Montreal is Eastern Time Zone, not Pacific. However, lacks explicit staff/lead scope - no team lead title or cross-team influence signals prevent score 4.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #1565c0;background:#dbeafe;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#6</span>
+          <span class="name">Edward Copony</span>
+          <span class="location">📍 Portland, OR, US ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 82</span>
+          <span class="our-score" style="background:#1565c0;">🔵 3 — Yes*</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">25-year veteran with strong developer tooling background and extensive AI implementation experience. Built agentic workflows with AWS Bedrock/Claude, drove Claude Code adoption across engineering teams, and created developer productivity systems with flow metrics. Has required technical stack (Python, TypeScript, Ruby, AWS) but lacks explicit staff-level scope evidence despite principal title.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Built production GenAI applications with AWS Bedrock and Anthropic Claude, plus drove organization-wide adoption of AI-assisted development tools like Claude Code with defined quality gates and code review practices</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Portland, OR, US (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3. Resume shows AI-writing patterns with excessive em dashes and generic language structure.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #1565c0;background:#dbeafe;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#7</span>
+          <span class="name">Tanghoi Lai</span>
+          <span class="location">📍 Foothill Ranch, California, US ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 81</span>
+          <span class="our-score" style="background:#1565c0;">🔵 3 — Yes*</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Strong candidate with 10+ years experience and clear developer tooling/platform engineering focus. Built AI-assisted CI/CD failure analysis agent with RAG and LLM tool-calling at Medallia, contributed to Backstage developer platform, and has extensive CI/CD pipeline optimization work. Missing explicit staff/tech lead scope evidence despite Principal Engineer title. Resume shows potential AI-generation signals with excessive em dashes and polished templated language.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Built autonomous CI/CD failure analysis agent at Medallia combining semantic caching, RAG-based knowledge retrieval, and LLM tool-calling - exactly the AI developer tooling this role requires</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Foothill Ranch, California, US (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3. Also lacks explicit staff-level scope evidence (no mention of leading teams, mentoring, or cross-org influence) despite Principal Engineer title.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #1565c0;background:#dbeafe;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#8</span>
+          <span class="name">Jay Cruikshank</span>
+          <span class="location">📍 Denver, CO, US</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 78</span>
+          <span class="our-score" style="background:#1565c0;">🔵 3 — Yes</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Strong candidate who meets all hard requirements except explicit staff-level scope. 7+ years experience with clear developer tooling focus - built company-wide AI code review tool integrated with Bitbucket that automatically reviews PRs and flags issues. Led cross-pod initiatives, mentored engineers, and championed AI-assisted development workflows. Missing explicit staff engineer title or cross-org influence signal required for score 4.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Built Procare's internal AI code review tool integrated with Bitbucket - automatically reviews pull requests, flags bugs/security issues, and was adopted company-wide across engineering</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">Only 7 years experience (graduated 2019) - just at threshold. Lead engineer title but lacks explicit staff-level scope or cross-org influence required for score 4</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #1565c0;background:#dbeafe;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#9</span>
+          <span class="name">James Ross</span>
+          <span class="location">📍 Seattle, Washington, US ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 72</span>
+          <span class="our-score" style="background:#1565c0;">🔵 3 — Yes</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Seattle, Washington, US (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3. Strong technical match with 18+ years experience, explicit AI developer tooling work (Graft, XYPH, Wesley coding agents and workflow orchestration), platform engineering background at Ember and Gala, and all target languages (TypeScript, Python, Go). Missing explicit staff-level cross-team influence evidence despite Staff title.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Built multiple AI developer tools in production including Graft coding-agent context control, XYPH workflow orchestration, and Wesley schema/codegen systems with CLI/MCP surfaces - directly aligned with agentic developer tooling requirements</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Seattle, Washington, US (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3.</span></div>
+        </div>
+      </div>
+    </div>
+<div class="section-heading">🟡 No — Do Not Advance (9)</div>
+
+    <div class="card" style="border-left:4px solid #d97706;background:#fef3c7;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#10</span>
+          <span class="name">Arjun Krishnankutty</span>
+          <span class="location">📍 San Diego, California, US ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 91</span>
+          <span class="our-score" style="background:#b45309;">🟡 2 — No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">12+ years experience with strong infrastructure and platform engineering background, but fails the AI developer tooling requirement. While candidate mentions 'agentic engineering workflows' and Gemini Enterprise adoption, the AI work serves business productivity across general employees, not software engineers specifically. Primary background is data platform architecture (Snowflake, Kafka, streaming pipelines) rather than developer tooling/DevEx platforms that other engineers depend on for coding workflows.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Extensive platform engineering experience with clear tech leadership scope - sole architect of multi-region OLAP platform, led team of 5 engineers, drove org-wide strategic shifts from ETL to ELT</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in San Diego, California, US (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3. Additionally, AI work focuses on general business productivity (search over Confluence/Jira/Drive) rather than developer tooling - does not meet the hard requirement for AI applied specifically to engineering workflows.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #d97706;background:#fef3c7;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#11</span>
+          <span class="name">Allan Long</span>
+          <span class="location">📍 Reston, VA, US</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 90</span>
+          <span class="our-score" style="background:#b45309;">🟡 2 — No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">20+ years experience with explicit developer tooling background (SDK modernization, DevEx platform improvements at Global InfoTek) and current AI agent platform work at Booz Allen using AWS Bedrock, LangChain, RAG. However, the AI work appears to be for end-user data search/synthesis rather than tools that help software engineers write/review/test code, and the background is primarily defense contractor work which may not transfer to commercial software environments.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Architecting agentic AI platform with modern stack (AWS Bedrock, LangChain, LangGraph, RAG) and has explicit developer tooling experience including SDK modernization and DevEx improvements</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">Defense contractor background exclusively - 20+ years at defense/government contractors (Booz Allen, CACI, Leidos, Global InfoTek) with no commercial software experience, and current AI work serves data consumers rather than software engineers</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #d97706;background:#fef3c7;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#12</span>
+          <span class="name">Santosh Mandi</span>
+          <span class="location">📍 Seattle, Washington, US ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 87</span>
+          <span class="our-score" style="background:#b45309;">🟡 2 — No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">15+ years experience meets the threshold, but lacks explicit developer tooling/platform engineering focus - primarily product engineering for Yahoo's media platforms. Limited AI signal consists only of 'developed an AI agent' at current role and API integrations, without evidence of building AI-assisted developer tooling that serves engineering workflows. Missing staff-level scope evidence despite Principal title.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Strong distributed systems experience with GraphQL federation, microservices architecture, and scalable backend systems at Yahoo across multiple high-traffic platforms</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Seattle, Washington, US (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3. Primary background is product engineering for media platforms, not developer tooling/platform engineering that serves other engineers.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #d97706;background:#fef3c7;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#13</span>
+          <span class="name">Daniel Glassow</span>
+          <span class="location">📍 Vancouver, Washington, US ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 81</span>
+          <span class="our-score" style="background:#b45309;">🟡 2 — No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">16+ years experience with strong AWS/Terraform/Go/Python stack and extensive platform engineering background building automation, CI/CD pipelines, and infrastructure tools. However, shows zero evidence of AI applied to developer tooling workflows - only lists 'AI Product Engineering' in skills section with no corresponding work history demonstrating building AI-assisted coding tools, agentic dev workflows, or LLM integration for software engineers.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Extensive platform engineering background with AWS/Terraform expertise - built automation systems, CI/CD pipelines, and infrastructure tools that other engineers depend on across multiple roles</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Vancouver, Washington, US (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3. Additionally, AI experience appears skills-section only with no work history evidence of building AI developer tooling.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #d97706;background:#fef3c7;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#14</span>
+          <span class="name">Juan Hart</span>
+          <span class="location">📍 Houston, Texas, US</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 78</span>
+          <span class="our-score" style="background:#b45309;">🟡 2 — No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">7 years experience (2017-2024 counting post-graduation roles) falls short of the 8+ year requirement for score 3+. While candidate shows strong AI expertise with LLMs, agents, and RAG systems, the AI work primarily serves business customers and enterprise solutions rather than software engineers. No explicit developer tooling or platform engineering background where tools were built for other engineers to depend on.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Deep hands-on AI experience with agentic workflows, LangGraph state machines, and Azure AI Foundry Agent Service at enterprise scale</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">Below 8-year experience threshold and lacks developer tooling/platform engineering background - AI work serves business customers, not software engineering workflows</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #d97706;background:#fef3c7;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#15</span>
+          <span class="name">Colleen McGuckin</span>
+          <span class="location">📍 Los Angeles, California, US ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 73</span>
+          <span class="our-score" style="background:#b45309;">🟡 2 — No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">10+ years of experience with strong platform and tooling background including internal tools, CI/CD pipelines, and infrastructure serving other engineering teams. However, fails the AI developer tooling hard requirement - only shows ML integration work (Pick Optimization ML Integration) which served warehouse operations, not software engineers. Missing explicit AI-assisted or agentic developer tooling experience.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Strong platform engineering background with explicit internal tooling and infrastructure work serving other engineering teams, plus demonstrated staff-level leadership managing cross-functional teams and driving technical architecture decisions</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in Los Angeles, California, US (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3. Additionally, no AI developer tooling experience - ML work was for warehouse optimization, not engineering workflows.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #d97706;background:#fef3c7;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#16</span>
+          <span class="name">Alexander Oswald Dahl</span>
+          <span class="location">📍 St. Catharines, Ontario, CA ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 68</span>
+          <span class="our-score" style="background:#b45309;">🟡 2 — No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Has 15+ years of experience and strong AI development background with agentic workflows, OpenAI SDK, and RAG implementation. However, the AI work is focused on healthcare/medical document processing rather than developer tooling - parsing medical documents, FHIR data conversion, and patient analytics. No evidence of building platforms or tools that other software engineers depend on.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Strong AI implementation experience with agentic workflows for dynamic ETL script generation and extensive healthcare AI pipeline development using modern ML/LLM stack</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">⚠️ WEST COAST FLAG: Candidate is in St. Catharines, Ontario, CA (Pacific Time). HM preference is Central/Eastern TZ. Max score capped at 3. Primary concern: AI work serves healthcare/medical domain, not software engineering workflows - no developer tooling or platform engineering background evident.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #d97706;background:#fef3c7;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#17</span>
+          <span class="name">Elizabeth Garland</span>
+          <span class="location">📍 Arlington, Virginia, US</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 50</span>
+          <span class="our-score" style="background:#b45309;">🟡 2 — No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Candidate has 6+ years experience in consulting/analytics but lacks the required 8+ years of software engineering experience and has no developer tooling or platform engineering background. While she mentions 'Agentic AI' in skills, her work history shows only business analytics and decision intelligence platforms for supply chain - not AI tooling for software engineers.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Recent experience with decision intelligence platforms and mentions Agentic AI in skills section, indicating some awareness of AI applications</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">Complete absence of software engineering experience - background is entirely consulting/analytics focused with no developer tooling, platform engineering, or infrastructure work serving other engineers</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #d97706;background:#fef3c7;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#18</span>
+          <span class="name">Songxiang Gu</span>
+          <span class="location">📍 Boston, MA, US</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 41</span>
+          <span class="our-score" style="background:#b45309;">🟡 2 — No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Strong technical background with 13+ years of experience and extensive AI/ML expertise, but does not meet the core requirement for developer tooling focus. Career is primarily ML research, business AI applications (recommendation systems, chatbots, personalization), and data science rather than building platforms or tools that other engineers depend on. The LinkedIn Feathr project shows some developer tooling exposure, but the overall trajectory is AI for business outcomes, not AI for developer workflows.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Extensive AI/ML expertise with hands-on LLM work at UiPath (RAG, fine-tuning, deployment) and leadership experience managing technical teams</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">No developer tooling or platform engineering focus - career centers on business AI applications (recommendation engines, chatbots, personalization) rather than building tools that serve other software engineers</span></div>
+        </div>
+      </div>
+    </div>
+<div class="section-heading">❌ Strong No (4)</div>
+
+    <div class="card" style="border-left:4px solid #c0392b;background:#fde8e8;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#19</span>
+          <span class="name">Yenen Semeneh</span>
+          <span class="location">📍 Herndon, VA, US</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 63</span>
+          <span class="our-score" style="background:#c0392b;">❌ 1 — Strong No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Candidate has only 6+ years of experience, below the 7-year minimum threshold for advancement. While they list AI-related skills (OpenAI GPT-4o, LLM API Integration), there is no evidence in their work history of building AI developer tooling - their roles show traditional full-stack development on ERP systems and Ticketmaster platform with no developer tooling or platform engineering focus.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Has relevant technical stack including TypeScript, Python, and AWS experience with practical cloud deployment experience</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">Under 7 years experience (immediate disqualifier) and no developer tooling/platform engineering background - all roles show product feature development rather than building tools for other engineers</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #c0392b;background:#fde8e8;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#20</span>
+          <span class="name">Sean Beard</span>
+          <span class="location">📍 Aurora, CO, US</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 63</span>
+          <span class="our-score" style="background:#c0392b;">❌ 1 — Strong No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Disqualified due to complete absence of AI-related work experience anywhere on resume. While candidate has 10+ years experience and some developer tooling work (building starter app templates with CI/CD at Angi), there is zero evidence of building or shipping AI-assisted developer tooling, which is a hard requirement for this role.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Built starter web application template at Angi with CI/CD, static code analysis, and internal tooling configuration to enhance developer experience across all new apps</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">No AI signal anywhere on resume - has never built or shipped AI-assisted developer tooling, which is a hard gate requirement for this Staff-level AI &amp; Developer Tooling role</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #c0392b;background:#fde8e8;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#21</span>
+          <span class="name">Jeffrey Sandberg</span>
+          <span class="location">📍 Layton, Utah, US</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 62</span>
+          <span class="our-score" style="background:#c0392b;">❌ 1 — Strong No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Candidate has 14+ years of experience but shows no AI signal anywhere on resume and lacks developer tooling/platform background. Work history is entirely product feature engineering (sportsbook apps, e-commerce checkout flows, billing systems) with no evidence of building tools or platforms that other engineers depend on.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Strong technical depth in Elixir/Erlang with distributed systems experience and solid tenure at recognizable companies</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">Complete absence of AI experience and no developer tooling/platform engineering background - resume shows only product feature development throughout entire career</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid #c0392b;background:#fde8e8;">
+      <div class="card-header">
+        <div class="candidate-info">
+          <span class="rank">#22</span>
+          <span class="name">Juan Acevedo</span>
+          <span class="location">📍 Toronto, ON, CA ⚠️WC</span>
+        </div>
+        <div class="scores">
+          <span class="brainner-score">🧠 23</span>
+          <span class="our-score" style="background:#c0392b;">❌ 1 — Strong No</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="field"><span class="label">Summary</span><span class="value">Juan has only 5 years of software engineering experience, well below the 7-year minimum threshold. His background is entirely product/front-end development with no developer tooling, platform engineering, or infrastructure experience. No AI signal anywhere on resume.</span></div>
+        <div class="two-col">
+          <div class="field"><span class="label">💪 Top Strength</span><span class="value">Strong technical execution in front-end development with measurable outcomes like Lighthouse scores above 90 and deployment across 70+ sites</span></div>
+          <div class="field"><span class="label">⚠️ Top Concern</span><span class="value">Under 7 years experience (immediate disqualifier), zero developer tooling/platform background, and no AI experience - misses all hard requirements for this Staff-level role</span></div>
+        </div>
+      </div>
+    </div></div>
+</body></html>

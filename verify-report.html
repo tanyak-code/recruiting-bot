@@ -1,0 +1,2758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ashby Stage Verification</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f0f2f5; color: #1a1a1a; }
+.header { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 20px 32px; position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; }
+.title { font-size: 18px; font-weight: 700; }
+.subtitle { font-size: 13px; color: #666; margin-top: 2px; }
+.badge { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 12px; }
+.badge.running { background: #fef9c3; color: #854d0e; }
+.badge.done { background: #dcfce7; color: #166534; }
+.content { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+.grand-banner { border-radius: 10px; padding: 16px 20px; font-size: 15px; font-weight: 700; margin-bottom: 24px; text-align: center; }
+.grand-banner.clear { background: #dcfce7; color: #166534; }
+.grand-banner.stuck { background: #fde8e8; color: #c0392b; }
+.grand-banner.checking { background: #fef9c3; color: #854d0e; }
+.job-card { background: #fff; border-radius: 10px; padding: 18px 22px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.08); border-left: 4px solid #e5e7eb; }
+.job-card.stuck { border-left-color: #c0392b; }
+.job-card.clear { border-left-color: #1a7f4b; }
+.job-card.error { border-left-color: #d97706; }
+.job-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.job-title { font-size: 15px; font-weight: 700; }
+.job-status { font-size: 13px; color: #555; }
+.job-stats { display: flex; gap: 16px; font-size: 13px; color: #555; margin-bottom: 12px; flex-wrap: wrap; }
+.stat-bad { color: #c0392b; font-weight: 600; }
+.stat-warn { color: #b45309; font-weight: 600; }
+.note { font-size: 12px; color: #b45309; margin-bottom: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+th { text-align: left; padding: 7px 10px; background: #f8f9fa; color: #6b7280; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid #e5e7eb; }
+td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.score-badge { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 10px; white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div>
+    <div class="title">Ashby Stage Verification</div>
+    <div class="subtitle">3569 total screened candidates · 4 jobs</div>
+  </div>
+  <span class="badge done">✅ Check complete</span>
+</div>
+<div class="content">
+  <div class="grand-banner stuck">❌ 438 candidates still in Application Review across 4 jobs</div>
+  
+    <div class="job-card stuck">
+      <div class="job-header">
+        <span class="job-title">❌ Product Ops (Ed)</span>
+        <span class="job-status">9 stuck in Application Review</span>
+      </div>
+      
+      <div class="job-stats">
+        <span>📋 1337 screened</span>
+        <span>✅ 1327 actioned</span>
+        <span class="stat-bad">❌ 9 stuck</span>
+        <span class="stat-warn">⚠️ 1 not found</span>
+      </div>
+      <div class="note">⚠️ 1 screened candidate not found in Ashby (withdrawn or merged)</div>
+      
+      <table>
+        <thead><tr><th>Name</th><th>Email</th><th>Score</th><th>Current Stage</th></tr></thead>
+        <tbody>
+      <tr>
+        <td>Lilia Johnson</td>
+        <td>liliaftw@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jijin Gopal</td>
+        <td>jijin.777@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Foluwa Akinsemoyin</td>
+        <td>foluwaakinsemoyin@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tiffany Teng</td>
+        <td>tengtiffany1@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Carla Monica Sicat</td>
+        <td>carla.sicat@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Shane Smith</td>
+        <td>shanesmith0721@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Esther Lu</td>
+        <td>elu21881@yahoo.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Regine De Guzman</td>
+        <td>reginedeguzman97@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jason Kent</td>
+        <td>jasonwkent@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr></tbody>
+      </table>
+    </div>
+
+    <div class="job-card stuck">
+      <div class="job-header">
+        <span class="job-title">❌ Sr. Manager TPM (Ed)</span>
+        <span class="job-status">18 stuck in Application Review</span>
+      </div>
+      
+      <div class="job-stats">
+        <span>📋 1446 screened</span>
+        <span>✅ 1425 actioned</span>
+        <span class="stat-bad">❌ 18 stuck</span>
+        <span class="stat-warn">⚠️ 3 not found</span>
+      </div>
+      <div class="note">⚠️ 3 screened candidates not found in Ashby (withdrawn or merged)</div>
+      
+      <table>
+        <thead><tr><th>Name</th><th>Email</th><th>Score</th><th>Current Stage</th></tr></thead>
+        <tbody>
+      <tr>
+        <td>Michael Patrick</td>
+        <td>mikegpatrick@msn.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Edith Ngugi</td>
+        <td>edithngugi@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mascha Kroenlein</td>
+        <td>maschakroenlein@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kannan Nallur Velusamy</td>
+        <td>kannanv1983@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Saurabh Dwivedi</td>
+        <td>dwivedi_saurabh@hotmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Zarwah Imtiaz</td>
+        <td>zarwah.imtiaz@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sameer Patil</td>
+        <td>sameerpatil77@live.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Huan Li</td>
+        <td>lihuan0611@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Rene J. Villaruel Jr.</td>
+        <td>rene.villaruel@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Benjamin Kurzyna</td>
+        <td>benjaminkurzyna@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ramesh Simhambhatla</td>
+        <td>aisimham@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Christopher L. Garza</td>
+        <td>christopher.lee.garza1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Madhavi Yarlagadda</td>
+        <td>madhuyar1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Niharika Pilli</td>
+        <td>niharika.nsk@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Miriam Gribin</td>
+        <td>mirgribin@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kevin Lebre</td>
+        <td>kevin.lebre@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Nicole C. Greco</td>
+        <td>nicole.trapa@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Lalit Garg</td>
+        <td>lalit.lg@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr></tbody>
+      </table>
+    </div>
+
+    <div class="job-card stuck">
+      <div class="job-header">
+        <span class="job-title">❌ Staff SWE (Mitch)</span>
+        <span class="job-status">58 stuck in Application Review</span>
+      </div>
+      
+      <div class="job-stats">
+        <span>📋 58 screened</span>
+        <span>✅ 0 actioned</span>
+        <span class="stat-bad">❌ 58 stuck</span>
+        
+      </div>
+      
+      
+      <table>
+        <thead><tr><th>Name</th><th>Email</th><th>Score</th><th>Current Stage</th></tr></thead>
+        <tbody>
+      <tr>
+        <td>Paul Monday</td>
+        <td>pmonday@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Joseph Jacobs</td>
+        <td>therealjoeyj@icloud.com</td>
+        <td><span class="score-badge" style="background:#d4edda;color:#1a7f4b">4 — Strong Yes</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kristopher Kemper</td>
+        <td>kriskemper@gmail.com</td>
+        <td><span class="score-badge" style="background:#d4edda;color:#1a7f4b">4 — Strong Yes</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sivakumar Rathinavelu</td>
+        <td>sivakumar.rathinavelu@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Raul Medina Nussbaum</td>
+        <td>raul.medina.nussbaum@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Saurabh Ahlawat</td>
+        <td>saurabhsinghahlawat@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Thomas Lester</td>
+        <td>tom@tomlester.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Philippe Gabriel Souza Moraes Ribeiro</td>
+        <td>ribeiro.phillipe@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mike Boaz</td>
+        <td>code.archeologist@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Aaron Morabito</td>
+        <td>aaron.p.morabito@outlook.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Hernando Salas</td>
+        <td>hernandosalas@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Madhusoodhanan Nottiyath</td>
+        <td>nottiyath@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Américo García</td>
+        <td>americo.garcia.007@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Aleksey Inchakov</td>
+        <td>inchakov@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ricardo Vinci</td>
+        <td>ricardo.vinci@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Cavan Page</td>
+        <td>cavan100@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Joshua Daws</td>
+        <td>jdaws47@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Aaron Roberts</td>
+        <td>aaronlroberts@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Chuk  Yang Seng</td>
+        <td>sengcy@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Oleksandr Titula-Boichenko</td>
+        <td>banzalik@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>René Samson</td>
+        <td>reneasaf@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sulian Liu</td>
+        <td>sulianliu@hotmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Victor Passapera</td>
+        <td>vpassapera@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>William Whispell</td>
+        <td>william.whispell@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ian Handley</td>
+        <td>ianhandley@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Daniel Blanco</td>
+        <td>danblanco@duck.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>James Howe</td>
+        <td>jamesbhowe@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Leonard Stuart</td>
+        <td>cleve.stuart@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mohamed Abed</td>
+        <td>mohammedsabryabed@gmail.com</td>
+        <td><span class="score-badge" style="background:#d4edda;color:#1a7f4b">4 — Strong Yes</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Erich Staehling</td>
+        <td>erich.staehling@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Matthew Witkowski</td>
+        <td>mattwitkowski503@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Suraj Mirpuri</td>
+        <td>mirpurisuraj1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kenton Newby</td>
+        <td>kentonnewby@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Nathaniel Kent</td>
+        <td>kentnathan14@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Roman Jazmin</td>
+        <td>roman@aisecurex.ai</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Siva Uppari</td>
+        <td>siva.uppari@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Zachary Toney</td>
+        <td>zach@ztat.me</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ricardo Anguiano</td>
+        <td>ricardo.rito.a@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jin Teck Chu</td>
+        <td>jinteckchu@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Michael Pruss</td>
+        <td>michael.pruss1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Thomas Creed</td>
+        <td>thomas.p.creed@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Eric Majewicz</td>
+        <td>ericmajewicz@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Satnam Singh Sandhu</td>
+        <td>sandhu.satnam@outlook.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jonathon Farzanfar</td>
+        <td>jfarzanfar1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Bibin Thomas</td>
+        <td>bibin.thomas.k@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Paul Borgen</td>
+        <td>pborgennc@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Vitalii Bilanchuk</td>
+        <td>vitalii.bilanchuk@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Karunakar Kankanala</td>
+        <td>karunakar16@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Rene Alberto Meza Escamilla</td>
+        <td>renemeza.escamilla@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Aaron Allen</td>
+        <td>hello@aaronmallen.me</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Philip Ludington</td>
+        <td>pjludington@gmail.com</td>
+        <td><span class="score-badge" style="background:#dbeafe;color:#1565c0">3 — Maybe</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sean Gillespie</td>
+        <td>s.gillespie@project89.org</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Weyland Chiang</td>
+        <td>weyland.chiang@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>German Simon</td>
+        <td>germanr.simon@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tim Klever</td>
+        <td>tim@timisawesome.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ryan Lopez</td>
+        <td>lopezryan2008@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jory Leech</td>
+        <td>joryleech@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Rambabu Dhanavath</td>
+        <td>rambabudhanavath9@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr></tbody>
+      </table>
+    </div>
+
+    <div class="job-card stuck">
+      <div class="job-header">
+        <span class="job-title">❌ Sr. PM (Jordan)</span>
+        <span class="job-status">353 stuck in Application Review</span>
+      </div>
+      
+      <div class="job-stats">
+        <span>📋 728 screened</span>
+        <span>✅ 369 actioned</span>
+        <span class="stat-bad">❌ 353 stuck</span>
+        <span class="stat-warn">⚠️ 6 not found</span>
+      </div>
+      <div class="note">⚠️ 6 screened candidates not found in Ashby (withdrawn or merged)</div>
+      
+      <table>
+        <thead><tr><th>Name</th><th>Email</th><th>Score</th><th>Current Stage</th></tr></thead>
+        <tbody>
+      <tr>
+        <td>Kirti Adlakha</td>
+        <td>adlakhakirti9@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Will Marshall</td>
+        <td>william.marshall@proinboxpost.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Chong Li</td>
+        <td>chong.li919@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Robert Tenney</td>
+        <td>robert.tenney@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Palak Chauhan</td>
+        <td>palak.chauhan49@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Frances Jillian Qua</td>
+        <td>fjsqua@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Meggan Bishop</td>
+        <td>megganabishop@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Allison DeVille</td>
+        <td>allisonmdeville@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>LESLIE A. ESTELLE, MBA</td>
+        <td>laestelle2009@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Felix Romo</td>
+        <td>felixromo@proton.me</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Adrian Cabilio</td>
+        <td>adrian.cabilio@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ally Sopata</td>
+        <td>sopataally.sopata@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Elias Cohen</td>
+        <td>eliascm1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>DALE PINNOCK</td>
+        <td>dale.h.pinnock@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jason Kay</td>
+        <td>kay.jason@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Hallie Hoffman</td>
+        <td>halliehoffman26@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Parnia Ashari</td>
+        <td>parnia.ashari@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ravina Chopra</td>
+        <td>chopra.ravina21@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Priyanka Natrajan</td>
+        <td>priyanka.natrajan@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sara Dada</td>
+        <td>saradada@me.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ruhma Khawaja</td>
+        <td>ruhma.k18@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>DENI SHARP</td>
+        <td>denilsharp@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Calahan Larson</td>
+        <td>calahan.larson@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Benjamin Bloom</td>
+        <td>bwbloom@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Martin Byrne</td>
+        <td>mbyrne2323@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kaustubh Karale</td>
+        <td>ks_karale@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>James Lorentson</td>
+        <td>james.lorentson@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sankalp Shrivastava</td>
+        <td>techprosankalp@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Abdullah Ali</td>
+        <td>abdullahsajidali@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jyoti Singh</td>
+        <td>jyotisingh.arj@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Miles Christensen</td>
+        <td>miles@studio8c.net</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Hillary Yeboah</td>
+        <td>hillary.yeboah@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ayodeji Ejidiran</td>
+        <td>ayodeji.ejidiran@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Asjad Fazal Balbale</td>
+        <td>asjadbalbale@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Lara Temel</td>
+        <td>laratemel@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Asad Naqvi</td>
+        <td>asadullahnaqvi@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>David Erakovic</td>
+        <td>david.erakovic@outlook.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Rajat Rao</td>
+        <td>rajatrao@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Yash Gujre</td>
+        <td>yashgujre7@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mercy Bankole</td>
+        <td>oybanky@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Yvonne Chung</td>
+        <td>yvonne.ychung@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Bibek Ghimire</td>
+        <td>bibekgh@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Dantonio Cooksey</td>
+        <td>dtc4yah@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Héctor Manuel Ballesteros</td>
+        <td>hectormballesteros@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Venkat Nikhil Yerramilli</td>
+        <td>venkatatnikhil@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sai Adithya Bele</td>
+        <td>saiadithyabele0@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kavitha Alegala</td>
+        <td>kavitha.alegala@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Malcolm Ward</td>
+        <td>malcolm.a.ward@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Katie Kalm</td>
+        <td>kkalm143@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Aravind Ravi</td>
+        <td>aravindravi.academics@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Federico Schenquerman</td>
+        <td>fedephiru@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Dao Zhang</td>
+        <td>doyle.zhang@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Harshad Kolhe</td>
+        <td>harshkay147@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Naveed Khan</td>
+        <td>naveedk5996@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Max Wolitzky</td>
+        <td>maxwolitzkypm+scribd@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kristin Zibell</td>
+        <td>kristin.zibell@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Brijesh Madavan</td>
+        <td>brijeshmadavan33@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Nataliya Richard</td>
+        <td>nataliya.richard@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mitchell DeYoung</td>
+        <td>deyoung.mitchell@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Malik Jumani</td>
+        <td>malikjumani@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Shuai Tan</td>
+        <td>stan@monumentchemical.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Dev M. Patel</td>
+        <td>devptl1602@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mirat Panchal</td>
+        <td>miratpanchal@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>M. Janine Burks</td>
+        <td>burksmjanine@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Harsha Mehra</td>
+        <td>harshamehra75@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kavya Devarapalli</td>
+        <td>kvy.dev@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kathy Kong</td>
+        <td>kathyqkong@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Daniel Llosa</td>
+        <td>dllosa305@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Toni Animashaun</td>
+        <td>koanim@hotmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kevin Leaver</td>
+        <td>ksleaver1@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Lucas Gibbons</td>
+        <td>lucas.gibbons@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Michelle Vacarciuc</td>
+        <td>vacarciucmichelle@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Neeti Diggikar</td>
+        <td>neeti.diggikar@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Matthew Goodson</td>
+        <td>mgoodsonpm@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sreekanth Chandramouli</td>
+        <td>sreekanth.ssn@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Paul Ezekiel</td>
+        <td>paulezek@live.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Neda Eshraghi</td>
+        <td>neda.eshraghi@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>URVASHI MISHRA (MONA)</td>
+        <td>urvashitripathi@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Brittany Ball</td>
+        <td>brittanyyball@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Aaron Watchmaker</td>
+        <td>awatch26@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Raquel Sapnu</td>
+        <td>raquelsapnu@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ilya Turko</td>
+        <td>ilya.turko@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Vinuthna Yetukuri</td>
+        <td>yetukuri.vinuthna@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sara Torres</td>
+        <td>sara.m.torres29@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Yusuke Tanaka</td>
+        <td>yusuke.bill@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jieon Kim</td>
+        <td>jieonkim1344@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Walker Bolger</td>
+        <td>walker.bolger@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Matthew Gillen</td>
+        <td>matthewgillen123@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mark (Mehrdad) Heydari</td>
+        <td>heydari.mehrdad@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Qasim Malik</td>
+        <td>qasim.malik@torontomu.ca</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Nathan Wu</td>
+        <td>nathanwu424@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kumar Kothari</td>
+        <td>kumar5.kothari@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Chibuike N. Imo</td>
+        <td>chibbyrecruiting@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Yashi Lu</td>
+        <td>luyashi@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Fara Narbayev</td>
+        <td>fanarbayev@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jieni Peng</td>
+        <td>jieni.peng@quickpostmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Divya Mohan</td>
+        <td>mohandivya925@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Abash Lal</td>
+        <td>abash.iimb@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tony Park</td>
+        <td>kpark73@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Gauri Shetty</td>
+        <td>shettygauri@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jordana Mah</td>
+        <td>jordana.mah@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Juyao Hoo</td>
+        <td>juyao.hoo@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Edgar Wharton</td>
+        <td>blackwell.e.wharton@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Travis Sellers</td>
+        <td>sellers.travis@icloud.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Eleni Romano</td>
+        <td>eleni.romano1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>John Pirrie</td>
+        <td>johnpirrie@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Aman K Akbar</td>
+        <td>amanullah@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sushma Reddem</td>
+        <td>sushmapranathi@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Alex Yu</td>
+        <td>alexyu24000@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Francisco Sanchez</td>
+        <td>fsanchez@kudosconsult.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Andrew Nigel Suresh</td>
+        <td>andrewnsuresh@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Raymond Truong</td>
+        <td>truongr1995@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Hester Mak</td>
+        <td>makhesterholam+scribd@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Firdaush Bhadha</td>
+        <td>firdaush@bhadha.ca</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Pooja Shah</td>
+        <td>poojashah29@smartmailhost.net</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Rashmi Nayak</td>
+        <td>rashrn@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Anup Shrestha</td>
+        <td>anupsth23@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Raina Tammets</td>
+        <td>rainaestonia@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Todd Kalhar</td>
+        <td>todd.kalhar@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Anton Shatokhin</td>
+        <td>shatokhinanton@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Anum Naseem</td>
+        <td>anumak33@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Robyn Brigham</td>
+        <td>rrbrigham7@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Doris Yuan</td>
+        <td>yuan.doris@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tiana Ramirez</td>
+        <td>tiana.ramirez1026@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sara Mahan</td>
+        <td>smmahan1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Vedija Pillay</td>
+        <td>vedijapillay@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kailey Barnes</td>
+        <td>kaileybarnes@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Karthik Poluri</td>
+        <td>ragpo.1407@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Cyrus Elmtalab</td>
+        <td>elmtalaba@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Owen Li</td>
+        <td>owen.lzw@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Anna Kauffman</td>
+        <td>annagracekauffman@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jack Whitis</td>
+        <td>jack.whitis@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sidney Hardin</td>
+        <td>sidney.hardin07@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Abbey Fash</td>
+        <td>abiodun3000x@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>SeoHyun Choo</td>
+        <td>seohyunchoo@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jeff Wilson</td>
+        <td>whackscript@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>John Van Straalen</td>
+        <td>jvs@lodebek.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Nadya Lagzyan</td>
+        <td>nadya.lagzyan@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jai Kim</td>
+        <td>jaikyeong.kim@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Pravalya Kamireddy</td>
+        <td>pravalyakamireddy9@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tijana Gajic</td>
+        <td>tijana.g.cirkovic@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Dominik C. Neal</td>
+        <td>dominik.neal20@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Salma Mashkoor</td>
+        <td>salmamashkoor1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sri Vidya Bhaktavatsala Iyer</td>
+        <td>s.iyer2216@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sara Hathaway</td>
+        <td>hathawse@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Rafee Alam</td>
+        <td>ralam70@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Alyssa Kay</td>
+        <td>alyssa@alyssakay.org</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Natalia Milan</td>
+        <td>aliamilan1218@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sarvesh Chidambaram</td>
+        <td>sarveshjax@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Michael Denson</td>
+        <td>michael@denson.cc</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sage Turk</td>
+        <td>sturk.experticity@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Steven Hou</td>
+        <td>steven.yh.hou@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Alan Herman</td>
+        <td>aherman25@gsb.columbia.edu</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Nazanin Azari</td>
+        <td>nazaninazarnaz@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Chibunna Dimude</td>
+        <td>chibunnadimude@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mehrdad Arjmand</td>
+        <td>mehrdad.arjmand@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ren Volpi</td>
+        <td>renvolpi@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Manasi Dushyant Mehta</td>
+        <td>manasimehta026@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Marco Martin Gallego</td>
+        <td>marcomgallego@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Shobhit Jain</td>
+        <td>shobhitjain.uwo@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Nophar Ben Shaul</td>
+        <td>nopharbs@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Steph Clausen</td>
+        <td>stephbclausen@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Lindsay Smith</td>
+        <td>lindzmsmith@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Scott Tian</td>
+        <td>scotttian7@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Bomani Mintz-Johnson</td>
+        <td>bomani.j.mintz@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tony Figola</td>
+        <td>tfigola@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Abhinav Chander Mahajan</td>
+        <td>abhinavmahajan87@protonmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Anupriya Kasumnal</td>
+        <td>anupriya.kasumnal@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tracey Davis</td>
+        <td>pallas3@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Swati Chaudhary</td>
+        <td>swati.chaudhary120197@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>An Li</td>
+        <td>li.unc.16@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jerry Nkenchor</td>
+        <td>jnkenchor@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Anish Mehta</td>
+        <td>anish8185@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sushmitha Krishnamoorthy</td>
+        <td>sushkrsh@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Marlena Manulis</td>
+        <td>marlena@manulis.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Meng-Chia (Derrick) Chiang</td>
+        <td>derrick.chiang1024@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ankita Verma</td>
+        <td>contact.ankitav@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Joyce Arpitha Prasad</td>
+        <td>joyce.a.prasad@outlook.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Cody Holden</td>
+        <td>holden.codym@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sabah Azam</td>
+        <td>sabahazam89@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Shan (Celine) Fu</td>
+        <td>celine5233@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Maryam Samizadeh</td>
+        <td>samizadehmaryam@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kenneth Yeung</td>
+        <td>kennethmyeung@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Evelyn Chou</td>
+        <td>ysevelynchou@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>April De Zen</td>
+        <td>april.dezen@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jenny DeSouchet</td>
+        <td>jendesouchet@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Rohan Shetty</td>
+        <td>shettyrohan88@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ashley Hanbury</td>
+        <td>ashleymhanbury@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Laura Bloechl</td>
+        <td>laura.bloechl@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Gurneet Singh Paul</td>
+        <td>gurneet.paul@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Maggie Morgan</td>
+        <td>maggie.morgan211@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>VIVEK SAJWAN</td>
+        <td>viveksajwan95@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Harshal Nanavare</td>
+        <td>harshalforpm@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Gina Y. Kim</td>
+        <td>gkim9779@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Francis Feng</td>
+        <td>fate9311@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>KAUSTAV MUKHERJEE</td>
+        <td>mail.kmukherj@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Emily Takagi</td>
+        <td>emilytakagi@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jonathan D. Jules</td>
+        <td>jonathan.david.jules@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ramji Govindarajan</td>
+        <td>ramji.govindarajan@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Richa Chugh</td>
+        <td>richa.chugh@outlook.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Rachel J. Kang</td>
+        <td>rachel.j.kang@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Quin Robinson</td>
+        <td>quinrobinson@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Karishma Amin</td>
+        <td>bykarishma21@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Andrew Soep</td>
+        <td>siraris@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kunal Dash</td>
+        <td>kunalmra@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ahmad Nayfeh</td>
+        <td>ahmadnayfeh092@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Autumn Abbott</td>
+        <td>a.abbott825@protonmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jamil Hussein</td>
+        <td>jamil.shus@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sergey Kozlov</td>
+        <td>s.v.kozlov@icloud.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Michelle Cedillo</td>
+        <td>micced@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Khushboo Bhatia</td>
+        <td>bhatia.khushbu@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Shivam Ohri</td>
+        <td>shivam07ohri@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Carlos "Charlie" Rivera</td>
+        <td>charles.rivera@me.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Vitali Potchekin</td>
+        <td>vitali.potchekin@ohmymail.net</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Bhargav Kumar</td>
+        <td>bhargavkumar_manda@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Christopher Ferrante</td>
+        <td>ferranteca@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Aaron Heppleston</td>
+        <td>aheppleston@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Elizabeth Tompkins</td>
+        <td>elizabethhelentompkins@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Varun Kumar Singh</td>
+        <td>varunsingh00415@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Randal Romell</td>
+        <td>randalromell.pm@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Franck Loic</td>
+        <td>franck@hirefranck.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Davis Joseph</td>
+        <td>djoseph0915@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Dave Smith</td>
+        <td>daverolestack@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Anand Walvekar</td>
+        <td>walvekaranand@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tresha Lim</td>
+        <td>tresha.lim@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Bitan Kumar Mani</td>
+        <td>bitan.km@techsmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Yves Bourgeois</td>
+        <td>bringideas2market@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Yvette Zhou</td>
+        <td>yvettechow@hotmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Adam Kimmerer</td>
+        <td>adamkimmerer@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Richard Kingsford</td>
+        <td>richkingsford@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>David Xue</td>
+        <td>david.fw.xue@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>David G. Hill</td>
+        <td>davidhill126@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kathryn Green Smith</td>
+        <td>marykgreen@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Hollis Cooper</td>
+        <td>hollis.cooper@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Neelu Ramisetty</td>
+        <td>neeluc@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Viddatra Balaji</td>
+        <td>viddatrabalaji8@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Augustine Chan</td>
+        <td>augustine.chan@outlook.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ashutosh Tripathi</td>
+        <td>mailashutoshtripathi@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Lukasz Konopko</td>
+        <td>lukek631@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Aneri Shah</td>
+        <td>aneri@utexas.edu</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Peter Smith</td>
+        <td>peterlasmith@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Daniel Roberts</td>
+        <td>hello@danielkarlroberts.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Stephan Amenta</td>
+        <td>stephan.amenta@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Anirudh Govil</td>
+        <td>anirudhgovil@outlook.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Falguni Mehrotra</td>
+        <td>falguni.mehrotra25@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Maisara Hussain</td>
+        <td>maisarahussain@hotmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Meesum Hussain</td>
+        <td>meesum.sde@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Gabrielle Alves</td>
+        <td>gaah.alves@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Nagarjuna Sidhabathuni</td>
+        <td>nsidhaba@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Chloe Reeves</td>
+        <td>chloe.f.reeves@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Karthik Jediseh</td>
+        <td>kjediseh@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Siddharth Sharma</td>
+        <td>sharmasid1@outlook.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Olivia Christopher</td>
+        <td>olivia.a.christopher@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Pavel Derendiaev</td>
+        <td>pavelderendyaev@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Eva Das</td>
+        <td>eva2good@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Katrina Feliciano-Stoddard</td>
+        <td>katrinafs@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sam Drackett</td>
+        <td>sc.drackett@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sruthi Moothath</td>
+        <td>spm2708@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Alex French</td>
+        <td>alex.french10@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Eric Tsai</td>
+        <td>eric.ch.tsai@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sadaf Badar</td>
+        <td>sadaf.official2602@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Timothy J. Baio</td>
+        <td>tjbb448@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Gagan Sandhu</td>
+        <td>write.gagansandhu@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Seva (Vsevolod) Medvedovskyi</td>
+        <td>simondovsky@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Shirly Natanzon</td>
+        <td>rosenshirly@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Megha R. Patel</td>
+        <td>megharpatel9@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Annie Ding</td>
+        <td>annieding518@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kevin Fig</td>
+        <td>kevinfig12@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Patrick A. Wilson</td>
+        <td>patrickawilson@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ritesh Lal</td>
+        <td>lalritesh@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sumati Ahuja</td>
+        <td>sumati.ahuja@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Hemant Patel</td>
+        <td>hemantpatel23@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Maya Chatila</td>
+        <td>mchatila@alumni.harvard.edu</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sarah Pry</td>
+        <td>sarahkpry@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Robin Gupta</td>
+        <td>gupta.robin.1991@hotmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Anuhya Kasam</td>
+        <td>anuhya.kasam@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kimberly L. Yang</td>
+        <td>kimyang2020@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Steven Chhatwal</td>
+        <td>chhatwalsteven@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Gregory Guilloth</td>
+        <td>gregory.guilloth@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>David Forbes</td>
+        <td>davidwells.forbes@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Richard "Ricky" Bradley</td>
+        <td>ricky.bradley@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mishu Bhat</td>
+        <td>mishu.bhat@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Julie Mahoney</td>
+        <td>juliem728@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tina Tang</td>
+        <td>tina.tang.uva@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ayobami Tunde-Alli</td>
+        <td>ayobamiolumidetundealli@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Phoebe Browning</td>
+        <td>browning.phoebe.l@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Melissa Alvarado</td>
+        <td>melissa.alvarado91@jobmail.io</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Baresi Ngnoubisepo</td>
+        <td>baresingnoubisepo@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ryan Kwon</td>
+        <td>ryankwon173@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Igor Mileshin</td>
+        <td>igormileshin@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jacob S. Roh</td>
+        <td>jakeroh089@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Pradeep Reddy Gorla</td>
+        <td>pradeepreddygorla7@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Nesrine Menikh</td>
+        <td>nesrine.m95@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>MIR ABBAS IMAD ALI</td>
+        <td>imad.ali@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sanket Bumb</td>
+        <td>sanket.bumb@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Stephen Wang</td>
+        <td>stephenleewang@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Milleigh Vo</td>
+        <td>milleighvo@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Meena Jayanthi</td>
+        <td>meenakshi.jayanthi@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Umaima Afzal</td>
+        <td>afzalumaima26@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Ray Liu</td>
+        <td>liuhui66@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>David Koenitzer</td>
+        <td>davidkoenit@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Timothy Aston</td>
+        <td>taston@rogers.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Shawn Thomas</td>
+        <td>sgthomas775@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mohan Reddy GVR</td>
+        <td>gvrmohanreddy@hotmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Brigham Ballard</td>
+        <td>brigham@ballard8.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jayneesh Wanjara</td>
+        <td>jayneeshw7@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Brandon A. Bush</td>
+        <td>brandonadambush@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Melody Phon</td>
+        <td>melody.phon@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Zbigniew Krupowicz</td>
+        <td>zbyszko@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Leyla Khanahmad</td>
+        <td>leyla.khanahmad@mailzoomhub.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Danny Rozo</td>
+        <td>danny.c.rozo@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Scott Ferguson</td>
+        <td>fergusonscott@outlook.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jay Banet</td>
+        <td>jaybanet@umich.edu</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Alexander Wald</td>
+        <td>alexjwald@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mijeong Kim</td>
+        <td>mijeongpm@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tom Panouses</td>
+        <td>tpanouses@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>ANASTASIA VERNIDUB</td>
+        <td>aa.vernidub@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>CHASE H. KAYE</td>
+        <td>chasekaye10@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Tim Lawrence</td>
+        <td>timlawrence97@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jonathan Wang</td>
+        <td>jwang002@icloud.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Michael Thuresson</td>
+        <td>mikethuresson@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>ANUJOTHI DINAKARAN</td>
+        <td>anujothi.a@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Simone Giacometti</td>
+        <td>sgiacometti@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Charles J. Cohick, MBA</td>
+        <td>charles.j.cohick@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Roopali Muddebihal</td>
+        <td>roopali.m16@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sean Branch</td>
+        <td>seanabranch@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kauser Hyder</td>
+        <td>kauserhyder89@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Santhosh Thammi</td>
+        <td>sthammi1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Daniel Doctor</td>
+        <td>danieldoctor1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Kunal Phadnis</td>
+        <td>kphadnis1@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Guangyu Chen</td>
+        <td>guangyu.chen2@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Karanbir Randhawa</td>
+        <td>karanbir.randhawa86@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Youssef Billawala</td>
+        <td>ybillawala@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Phillip Williams-Oliveira</td>
+        <td>phillip.j.oliveira@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Puja Sharma</td>
+        <td>puja17sharma@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Aaron J. Rappoport</td>
+        <td>rappoporta@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sarah To</td>
+        <td>sarahto888@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Brenda Beas</td>
+        <td>brenda.beas@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Nate Whicker</td>
+        <td>natewhicker@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Shruti Gupta</td>
+        <td>shrutigupta1992@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Mohsin Fazal E Karim Potrick</td>
+        <td>mohsinpotrick96@outlook.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Larry Dana Gaither</td>
+        <td>larrydana.gaither@gmail.com</td>
+        <td><span class="score-badge" style="background:#fde8e8;color:#c0392b">1 — Hard No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Bryce Nathaniel Romney</td>
+        <td>romney.bryce@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Daniel Nunez</td>
+        <td>daniel.nunez.ro@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Lavudya Nehru Chowhan</td>
+        <td>ashishncl1701@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Suvendu Mishra</td>
+        <td>suvmishra@yahoo.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Pujith Sai Kumar Reddy Nooka</td>
+        <td>pujithnooka@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Sean Mehr</td>
+        <td>mehrsean@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Anshul Uchil</td>
+        <td>anshuluchil@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Jungwoo Park</td>
+        <td>jungwoohoo0123@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Javon Holt</td>
+        <td>javon.nehemiah@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Matthew Francis</td>
+        <td>francisdmatt@outlook.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr>
+      <tr>
+        <td>Noah Lopez</td>
+        <td>fredoluv@gmail.com</td>
+        <td><span class="score-badge" style="background:#fef3c7;color:#b45309">2 — No</span></td>
+        <td>Application Review</td>
+      </tr></tbody>
+      </table>
+    </div>
+</div>
+</body>
+</html>

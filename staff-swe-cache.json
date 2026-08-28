@@ -1,0 +1,1395 @@
+{
+  "pmonday@gmail.com": {
+    "name": "Paul Monday",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 100,
+    "location": "Lafayette, Colorado, US"
+  },
+  "therealjoeyj@icloud.com": {
+    "name": "Joseph Jacobs",
+    "ourScore": 4,
+    "scoreLabel": "Strong Yes",
+    "brainnerScore": 100,
+    "location": "Phoenix, AZ, US"
+  },
+  "kriskemper@gmail.com": {
+    "name": "Kristopher Kemper",
+    "ourScore": 4,
+    "scoreLabel": "Strong Yes",
+    "brainnerScore": 100,
+    "location": "Atlanta, Georgia, US"
+  },
+  "sivakumar.rathinavelu@gmail.com": {
+    "name": "Sivakumar Rathinavelu",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 100,
+    "location": "Atlanta, GA, US"
+  },
+  "raul.medina.nussbaum@gmail.com": {
+    "name": "Raul Medina Nussbaum",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 100,
+    "location": "Mexico City, MX"
+  },
+  "saurabhsinghahlawat@gmail.com": {
+    "name": "Saurabh Ahlawat",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 100,
+    "location": "Toronto, Ontario, CA"
+  },
+  "tom@tomlester.com": {
+    "name": "Thomas Lester",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 100,
+    "location": "Saint Johns, FL, US"
+  },
+  "ribeiro.phillipe@gmail.com": {
+    "name": "Philippe Gabriel Souza Moraes Ribeiro",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 100,
+    "location": "Dublin, CA, US"
+  },
+  "code.archeologist@gmail.com": {
+    "name": "Mike Boaz",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 96,
+    "location": "Atlanta, Georgia, US"
+  },
+  "aaron.p.morabito@outlook.com": {
+    "name": "Aaron Morabito",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 91,
+    "location": "Portland, OR, US"
+  },
+  "hernandosalas@gmail.com": {
+    "name": "Hernando Salas",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 91,
+    "location": "Miami, Florida, US"
+  },
+  "nottiyath@gmail.com": {
+    "name": "Madhusoodhanan Nottiyath",
+    "ourScore": 3,
+    "scoreLabel": "Yes*",
+    "brainnerScore": 91,
+    "location": "San Jose, California, US"
+  },
+  "americo.garcia.007@gmail.com": {
+    "name": "Américo García",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 91,
+    "location": "Monterrey, Nuevo León, MX"
+  },
+  "inchakov@gmail.com": {
+    "name": "Aleksey Inchakov",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 87,
+    "location": "Boca Raton, Florida, US"
+  },
+  "ricardo.vinci@gmail.com": {
+    "name": "Ricardo Vinci",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 87,
+    "location": "Miami, FL, US"
+  },
+  "cavan100@gmail.com": {
+    "name": "Cavan Page",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 86,
+    "location": "San Diego, CA, US"
+  },
+  "jdaws47@gmail.com": {
+    "name": "Joshua Daws",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 86,
+    "location": "Sugar Hill, Georgia, US"
+  },
+  "aaronlroberts@gmail.com": {
+    "name": "Aaron Roberts",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "Centreville, Virginia, US"
+  },
+  "sengcy@gmail.com": {
+    "name": "Chuk  Yang Seng",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "Aldie, Virginia, US"
+  },
+  "banzalik@gmail.com": {
+    "name": "Oleksandr Titula-Boichenko",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 82,
+    "location": "Seattle, WA, US"
+  },
+  "reneasaf@gmail.com": {
+    "name": "René Samson",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "West Hempstead, NY, US"
+  },
+  "sulianliu@hotmail.com": {
+    "name": "Sulian Liu",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 82,
+    "location": "Ottawa, ON, CA"
+  },
+  "vpassapera@gmail.com": {
+    "name": "Victor Passapera",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "Morgan Hill, California, US"
+  },
+  "william.whispell@gmail.com": {
+    "name": "William Whispell",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "Monroe, CT, US"
+  },
+  "ianhandley@gmail.com": {
+    "name": "Ian Handley",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "Spanish Fork, UT, US"
+  },
+  "danblanco@duck.com": {
+    "name": "Daniel Blanco",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "Atlanta, GA, US"
+  },
+  "jamesbhowe@yahoo.com": {
+    "name": "James Howe",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "Little Elm, Texas, US"
+  },
+  "cleve.stuart@gmail.com": {
+    "name": "Leonard Stuart",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "Silver Spring, Maryland, US"
+  },
+  "mohammedsabryabed@gmail.com": {
+    "name": "Mohamed Abed",
+    "ourScore": 4,
+    "scoreLabel": "Strong Yes",
+    "brainnerScore": 81,
+    "location": "Mexico City, MX"
+  },
+  "erich.staehling@gmail.com": {
+    "name": "Erich Staehling",
+    "ourScore": 3,
+    "scoreLabel": "Yes*",
+    "brainnerScore": 78,
+    "location": "Sunnyvale, CA, US"
+  },
+  "mattwitkowski503@gmail.com": {
+    "name": "Matthew Witkowski",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 78,
+    "location": "Somerset, New Jersey, US"
+  },
+  "mirpurisuraj1@gmail.com": {
+    "name": "Suraj Mirpuri",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 78,
+    "location": "Renton, WA, US"
+  },
+  "kentonnewby@gmail.com": {
+    "name": "Kenton Newby",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 78,
+    "location": "Atlanta, GA, US"
+  },
+  "kentnathan14@gmail.com": {
+    "name": "Nathaniel Kent",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 77,
+    "location": "San Diego, CA, US"
+  },
+  "roman@aisecurex.ai": {
+    "name": "Roman Jazmin",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 77,
+    "location": "Pearland, Texas, US"
+  },
+  "siva.uppari@gmail.com": {
+    "name": "Siva Uppari",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 77,
+    "location": "Dublin, California, US"
+  },
+  "zach@ztat.me": {
+    "name": "Zachary Toney",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 73,
+    "location": "Fort Lauderdale, FL, US"
+  },
+  "ricardo.rito.a@gmail.com": {
+    "name": "Ricardo Anguiano",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 73,
+    "location": "Puebla, MX"
+  },
+  "jinteckchu@gmail.com": {
+    "name": "Jin Teck Chu",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 73,
+    "location": "Lebanon, New Hampshire, US"
+  },
+  "michael.pruss1@gmail.com": {
+    "name": "Michael Pruss",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 73,
+    "location": "Ottawa, Ontario, CA"
+  },
+  "thomas.p.creed@gmail.com": {
+    "name": "Thomas Creed",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 73,
+    "location": "Tyngsborough, MA, US"
+  },
+  "ericmajewicz@gmail.com": {
+    "name": "Eric Majewicz",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 73,
+    "location": "Miami, Florida, US"
+  },
+  "sandhu.satnam@outlook.com": {
+    "name": "Satnam Singh Sandhu",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 73,
+    "location": "Toronto, ON, CA"
+  },
+  "jfarzanfar1@gmail.com": {
+    "name": "Jonathon Farzanfar",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 72,
+    "location": "Canon City, Colorado, US"
+  },
+  "bibin.thomas.k@gmail.com": {
+    "name": "Bibin Thomas",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 72,
+    "location": "Toronto, Ontario, CA"
+  },
+  "pborgennc@gmail.com": {
+    "name": "Paul Borgen",
+    "ourScore": 2,
+    "scoreLabel": "No*",
+    "brainnerScore": 72,
+    "location": "Wethersfield, Connecticut, US"
+  },
+  "vitalii.bilanchuk@gmail.com": {
+    "name": "Vitalii Bilanchuk",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 69,
+    "location": "Toronto, Ontario, CA"
+  },
+  "karunakar16@gmail.com": {
+    "name": "Karunakar Kankanala",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 64,
+    "location": "Clarksburg, Maryland, US"
+  },
+  "renemeza.escamilla@gmail.com": {
+    "name": "Rene Alberto Meza Escamilla",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 64,
+    "location": "Ensenada, Baja California, MX"
+  },
+  "hello@aaronmallen.me": {
+    "name": "Aaron Allen",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 63,
+    "location": "San Antonio, TX, US"
+  },
+  "pjludington@gmail.com": {
+    "name": "Philip Ludington",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 63,
+    "location": "Austin, Texas, US"
+  },
+  "s.gillespie@project89.org": {
+    "name": "Sean Gillespie",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 63,
+    "location": "Dundas, Ontario, CA"
+  },
+  "weyland.chiang@gmail.com": {
+    "name": "Weyland Chiang",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 62,
+    "location": "Falls Church, Virginia, US"
+  },
+  "germanr.simon@gmail.com": {
+    "name": "German Simon",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 60,
+    "location": "Hamilton, Ontario, CA"
+  },
+  "tim@timisawesome.com": {
+    "name": "Tim Klever",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 55,
+    "location": "Phoenix, AZ, US"
+  },
+  "lopezryan2008@gmail.com": {
+    "name": "Ryan Lopez",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 50,
+    "location": "Washington, District of Columbia, US"
+  },
+  "joryleech@gmail.com": {
+    "name": "Jory Leech",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 46,
+    "location": "Portland, OR, US"
+  },
+  "rambabudhanavath9@gmail.com": {
+    "name": "Rambabu Dhanavath",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 36,
+    "location": "Fort Wayne, Indiana, US"
+  },
+  "prachi.gupta0618@outlook.com": {
+    "name": "Prachi Gupta",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 100,
+    "location": "Dallas, TX, US"
+  },
+  "faisalejaz92@hotmail.com": {
+    "name": "Faisal Ejaz",
+    "ourScore": 2,
+    "scoreLabel": "No*",
+    "brainnerScore": 100,
+    "location": "Austin, TX, US"
+  },
+  "md.rid.can@gmail.com": {
+    "name": "Md Moinuddin Sharif Riyadh",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 100,
+    "location": "Ottawa, Ontario, CA"
+  },
+  "jason.brown.engineer@gmail.com": {
+    "name": "Jason Brown",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 100,
+    "location": "Austin, TX, US"
+  },
+  "billgloff@gmail.com": {
+    "name": "William Gloff",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 100,
+    "location": "Crystal Lake, Illinois, US"
+  },
+  "tcat94762@gmail.com": {
+    "name": "Michael Wong",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 100,
+    "location": "Windsor, ON, CA"
+  },
+  "anthony.skrzypczak90@outlook.com": {
+    "name": "Anthony Skrzypczak",
+    "ourScore": 2,
+    "scoreLabel": "No*",
+    "brainnerScore": 100,
+    "location": "Chicago, IL, US"
+  },
+  "jkmiller214@outlook.com": {
+    "name": "Jake Miller",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 100,
+    "location": "Miami, FL, US"
+  },
+  "stanfordchambers@outlook.com": {
+    "name": "Stanford Chambers",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 100,
+    "location": "New York, NY, US"
+  },
+  "ryangrasell@outlook.com": {
+    "name": "Ryan Todd Grasell",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 100,
+    "location": "San Francisco, California, US"
+  },
+  "christopherzahrah@outlook.com": {
+    "name": "Christopher Zahrah",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 100,
+    "location": "Austin, Texas, US"
+  },
+  "rmadhavmca@gmail.com": {
+    "name": "Madhav Ramanadham",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 100,
+    "location": "Seattle, WA, US"
+  },
+  "denhugheson@gmail.com": {
+    "name": "Dennis Hughes",
+    "ourScore": 4,
+    "scoreLabel": "Strong Yes",
+    "brainnerScore": 100,
+    "location": "Houston, TX, US"
+  },
+  "marcevan320@gmail.com": {
+    "name": "Marc Anthony Evangelista",
+    "ourScore": 2,
+    "scoreLabel": "No*",
+    "brainnerScore": 100,
+    "location": "Falls Church, Virginia, US"
+  },
+  "iamfrey4493@outlook.com": {
+    "name": "Frey Kikel",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 100,
+    "location": "Glen Ellyn, IL, US"
+  },
+  "tonianev@gmail.com": {
+    "name": "Toni Anev",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 100,
+    "location": "Toronto, ON, CA"
+  },
+  "tkunkel004@gmail.com": {
+    "name": "Thomas Kunkel",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 100,
+    "location": "Austin, TX, US"
+  },
+  "fernando.mosq@outlook.com": {
+    "name": "Fernando Mosqueda",
+    "ourScore": 2,
+    "scoreLabel": "No*",
+    "brainnerScore": 100,
+    "location": "Mansfield, Texas, US"
+  },
+  "adnanelokman4@gmail.com": {
+    "name": "Adnane Lokman",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 100,
+    "location": "Grand Prairie, TX, US"
+  },
+  "nathan.kift@gmail.con": {
+    "name": "Nathan Kift",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 100,
+    "location": "Vancouver, British Columbia, CA"
+  },
+  "debugorbit@gmail.com": {
+    "name": "Matthew Cai",
+    "ourScore": 2,
+    "scoreLabel": "No*",
+    "brainnerScore": 100,
+    "location": "San Francisco, CA, US"
+  },
+  "emmachoudharyy@gmail.com": {
+    "name": "Emma Choudhary",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 96,
+    "location": "Mountlake Terrace, Washington, US"
+  },
+  "sreetejkasara510@gmail.com": {
+    "name": "Sreetej Reddy Kasara",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 96,
+    "location": "Frisco, TX, US"
+  },
+  "braxbrewton@outlook.com": {
+    "name": "Braxton Brewton",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 96,
+    "location": "Bronxville, New York, US"
+  },
+  "bill.zoheb@gmail.com": {
+    "name": "Bill Zoheb",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 96,
+    "location": "New York, NY, US"
+  },
+  "c.bwalls4579@gmail.com": {
+    "name": "Charles Walls",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 96,
+    "location": "Universal City, Texas, US"
+  },
+  "david.yang.swe@gmail.com": {
+    "name": "David Yang",
+    "ourScore": 3,
+    "scoreLabel": "Yes*",
+    "brainnerScore": 95,
+    "location": "Los Angeles, CA, US"
+  },
+  "brandy.e.garland@gmail.com": {
+    "name": "Brandy Garlanf",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 91,
+    "location": "Windsor, Colorado, US"
+  },
+  "kyle@ksheppard.com": {
+    "name": "Kyle Sheppard",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 91,
+    "location": "Chicago, IL, US"
+  },
+  "johnwill4g@gmail.com": {
+    "name": "John Li",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 91,
+    "location": "Toronto, Ontario, CA"
+  },
+  "yangvil887@gmail.com": {
+    "name": "Vidland Yang",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 91,
+    "location": "Minneapolis, Minnesota, US"
+  },
+  "kfuhst@gmail.com": {
+    "name": "Kevin Fuhst",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 91,
+    "location": "Denver, Colorado, US"
+  },
+  "adib.souly@gmail.com": {
+    "name": "Adib Souly",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 91,
+    "location": "Toronto, Ontario, CA"
+  },
+  "rafaeleduardo.malcocer@outlook.com": {
+    "name": "Rafael Miranda Alcocer",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 91,
+    "location": "Valladolid, Yucatán, MX"
+  },
+  "javier@sandino.ca": {
+    "name": "Javier Sandino",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 91,
+    "location": "Burlington, Ontario, CA"
+  },
+  "klocatelli@fastmail.com": {
+    "name": "Kento Locatelli",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 91,
+    "location": "Seattle, WA, US"
+  },
+  "matthew.lee.cl@outlook.com": {
+    "name": "Matthew Lee",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 91,
+    "location": "Morgan Hill, California, US"
+  },
+  "jeffpeeples@gmail.com": {
+    "name": "Jeffrey Peeples",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 91,
+    "location": "Dallas, TX, US"
+  },
+  "michaelchandev804@gmail.com": {
+    "name": "Michael Chan",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 91,
+    "location": "Dickinson, Texas, US"
+  },
+  "i.polischukalexandr@gmail.com": {
+    "name": "Oleksandr Polishchuk",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 87,
+    "location": "Toronto, ON, CA"
+  },
+  "ajayraghunathan@outlook.com": {
+    "name": "Ajay Raghunathan",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 87,
+    "location": "Santa Clara, CA, US"
+  },
+  "slavok400@gmail.com": {
+    "name": "Viacheslav Spirin",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 87,
+    "location": "Toronto, Ontario, CA"
+  },
+  "akoladeiasipade@gmail.com": {
+    "name": "Akolade Asipade",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 87,
+    "location": "Atlanta, Georgia, US"
+  },
+  "mlorran242@gmail.com": {
+    "name": "Lorran Matheus",
+    "ourScore": 2,
+    "scoreLabel": "No*",
+    "brainnerScore": 87,
+    "location": "Rio de Janeiro, Rio de Janeiro, BR"
+  },
+  "ktezapsidis@gmail.com": {
+    "name": "Kato Tezapsidis",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 87,
+    "location": "Chicago, IL, US"
+  },
+  "christianrichardson.tech@gmail.com": {
+    "name": "Christian Richardson",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 87,
+    "location": "Kissimmee, Florida, US"
+  },
+  "ntickoo@gmail.com": {
+    "name": "Neeraj Tickoo",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 86,
+    "location": "Austin, Texas, US"
+  },
+  "michshao91@gmail.com": {
+    "name": "Michael Stephen Lee Shao",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "Seattle, WA, US"
+  },
+  "rjr212633@outlook.com": {
+    "name": "Rhahjni Reid",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 82,
+    "location": "Hartford, Connecticut, US"
+  },
+  "ltdw@pm.me": {
+    "name": "Leighton Tidwell",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "San Antonio, TX, US"
+  },
+  "sunitsanjeet@rediffmail.com": {
+    "name": "Sunit Kumar Singh",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 82,
+    "location": "Guadalajara, Jalisco, MX"
+  },
+  "nate.edel@gmail.com": {
+    "name": "Nathan Edel",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "San Mateo, CA, US"
+  },
+  "alex@voo.gg": {
+    "name": "Vũ Nguyễn",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 82,
+    "location": "Massapequa, NY, US"
+  },
+  "zack@roguepenguin.net": {
+    "name": "Zachary Roman",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "Cypress, TX, US"
+  },
+  "memorodriguezca@gmail.com": {
+    "name": "Memo Rodriguez",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 82,
+    "location": "San Jose, California, US"
+  },
+  "balakrishnah1busa@gmail.com": {
+    "name": "Balakrishna Valluri",
+    "ourScore": 2,
+    "scoreLabel": "No*",
+    "brainnerScore": 82,
+    "location": "Irving, Texas, US"
+  },
+  "iamjasonsun@outlook.com": {
+    "name": "Jiasong Sun",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 81,
+    "location": "League City, TX, US"
+  },
+  "fangxiao.dong187@gmail.com": {
+    "name": "Fangxiao Dong",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 81,
+    "location": "Springfield, Virginia, US"
+  },
+  "payalpatel4888@gmail.com": {
+    "name": "Payal Patel",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 81,
+    "location": "Toronto, Ontario, CA"
+  },
+  "mdlorey@gmail.com": {
+    "name": "Michael Lorey",
+    "ourScore": 2,
+    "scoreLabel": "No*",
+    "brainnerScore": 78,
+    "location": "Atlanta, Georgia, US"
+  },
+  "tamimjabban@live.com": {
+    "name": "Tamim Jabban",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 78,
+    "location": "Waterdown, Ontario, CA"
+  },
+  "jimenezy09d@gmail.com": {
+    "name": "Yahir Jimenez",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 78,
+    "location": "Humble, TX, US"
+  },
+  "david@brubaker.dev": {
+    "name": "David Brubaker",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 78,
+    "location": "Tomball, TX, US"
+  },
+  "anicholas.cpp@gmail.com": {
+    "name": "Anthony Nicholas",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 78,
+    "location": "Herriman, UT, US"
+  },
+  "falvarez88888@outlook.com": {
+    "name": "Fernando Alvarez",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 77,
+    "location": "New York City, New York, US"
+  },
+  "envisionconsultcorp@gmail.com": {
+    "name": "Lenworth Gordon",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 77,
+    "location": "Redondo Beach, California, US"
+  },
+  "coolpy1@outlook.com": {
+    "name": "Parth Patel",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 77,
+    "location": "Cupertino, California, US"
+  },
+  "iamyashashah@gmail.com": {
+    "name": "Yash Shah",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 77,
+    "location": "Frederick, Maryland, US"
+  },
+  "akshita.msit@gmail.com": {
+    "name": "Akshita Tyagi",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 77,
+    "location": "Vancouver, BC, CA"
+  },
+  "aostang@gmail.com": {
+    "name": "Lonnie Kerchief",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 77,
+    "location": "Athens, Georgia, US"
+  },
+  "collin.k.park@gmail.com": {
+    "name": "Keon Young Park",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 77,
+    "location": "Westminster, CO, US"
+  },
+  "stm@seanmcguire.net": {
+    "name": "Sean Patterson-McGuire",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 73,
+    "location": "Shoreline, WA, US"
+  },
+  "dave.marr@gmail.com": {
+    "name": "David Marr",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 73,
+    "location": "Boston, MA, US"
+  },
+  "gilbert@heygilbert.com": {
+    "name": "Gilbert Vasquez",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 73,
+    "location": "Granbury, Texas, US"
+  },
+  "todd.sjolander@gmail.com": {
+    "name": "Todd Sjolander",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 73,
+    "location": "Grafton, Massachusetts, US"
+  },
+  "me@calcaide.com": {
+    "name": "Carlos Alcaide",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 73,
+    "location": "North Vancouver, British Columbia, CA"
+  },
+  "brianruggieri@gmail.com": {
+    "name": "Joseph Ruggieri",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 73,
+    "location": "Athens, GA, US"
+  },
+  "auro@hsadler.com": {
+    "name": "Hunter Sadler",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 73,
+    "location": "Denver, Colorado, US"
+  },
+  "ipsita.comp.engg@gmail.com": {
+    "name": "Ipsita Ratha",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 73,
+    "location": "MA, Massachusetts, US"
+  },
+  "cesarivang9509@gmail.com": {
+    "name": "Cesar Ivan Gomez",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 72,
+    "location": "Mexico City, MX"
+  },
+  "yechtan@outlook.com": {
+    "name": "Yecheng Tan",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 72,
+    "location": "Miami, FL, US"
+  },
+  "kghosh.ns@gmail.com": {
+    "name": "Kuntal Ghosh",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 72,
+    "location": "Ottawa, CA"
+  },
+  "mattliu094@gmail.com": {
+    "name": "Matthew Liu",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 72,
+    "location": "San Diego, California, US"
+  },
+  "vijayvatsalraj4@gmail.com": {
+    "name": "Vijay Raj",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 72,
+    "location": "Secaucus, New Jersey, US"
+  },
+  "bitutskyp@gmail.com": {
+    "name": "Paul Bitutsky",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 72,
+    "location": "Denton, Texas, US"
+  },
+  "rohul@nyu.edu": {
+    "name": "Rohul Amin",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 72,
+    "location": "New York City, New York, US"
+  },
+  "v.ricardo220@hotmail.com": {
+    "name": "Ricardo Villarreal Ramirez",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 72,
+    "location": "Culiacán, Sinaloa, MX"
+  },
+  "murphymmyles@gmail.com": {
+    "name": "Myles Murphy",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 72,
+    "location": "Winter Garden, FL, US"
+  },
+  "work.shehlariaz@gmail.com": {
+    "name": "Shehla Riaz",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 71,
+    "location": "Drexel Hill, PA, US"
+  },
+  "bjacobgordon@gmail.com": {
+    "name": "Baruch Jacob Gordon",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 69,
+    "location": "Houston, Texas, US"
+  },
+  "skylar.hopper.dain@gmail.com": {
+    "name": "Skylar Hopper",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 68,
+    "location": "Edenton, North Carolina, US"
+  },
+  "aashishadhikari67@gmail.com": {
+    "name": "Aashish Adhikari",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 68,
+    "location": "Wheaton, MD, US"
+  },
+  "rpoudel00@gmail.com": {
+    "name": "Rupak Poudel",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 68,
+    "location": "Fort Worth, TX, US"
+  },
+  "abdelrahman.elbarbary@gmail.com": {
+    "name": "Abdelrahman Elbarbary",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 67,
+    "location": "Texas, US"
+  },
+  "rakiyama9999@outlook.com": {
+    "name": "Ryan Akiyama",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 64,
+    "location": "San Francisco, California, US"
+  },
+  "hugealberto@outlook.com": {
+    "name": "Alberto Hughes",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 64,
+    "location": "Brooklyn, NY, US"
+  },
+  "har4labi.anim@gmail.com": {
+    "name": "Animashaun Akanbi",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 63,
+    "location": "Texas, US"
+  },
+  "mhealy@healyvectorlabs.com": {
+    "name": "MICHAEL Healy",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 63,
+    "location": "Jacksonville, FL, US"
+  },
+  "jordan@atlaslabs.world": {
+    "name": "Jordan Jiosi",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 63,
+    "location": "Philadelphia, Pennsylvania, US"
+  },
+  "jbhemlock@gmail.com": {
+    "name": "Jim Anderson",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 63,
+    "location": "Seattle, WA, US"
+  },
+  "benkjobs@tuta.com": {
+    "name": "Benjamin Kramer",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 59,
+    "location": "New York, NY, US"
+  },
+  "vama.agus@gmail.com": {
+    "name": "Agustin Vasquez Martinez",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 59,
+    "location": "Mexico City, MX"
+  },
+  "tonyliu.30@gmail.com": {
+    "name": "Anthony Liu",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 59,
+    "location": "New York, NY, US"
+  },
+  "saudahmedabbasi11@outlook.com": {
+    "name": "Saud Abbasi",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 59,
+    "location": "Oakville, Ontario, CA"
+  },
+  "tomthesilva@gmail.com": {
+    "name": "Thomas Silva",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 59,
+    "location": "Draper, Ut, US"
+  },
+  "james.brightman.tech@gmail.com": {
+    "name": "James Brightman",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 50,
+    "location": "Tampa, FL, US"
+  },
+  "s.n.psaradellis@gmail.com": {
+    "name": "Stephen Psaradellis",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 49,
+    "location": "Chicago, Illinois, US"
+  },
+  "liangda.huang@gmail.com": {
+    "name": "Liangda Huang",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 49,
+    "location": "Cupertino, CA, US"
+  },
+  "rahiemklugh@gmail.com": {
+    "name": "Rahiem Klugh",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 46,
+    "location": "Atlanta, GA, US"
+  },
+  "jordanrife12@outlook.com": {
+    "name": "Jordan Rife",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 46,
+    "location": "Austin, TX, US"
+  },
+  "yanling.ju@gmail.com": {
+    "name": "Yanling Ju",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 46,
+    "location": "Orange, Connecticut, US"
+  },
+  "mithravardhany1@gmail.com": {
+    "name": "Mithra Vardhan Rao Yalla",
+    "ourScore": 1,
+    "scoreLabel": "Strong No*",
+    "brainnerScore": 44,
+    "location": "Boston, Massachusetts, US"
+  },
+  "kevinlow422@outlook.com": {
+    "name": "Kevin Low",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 41,
+    "location": "Coldspring, Texas, US"
+  },
+  "garrettgratts21@gmail.com": {
+    "name": "Garrett Gratts",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 40,
+    "location": "Jersey City, New Jersey, US"
+  },
+  "csc823@gmail.com": {
+    "name": "Cuong Cu",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 36,
+    "location": "Austin, Texas, US"
+  },
+  "cloud6appdevelopment@gmail.com": {
+    "name": "Marisa Gomez Garcia",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 32,
+    "location": "Los Angeles, California, US"
+  },
+  "emtiaz3@gmail.com": {
+    "name": "Emtiaz Alam",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 31,
+    "location": "Ottawa, Ontario, CA"
+  },
+  "joseantonio85@gmail.com": {
+    "name": "José Antonio Dulanto Ojeda",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 27,
+    "location": "Mérida, Yucatán, MX"
+  },
+  "mousamik2212@gmail.com": {
+    "name": "Mousami Khadilkar",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 13,
+    "location": "Dayton, Ohio, US"
+  },
+  "garrett.stranger@gmail.com": {
+    "name": "Garrett Stranger",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 100,
+    "location": "Portland, OR, US"
+  },
+  "goikhman.yuri@gmail.com": {
+    "name": "Yuri Goikhman",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 91,
+    "location": "Burbank, CA, US"
+  },
+  "dbrans@gmail.com": {
+    "name": "Derek Brans",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 91,
+    "location": "Toronto, Ontario, CA"
+  },
+  "arjunpyc@gmail.com": {
+    "name": "Arjun Krishnankutty",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 91,
+    "location": "San Diego, California, US"
+  },
+  "vahidkiani88@gmail.com": {
+    "name": "Vahid Kiani",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 91,
+    "location": "Montreal, Quebec, CA"
+  },
+  "achrislong@gmail.com": {
+    "name": "Allan Long",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 90,
+    "location": "Reston, VA, US"
+  },
+  "santosh_ms@yahoo.com": {
+    "name": "Santosh Mandi",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 87,
+    "location": "Seattle, Washington, US"
+  },
+  "ecopony@gmail.com": {
+    "name": "Edward Copony",
+    "ourScore": 3,
+    "scoreLabel": "Yes*",
+    "brainnerScore": 82,
+    "location": "Portland, OR, US"
+  },
+  "thlai15@yahoo.com": {
+    "name": "Tanghoi Lai",
+    "ourScore": 3,
+    "scoreLabel": "Yes*",
+    "brainnerScore": 81,
+    "location": "Foothill Ranch, California, US"
+  },
+  "daniel.glassow@gmail.com": {
+    "name": "Daniel Glassow",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 81,
+    "location": "Vancouver, Washington, US"
+  },
+  "jaycruiks@gmail.com": {
+    "name": "Jay Cruikshank",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 78,
+    "location": "Denver, CO, US"
+  },
+  "juanhart1@gmail.com": {
+    "name": "Juan Hart",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 78,
+    "location": "Houston, Texas, US"
+  },
+  "vaghesh@gmail.com": {
+    "name": "Vaghesh Patel",
+    "ourScore": 4,
+    "scoreLabel": "Strong Yes",
+    "brainnerScore": 77,
+    "location": "Dallas, TX, US"
+  },
+  "colleenmcguckin@gmail.com": {
+    "name": "Colleen McGuckin",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 73,
+    "location": "Los Angeles, California, US"
+  },
+  "james@flyingrobots.dev": {
+    "name": "James Ross",
+    "ourScore": 3,
+    "scoreLabel": "Yes",
+    "brainnerScore": 72,
+    "location": "Seattle, Washington, US"
+  },
+  "alex@alexdahl.ca": {
+    "name": "Alexander Oswald Dahl",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 68,
+    "location": "St. Catharines, Ontario, CA"
+  },
+  "yenebahr@gmail.com": {
+    "name": "Yenen Semeneh",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 63,
+    "location": "Herndon, VA, US"
+  },
+  "sean.beard@outlook.com": {
+    "name": "Sean Beard",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 63,
+    "location": "Aurora, CO, US"
+  },
+  "jeff@pdx.su": {
+    "name": "Jeffrey Sandberg",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 62,
+    "location": "Layton, Utah, US"
+  },
+  "lizigarland@gmail.com": {
+    "name": "Elizabeth Garland",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 50,
+    "location": "Arlington, Virginia, US"
+  },
+  "songxiang.gu@gmail.com": {
+    "name": "Songxiang Gu",
+    "ourScore": 2,
+    "scoreLabel": "No",
+    "brainnerScore": 41,
+    "location": "Boston, MA, US"
+  },
+  "acevedojf@gmail.com": {
+    "name": "Juan Acevedo",
+    "ourScore": 1,
+    "scoreLabel": "Strong No",
+    "brainnerScore": 23,
+    "location": "Toronto, ON, CA"
+  }
+}

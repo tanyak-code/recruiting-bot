@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Screener</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f4f0; color: #1a1a1a; min-height: 100vh; }
+
+header { background: #fff; border-bottom: 1px solid #e0ddd6; padding: 12px 24px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 10; }
+header h1 { font-size: 15px; font-weight: 600; white-space: nowrap; }
+
+.role-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.role-tab { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid #e0ddd6; background: transparent; color: #6a6a68; transition: all 0.15s; white-space: nowrap; }
+.role-tab:hover { background: #f5f4f0; }
+.role-tab.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+.role-tab.archived { opacity: 0.45; font-style: italic; font-size: 11px; }
+.tab-divider { color: #ccc; font-size: 13px; letter-spacing: 2px; padding: 0 4px; user-select: none; align-self: center; }
+.results-count { margin-left: auto; font-size: 12px; color: #9a9590; white-space: nowrap; }
+
+.layout { display: grid; grid-template-columns: 360px 1fr; min-height: calc(100vh - 53px); }
+
+.sidebar { background: #fff; border-right: 1px solid #e0ddd6; padding: 20px; display: flex; flex-direction: column; gap: 14px; position: sticky; top: 53px; height: calc(100vh - 53px); overflow-y: auto; }
+.panel-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9a9590; margin-bottom: 6px; }
+
+textarea { width: 100%; background: #faf9f6; border: 1px solid #e0ddd6; border-radius: 8px; color: #1a1a1a; font-family: inherit; font-size: 13px; line-height: 1.6; padding: 10px 12px; outline: none; resize: vertical; min-height: 220px; transition: border-color 0.15s; }
+textarea:focus { border-color: #aaa8a0; background: #fff; }
+textarea::placeholder { color: #c0bdb6; font-size: 12px; }
+
+.btn-screen { width: 100%; padding: 12px; background: #1a1a1a; color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-screen:hover { background: #333; }
+.btn-screen:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-screen .spinner { width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; display: none; }
+.btn-screen.loading .spinner { display: block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.shortcut-hint { text-align: center; font-size: 11px; color: #c0bdb6; }
+.divider { border: none; border-top: 1px solid #f0ede6; }
+
+.criteria-box { font-size: 12px; color: #6a6a68; line-height: 1.8; }
+.criteria-box .c-head { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9a9590; margin-top: 10px; margin-bottom: 2px; display: block; }
+.criteria-box .c-head:first-child { margin-top: 0; }
+
+.results-panel { padding: 24px; }
+.empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; gap: 10px; color: #c0bdb6; text-align: center; }
+.empty-state p { font-size: 13px; max-width: 220px; line-height: 1.5; }
+
+.tally-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid #e0ddd6; flex-wrap: wrap; }
+.tally-total { font-size: 13px; color: #9a9590; margin-right: auto; }
+.tg { font-size: 13px; font-weight: 500; color: #3B6D11; }
+.ta { font-size: 13px; font-weight: 500; color: #854F0B; }
+.tr { font-size: 13px; font-weight: 500; color: #A32D2D; }
+.btn-export { padding: 6px 14px; background: #1a1a1a; border: none; border-radius: 6px; font-size: 12px; font-weight: 500; color: #fff; cursor: pointer; }
+.btn-export:hover { background: #333; }
+.btn-clear { padding: 6px 12px; background: transparent; border: 1px solid #e0ddd6; border-radius: 6px; font-size: 12px; color: #9a9590; cursor: pointer; }
+.btn-clear:hover { background: #f5f4f0; }
+
+.result-card { background: #fff; border: 1px solid #e0ddd6; border-radius: 12px; overflow: hidden; margin-bottom: 10px; transition: border-color 0.15s; }
+.result-card:hover { border-color: #c0bdb6; }
+.card-top { display: flex; align-items: center; padding: 14px 16px; gap: 12px; cursor: pointer; user-select: none; }
+
+.score-ring { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; flex-shrink: 0; border: 2px solid; }
+.ring-green { border-color: #3B6D11; color: #3B6D11; background: #EAF3DE; }
+.ring-blue  { border-color: #1565c0; color: #1565c0; background: #dbeafe; font-size: 12px; }
+.ring-amber { border-color: #854F0B; color: #854F0B; background: #FAEEDA; }
+.ring-red   { border-color: #A32D2D; color: #A32D2D; background: #FCEBEB; }
+
+.card-info { flex: 1; min-width: 0; }
+.c-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.c-role { font-size: 12px; color: #9a9590; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.rec-badge { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 500; flex-shrink: 0; }
+.badge-advance { background: #EAF3DE; color: #3B6D11; }
+.badge-maybe   { background: #FAEEDA; color: #854F0B; }
+.badge-pass    { background: #FCEBEB; color: #A32D2D; }
+
+.role-tag { display: inline-block; background: #f0ede6; border-radius: 4px; padding: 2px 8px; font-size: 11px; color: #6a6a68; flex-shrink: 0; }
+.chevron { font-size: 14px; color: #c0bdb6; flex-shrink: 0; transition: transform 0.2s; }
+
+.card-body { border-top: 1px solid #f0ede6; padding: 14px 16px; display: none; flex-direction: column; gap: 12px; }
+.card-body.open { display: flex; }
+
+.card-summary { font-size: 13px; color: #3a3a38; line-height: 1.65; }
+
+.sc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.sc-box { background: #faf9f6; border-radius: 6px; padding: 9px 11px; }
+.sc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
+.sc-label.str { color: #3B6D11; }
+.sc-label.con { color: #A32D2D; }
+.sc-text { font-size: 12px; color: #4a4a48; line-height: 1.4; }
+
+.hm-row { display: flex; gap: 8px; align-items: center; padding-top: 4px; border-top: 1px solid #f0ede6; }
+.hm-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9a9590; flex-shrink: 0; }
+.hm-select { padding: 5px 9px; background: #faf9f6; border: 1px solid #e0ddd6; border-radius: 6px; font-size: 12px; color: #1a1a1a; cursor: pointer; outline: none; flex-shrink: 0; }
+.hm-select:focus { border-color: #aaa8a0; }
+.hm-notes { flex: 1; min-width: 0; padding: 5px 9px; background: #faf9f6; border: 1px solid #e0ddd6; border-radius: 6px; font-size: 12px; color: #1a1a1a; outline: none; font-family: inherit; }
+.hm-notes:focus { border-color: #aaa8a0; background: #fff; }
+.hm-notes::placeholder { color: #c0bdb6; }
+
+/* ── Mode toggle ───────────────────────────────────────────── */
+.mode-toggle { display: flex; border: 1px solid #e0ddd6; border-radius: 8px; overflow: hidden; }
+.mode-btn { flex: 1; padding: 7px 10px; font-size: 12px; font-weight: 500; border: none; background: transparent; color: #9a9590; cursor: pointer; transition: all 0.15s; }
+.mode-btn:hover { background: #f5f4f0; color: #1a1a1a; }
+.mode-btn.active { background: #1a1a1a; color: #fff; }
+
+/* ── Transcript result cards ───────────────────────────────── */
+.tc-card { background: #fff; border: 1px solid #e0ddd6; border-radius: 12px; overflow: hidden; margin-bottom: 10px; transition: border-color 0.15s; }
+.tc-card:hover { border-color: #c0bdb6; }
+.tc-card-top { display: flex; align-items: center; padding: 14px 16px; gap: 12px; cursor: pointer; user-select: none; }
+.tc-card-body { border-top: 1px solid #f0ede6; padding: 16px; display: none; flex-direction: column; gap: 14px; }
+.tc-card-body.open { display: flex; }
+.tc-flag-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; background: #FEF3C7; color: #92400E; flex-shrink: 0; }
+.tc-section-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+.tc-section-label.pos { color: #3B6D11; }
+.tc-section-label.neg { color: #A32D2D; }
+.tc-section-label.hm  { color: #1565c0; }
+.tc-section-label.com { color: #6a6a68; }
+.tc-list { margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 5px; }
+.tc-list li { font-size: 12px; color: #4a4a48; line-height: 1.45; }
+.tc-hm-box { background: #EFF6FF; border-radius: 8px; padding: 10px 12px; font-size: 12px; color: #1E40AF; line-height: 1.6; }
+.tc-flag-box { background: #FEF3C7; border-radius: 8px; padding: 10px 12px; font-size: 12px; color: #92400E; line-height: 1.5; }
+.tc-com-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.tc-com-badge { padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+.com-excellent { background: #EAF3DE; color: #3B6D11; }
+.com-good { background: #DBEAFE; color: #1565c0; }
+.com-verbose { background: #FEF3C7; color: #92400E; }
+.com-unclear { background: #FCEBEB; color: #A32D2D; }
+
+/* ── Archived roles dropdown ──────────────────────────────── */
+.archived-dropdown { position: relative; }
+.archived-btn { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid #e0ddd6; background: transparent; color: #9a9590; white-space: nowrap; transition: all 0.15s; font-family: inherit; }
+.archived-btn:hover { background: #f5f4f0; color: #6a6a68; }
+.archived-btn.active { border-color: #aaa8a0; color: #4a4a48; background: #f0ede6; }
+.archived-menu { position: absolute; top: calc(100% + 6px); left: 0; background: #fff; border: 1px solid #e0ddd6; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,.1); z-index: 200; min-width: 230px; overflow: hidden; display: none; }
+.archived-menu.show { display: block; }
+.archived-item { display: block; width: 100%; text-align: left; padding: 9px 16px; font-size: 12px; color: #9a9590; cursor: pointer; border: none; border-bottom: 1px solid #f0ede6; background: transparent; white-space: nowrap; font-family: inherit; transition: all 0.1s; }
+.archived-item:last-child { border-bottom: none; }
+.archived-item:hover { background: #f5f4f0; color: #1a1a1a; }
+.archived-item.active { background: #1a1a1a; color: #fff; }
+
+/* ── Keith routing pill ───────────────────────────────────── */
+.c-routing { font-size: 11px; font-weight: 600; margin-top: 2px; letter-spacing: 0.01em; }
+.routing-keith  { color: #1565c0; }
+.routing-kat    { color: #7c3aed; }
+.routing-either { color: #854F0B; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Resume Screener</h1>
+  <div class="role-tabs" id="roleTabs">
+    <!-- dynamically populated by renderTabs() after criteria load -->
+  </div>
+  <div class="results-count" id="resultsCount"></div>
+</header>
+
+<div class="layout">
+  <div class="sidebar">
+    <div class="mode-toggle">
+      <button class="mode-btn active" id="modeResume" onclick="switchMode('resume')">Resume</button>
+      <button class="mode-btn" id="modeTranscript" onclick="switchMode('transcript')">Transcript</button>
+    </div>
+    <div>
+      <div class="panel-label" id="pasteLabel">Paste resume or profile</div>
+      <textarea id="pasteArea" placeholder="Copy anything from Ashby or a resume PDF — work history, skills, summary, raw text. Paste it all in."></textarea>
+    </div>
+    <button class="btn-screen" id="screenBtn">
+      <div class="spinner"></div>
+      <span class="btn-label">Screen candidate →</span>
+    </button>
+    <div class="shortcut-hint">or press ⌘ + Enter</div>
+    <hr class="divider">
+    <div>
+      <div class="panel-label">Active criteria</div>
+      <div class="criteria-box" id="criteriaDisplay"></div>
+    </div>
+  </div>
+
+  <div class="results-panel" id="resultsPanel">
+    <div class="empty-state">
+      <p>Paste a resume on the left and hit Screen. Results stack here as you go.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+let ROLES = {}; // populated from /api/criteria on load
+
+let activeRole = "keith";
+let results = [];
+let screenMode = "resume";
+let transcriptResults = [];
+
+function switchMode(mode) {
+  screenMode = mode;
+  document.getElementById("modeResume").classList.toggle("active", mode === "resume");
+  document.getElementById("modeTranscript").classList.toggle("active", mode === "transcript");
+  const area = document.getElementById("pasteArea");
+  const label = document.getElementById("pasteLabel");
+  const btnLabel = document.querySelector(".btn-label");
+  if (mode === "transcript") {
+    label.textContent = "Paste recruiter screen transcript";
+    area.placeholder = "Paste the full transcript from the recruiter screen call…";
+    area.style.minHeight = "300px";
+    btnLabel.textContent = "Assess transcript →";
+    renderTranscriptResults();
+  } else {
+    label.textContent = "Paste resume or profile";
+    area.placeholder = "Copy anything from Ashby or a resume PDF — work history, skills, summary, raw text. Paste it all in.";
+    area.style.minHeight = "220px";
+    btnLabel.textContent = "Screen candidate →";
+    renderResults();
+  }
+}
+
+function switchRole(role) {
+  activeRole = role;
+  renderTabs();
+  renderCriteria();
+}
+
+function renderTabs() {
+  const container = document.getElementById("roleTabs");
+  if (!container) return;
+
+  const active = [];
+  const archived = [];
+  for (const [roleKey, role] of Object.entries(ROLES)) {
+    if (role.archived) archived.push({ roleKey, role });
+    else active.push({ roleKey, role });
+  }
+  // Sort alphabetically by label for consistency
+  active.sort((a, b) => a.role.label.localeCompare(b.role.label));
+  archived.sort((a, b) => a.role.label.localeCompare(b.role.label));
+
+  let html = active.map(({ roleKey, role }) =>
+    `<button class="role-tab ${roleKey === activeRole ? "active" : ""}" data-role="${roleKey}">${esc(role.label)}</button>`
+  ).join("");
+
+  if (archived.length) {
+    const archivedHasActive = archived.some(({ roleKey }) => roleKey === activeRole);
+    html += `<div class="archived-dropdown">
+      <button class="archived-btn ${archivedHasActive ? "active" : ""}" onclick="event.stopPropagation(); toggleArchivedMenu()">Archived roles ▾</button>
+      <div class="archived-menu" id="archivedMenu">
+        ${archived.map(({ roleKey, role }) =>
+          `<button class="archived-item ${roleKey === activeRole ? "active" : ""}" data-role="${roleKey}">${esc(role.label)}</button>`
+        ).join("")}
+      </div>
+    </div>`;
+  }
+
+  container.innerHTML = html;
+
+  container.querySelectorAll("[data-role]").forEach(el => {
+    el.addEventListener("click", () => {
+      document.getElementById("archivedMenu")?.classList.remove("show");
+      switchRole(el.dataset.role);
+    });
+  });
+}
+
+function toggleArchivedMenu() {
+  document.getElementById("archivedMenu")?.classList.toggle("show");
+}
+
+// Close archived dropdown when clicking anywhere outside it
+document.addEventListener("click", () => {
+  document.getElementById("archivedMenu")?.classList.remove("show");
+});
+
+function renderCriteria() {
+  const display = ROLES[activeRole].display;
+  document.getElementById("criteriaDisplay").innerHTML = Object.entries(display).map(([head, items]) =>
+    `<span class="c-head">${head}</span>${items.join("<br>")}`
+  ).join("");
+}
+
+function esc(s) {
+  if (!s) return "";
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+function simpleHash(str) {
+  let h = 0;
+  for (let i = 0; i < Math.min(str.length, 600); i++) {
+    h = Math.imul(31, h) + str.charCodeAt(i) | 0;
+  }
+  return h;
+}
+
+async function screen() {
+  const text = document.getElementById("pasteArea").value.trim();
+  if (!text) return;
+
+  // Duplicate check
+  const hash = simpleHash(text);
+  const dupe = results.find(r => r._hash === hash);
+  if (dupe) {
+    if (!confirm(`Looks like ${dupe.name} — already screened (score: ${dupe.overallScore}). Screen again anyway?`)) return;
+  }
+
+  const btn = document.getElementById("screenBtn");
+  btn.disabled = true;
+  btn.classList.add("loading");
+  btn.querySelector(".btn-label").textContent = "Screening…";
+
+  try {
+    const role = ROLES[activeRole];
+    const now = new Date();
+    const today = now.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth() + 1; // 1-based
+    const prompt = `You are a senior technical recruiter. Screen this candidate carefully.
+
+TODAY'S DATE: ${today} (year: ${currentYear}, month: ${currentMonth}). This is the authoritative date — use it for ALL tenure and recency calculations.
+
+TENURE CALCULATION RULES (mandatory):
+- "Present" or "Current" always means ${currentYear} for year-level calculations
+- Example: "2022 – Present" = ${currentYear} − 2022 = ${currentYear - 2022} years. Do not use any other year.
+- Example: "2020 – Present" = ${currentYear} − 2020 = ${currentYear - 2020} years
+- Round down to full years only. Never use a year before ${currentYear} for "present" roles.
+- A start date before today is NOT a future date — do not flag it, do not mention it. Only surface something in topConcern if it is a genuine problem.
+
+TPM TITLE TENURE — SCAN ALL ROLES (mandatory):
+- Before making any claim about TPM tenure, scan EVERY role in the work history and list all roles whose title contains "Technical Program Manager", "Technology Program Manager", "TPM", or similar.
+- Sum the years across ALL such roles in the entire career, not just the most recent ones.
+- A candidate with TPM titles at multiple companies (e.g. Chase 2018–2020, Amazon 2020–2022, Datadog 2022–2024, SoFi 2024–present) has ~7+ years in TPM titles — do not claim "2 years" because you only counted the most recent role.
+- Engineering Manager, Software Engineer, or other non-TPM titles at earlier companies do NOT cause you to ignore TPM titles that came after them.
+
+${role.criteria}
+
+CANDIDATE RESUME / PROFILE:
+${text.slice(0, 8000)}
+
+Respond ONLY with a JSON object, no markdown, no explanation:
+{
+  "name": "<full name, or 'Candidate' if not found>",
+  "currentRole": "<most recent title + company, max 8 words>",${activeRole === 'keith' ? `
+  "recommendedRole": "<Keith (Python) | Kat (Ruby) | Either — probe language preference in screen>",` : ''}
+  "score": <1|2|3|4>,
+  "scoreLabel": "${activeRole === 'ed' ? 'Strong No|No|Yes|3M|Strong Yes' : 'Strong No|No|Yes|Strong Yes'}",
+  "summary": "<2-3 sentences: key strengths, any gaps, bottom line>",
+  "topStrength": "<single most compelling thing about this candidate>",
+  "topConcern": "<biggest gap or risk — null ONLY for score 4; for scoreLabel 3M always write the management gap here even if everything else is strong>"
+}`;
+
+    const res = await fetch("http://localhost:3131/claude", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-6",
+        max_tokens: 800,
+        messages: [{ role: "user", content: prompt }]
+      })
+    });
+
+    const data = await res.json();
+    const raw = data.content?.[0]?.text ?? "{}";
+    const result = JSON.parse(raw.replace(/```json|```/g, "").trim());
+    result._role = activeRole;
+    result._roleLabel = role.label;
+    result._hash = hash;
+    result._screenedAt = new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+    result.hmOutcome = "";
+    result.hmNotes = "";
+    // Normalize score
+    if (!result.score && result.overallScore) {
+      result.score = result.overallScore >= 80 ? 4 : result.overallScore >= 60 ? 3 : result.overallScore >= 40 ? 2 : 1;
+    }
+    result.scoreLabel = result.scoreLabel ?? (result.score === 4 ? "Strong Yes" : result.score === 3 ? "Yes" : result.score === 2 ? "No" : "Strong No");
+
+    results.unshift(result);
+    document.getElementById("pasteArea").value = "";
+    renderResults();
+
+  } catch(e) {
+    alert("Something went wrong: " + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.classList.remove("loading");
+    btn.querySelector(".btn-label").textContent = "Screen candidate →";
+    document.getElementById("pasteArea").focus();
+  }
+}
+
+function renderResults() {
+  const panel = document.getElementById("resultsPanel");
+  if (!results.length) {
+    panel.innerHTML = `<div class="empty-state"><p>Paste a resume on the left and hit Screen. Results stack here as you go.</p></div>`;
+    document.getElementById("resultsCount").textContent = "";
+    return;
+  }
+
+  const s4 = results.filter(r => r.score === 4).length;
+  const s3 = results.filter(r => r.score === 3).length;
+  const s2 = results.filter(r => r.score === 2).length;
+  const s1 = results.filter(r => r.score === 1).length;
+  document.getElementById("resultsCount").textContent = `${results.length} screened`;
+
+  panel.innerHTML = `
+    <div class="tally-bar">
+      <span class="tally-total">${results.length} candidate${results.length !== 1 ? "s" : ""}</span>
+      <span class="tg">4 · ${s4}</span>
+      <span style="font-size:13px;font-weight:500;color:#3B6D11">3 · ${s3}</span>
+      <span class="ta">2 · ${s2}</span>
+      <span class="tr">1 · ${s1}</span>
+      <button class="btn-export" onclick="exportCSV()">Export CSV ↓</button>
+      <button class="btn-clear" onclick="clearAll()">Clear</button>
+    </div>
+    ${results.map((r, i) => buildCard(r, i)).join("")}`;
+}
+
+function buildCard(r, i) {
+  const score = r.score ?? 1;
+  const label = r.scoreLabel ?? (score === 4 ? "Strong Yes" : score === 3 ? "Yes" : score === 2 ? "No" : "Strong No");
+  const is3M = label === "3M";
+  const ringClass = score === 4 ? "ring-green" : is3M ? "ring-blue" : score === 3 ? "ring-green" : score === 2 ? "ring-amber" : "ring-red";
+  const badgeClass = score >= 3 ? "badge-advance" : score === 2 ? "badge-maybe" : "badge-pass";
+  const ringDisplay = is3M ? "3M" : score;
+
+  // Routing pill for Keith & Kat cards
+  let routingHtml = "";
+  if (r._role === "keith" && r.recommendedRole) {
+    const rec = r.recommendedRole;
+    const routingClass = rec.startsWith("Keith") ? "routing-keith" : rec.startsWith("Kat") ? "routing-kat" : "routing-either";
+    routingHtml = `<div class="c-routing ${routingClass}">→ ${esc(rec)}</div>`;
+  }
+
+  return `<div class="result-card">
+    <div class="card-top" onclick="toggleCard(${i})">
+      <div class="score-ring ${ringClass}">${ringDisplay}</div>
+      <div class="card-info">
+        <div class="c-name">${esc(r.name)}</div>
+        <div class="c-role">${esc(r.currentRole ?? "")}</div>
+        ${routingHtml}
+      </div>
+      <span class="role-tag">${esc(r._roleLabel)}</span>
+      <div class="rec-badge ${badgeClass}">${esc(label)}</div>
+      <div class="chevron">›</div>
+    </div>
+    <div class="card-body" id="body-${i}">
+      <div class="card-summary">${esc(r.summary ?? "")}</div>
+      ${(r.topStrength || r.topConcern) ? `
+      <div class="sc-grid">
+        ${r.topStrength ? `<div class="sc-box"><div class="sc-label str">Strength</div><div class="sc-text">${esc(r.topStrength)}</div></div>` : "<div></div>"}
+        ${r.topConcern  ? `<div class="sc-box"><div class="sc-label con">Concern</div><div class="sc-text">${esc(r.topConcern)}</div></div>` : "<div></div>"}
+      </div>` : ""}
+      <div class="hm-row">
+        <span class="hm-label">HM decision</span>
+        <select class="hm-select" onchange="saveField(${i},'hmOutcome',this.value)">
+          <option value="" ${!r.hmOutcome ? "selected" : ""}>— pending —</option>
+          <option value="Advanced" ${r.hmOutcome === "Advanced" ? "selected" : ""}>Advanced</option>
+          <option value="Strong Yes" ${r.hmOutcome === "Strong Yes" ? "selected" : ""}>Strong Yes</option>
+          <option value="HM Pass" ${r.hmOutcome === "HM Pass" ? "selected" : ""}>HM Pass</option>
+          <option value="On Hold" ${r.hmOutcome === "On Hold" ? "selected" : ""}>On Hold</option>
+        </select>
+        <input class="hm-notes" type="text"
+          placeholder="HM notes or reason…"
+          value="${esc(r.hmNotes ?? "")}"
+          onblur="saveField(${i},'hmNotes',this.value)" />
+      </div>
+    </div>
+  </div>`;
+}
+
+function toggleCard(i) {
+  document.getElementById("body-" + i)?.classList.toggle("open");
+}
+
+function saveField(i, field, value) {
+  if (results[i]) results[i][field] = value;
+}
+
+async function assessTranscript() {
+  const text = document.getElementById("pasteArea").value.trim();
+  if (!text) return;
+
+  const btn = document.getElementById("screenBtn");
+  btn.disabled = true;
+  btn.classList.add("loading");
+  btn.querySelector(".btn-label").textContent = "Assessing…";
+
+  try {
+    const role = ROLES[activeRole];
+    const now = new Date();
+    const today = now.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+
+    const prompt = `You are a senior recruiting manager reviewing a recruiter screen transcript.
+
+TODAY'S DATE: ${today}
+ROLE: ${role.label}
+
+ROLE CRITERIA (use this to assess fit signals surfaced in the call):
+${role.criteria}
+
+RECRUITER SCREEN TRANSCRIPT:
+${text.slice(0, 12000)}
+
+Assess how the candidate performed in this specific recruiter screen call. Your job is NOT to re-score the resume — it is to evaluate what was learned in this conversation: did they confirm fit, surface new concerns, or show gaps? Pay close attention to communication quality and how they handled questions.
+
+Respond ONLY with a JSON object, no markdown, no explanation:
+{
+  "name": "<candidate full name from transcript, or 'Candidate'>",
+  "screenScore": <1|2|3|4>,
+  "screenLabel": "<Strong No|No|Advance|Strong Advance>",
+  "flag": <true|false>,
+  "flagReason": "<specific reason for flag — communication, comp, competing offers, red flag in answers — or null>",
+  "summary": "<2-3 sentences: what the call revealed, whether it confirms or changes resume assessment, bottom line>",
+  "positives": ["<specific strength confirmed or newly surfaced in this call>", "<another>"],
+  "concerns": ["<specific concern surfaced in this call>", "<another>"],
+  "hmPrepNotes": "<Concrete, specific advice for the HM: what to probe, what to watch for, suggested question angles — not generic>",
+  "communicationQuality": "<Excellent|Good|Verbose/Rambling|Unclear>",
+  "compensationAlignment": "<summary of comp discussion and whether it fits the range, or 'Not discussed'>"
+}`;
+
+    const res = await fetch("http://localhost:3131/claude", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-6",
+        max_tokens: 1200,
+        messages: [{ role: "user", content: prompt }]
+      })
+    });
+
+    const data = await res.json();
+    const raw = data.content?.[0]?.text ?? "{}";
+    const result = JSON.parse(raw.replace(/```json|```/g, "").trim());
+    result._role = activeRole;
+    result._roleLabel = role.label;
+    result._assessedAt = new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+
+    transcriptResults.unshift(result);
+    document.getElementById("pasteArea").value = "";
+    renderTranscriptResults();
+
+  } catch(e) {
+    alert("Something went wrong: " + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.classList.remove("loading");
+    btn.querySelector(".btn-label").textContent = "Assess transcript →";
+    document.getElementById("pasteArea").focus();
+  }
+}
+
+function buildTranscriptCard(r, i) {
+  const score = r.screenScore ?? 2;
+  const label = r.screenLabel ?? (score === 4 ? "Strong Advance" : score === 3 ? "Advance" : score === 2 ? "No" : "Strong No");
+  const ringClass = score >= 3 ? "ring-green" : score === 2 ? "ring-amber" : "ring-red";
+  const badgeClass = score >= 3 ? "badge-advance" : score === 2 ? "badge-maybe" : "badge-pass";
+  const comClass = { "Excellent": "com-excellent", "Good": "com-good", "Verbose/Rambling": "com-verbose", "Unclear": "com-unclear" }[r.communicationQuality] || "com-good";
+  const positivesList = (r.positives || []).map(p => `<li>${esc(p)}</li>`).join("");
+  const concernsList  = (r.concerns  || []).map(c => `<li>${esc(c)}</li>`).join("");
+
+  return `<div class="tc-card">
+    <div class="tc-card-top" onclick="toggleTcCard(${i})">
+      <div class="score-ring ${ringClass}">${score}</div>
+      <div class="card-info">
+        <div class="c-name">${esc(r.name)}</div>
+        <div class="c-role">Recruiter screen · ${esc(r._assessedAt)}</div>
+      </div>
+      <span class="role-tag">${esc(r._roleLabel)}</span>
+      ${r.flag ? `<span class="tc-flag-badge">⚑ Flag</span>` : ""}
+      <div class="rec-badge ${badgeClass}">${esc(label)}</div>
+      <div class="chevron">›</div>
+    </div>
+    <div class="tc-card-body" id="tc-body-${i}">
+      <div class="card-summary">${esc(r.summary)}</div>
+      ${positivesList ? `<div><div class="tc-section-label pos">✓ Confirmed Strengths</div><ul class="tc-list">${positivesList}</ul></div>` : ""}
+      ${concernsList  ? `<div><div class="tc-section-label neg">⚠ Concerns</div><ul class="tc-list">${concernsList}</ul></div>`  : ""}
+      ${r.hmPrepNotes ? `<div><div class="tc-section-label hm">HM Prep Notes</div><div class="tc-hm-box">${esc(r.hmPrepNotes)}</div></div>` : ""}
+      <div class="tc-com-row">
+        <span class="tc-section-label com" style="margin-bottom:0">Communication</span>
+        <span class="tc-com-badge ${comClass}">${esc(r.communicationQuality)}</span>
+        ${r.compensationAlignment && r.compensationAlignment !== "Not discussed" ? `<span style="font-size:12px;color:#9a9590;margin-left:6px">· ${esc(r.compensationAlignment)}</span>` : ""}
+      </div>
+      ${r.flag && r.flagReason ? `<div class="tc-flag-box">⚑ <strong>Flag:</strong> ${esc(r.flagReason)}</div>` : ""}
+    </div>
+  </div>`;
+}
+
+function toggleTcCard(i) {
+  document.getElementById("tc-body-" + i)?.classList.toggle("open");
+}
+
+function renderTranscriptResults() {
+  const panel = document.getElementById("resultsPanel");
+  if (!transcriptResults.length) {
+    panel.innerHTML = `<div class="empty-state"><p>Paste a recruiter screen transcript on the left and hit Assess.</p></div>`;
+    return;
+  }
+  const advances = transcriptResults.filter(r => r.screenScore >= 3).length;
+  const flags = transcriptResults.filter(r => r.flag).length;
+  panel.innerHTML = `
+    <div class="tally-bar">
+      <span class="tally-total">${transcriptResults.length} transcript${transcriptResults.length !== 1 ? "s" : ""} assessed</span>
+      <span class="tg">Advance: ${advances}</span>
+      <span class="tr">No: ${transcriptResults.length - advances}</span>
+      ${flags ? `<span style="font-size:13px;font-weight:500;color:#92400E">⚑ Flagged: ${flags}</span>` : ""}
+      <button class="btn-clear" onclick="clearTranscripts()">Clear</button>
+    </div>
+    ${transcriptResults.map((r, i) => buildTranscriptCard(r, i)).join("")}`;
+}
+
+function clearTranscripts() {
+  if (confirm("Clear all transcript assessments?")) { transcriptResults = []; renderTranscriptResults(); }
+}
+
+function exportCSV() {
+  if (!results.length) return;
+  const headers = ["Name","Current Role","Search","Score","Score Label","AI Summary","Top Strength","Top Concern","HM Decision","HM Notes","Screened"];
+  const rows = results.map(r => [
+    r.name ?? "", r.currentRole ?? "", r._roleLabel ?? "",
+    r.score ?? "", r.scoreLabel ?? "",
+    r.summary ?? "", r.topStrength ?? "", r.topConcern ?? "",
+    r.hmOutcome ?? "", r.hmNotes ?? "", r._screenedAt ?? ""
+  ]);
+  const q = v => `"${String(v).replace(/"/g,'""')}"`;
+  const csv = [headers, ...rows].map(row => row.map(q).join(",")).join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+  a.download = `screener-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+
+function clearAll() {
+  if (confirm("Clear all results?")) { results = []; renderResults(); }
+}
+
+// Map criteria file keys → screener role keys (file key may differ from tab key)
+const CRITERIA_KEY_MAP = {
+  "ed-tpm":    "ed",
+  "ed-ops":    "ed_ops",
+  "ed-srtpm":  "ed-srtpm",
+  "jordan":    "jordan",
+  "keith":     "keith",
+  "mitch":     "mitch",
+  "andre":     "andre",
+  "andre-mid": "andre-mid",
+};
+
+async function loadCriteria() {
+  try {
+    const resp = await fetch("/api/criteria");
+    const data = await resp.json();
+    for (const [fileKey, role] of Object.entries(data)) {
+      const roleKey = CRITERIA_KEY_MAP[fileKey] || fileKey;
+      ROLES[roleKey] = role;
+    }
+    console.log("✅ Criteria loaded from server:", Object.keys(ROLES).join(", "));
+  } catch(e) {
+    console.warn("⚠️  Could not load criteria from server — using built-in fallback:", e.message);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadCriteria();
+  renderTabs();
+  document.getElementById("screenBtn").addEventListener("click", () => {
+    if (screenMode === "transcript") assessTranscript();
+    else screen();
+  });
+  renderCriteria();
+});
+
+document.addEventListener("keydown", e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
+    if (screenMode === "transcript") assessTranscript();
+    else screen();
+  }
+});
+</script>
+</body>
+</html>

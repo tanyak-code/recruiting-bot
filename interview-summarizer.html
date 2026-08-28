@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Summary Tool</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,wght@0,300;0,500;1,300&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F7F5F0;
+    --surface: #FFFFFF;
+    --surface2: #F0EDE6;
+    --border: #E2DDD5;
+    --border-strong: #C8C2B8;
+    --text: #1A1714;
+    --text-muted: #6B6560;
+    --text-hint: #A09A93;
+    --accent: #2D5A3D;
+    --accent-light: #E8F0EA;
+    --accent-mid: #4A8060;
+    --warn: #8B4513;
+    --warn-light: #FDF0E8;
+    --danger: #7A1F1F;
+    --danger-light: #FDF0F0;
+    --score1: #C0392B; --score1-bg: #FDF2F2;
+    --score2: #E67E22; --score2-bg: #FEF9F0;
+    --score3: #27AE60; --score3-bg: #F0FAF4;
+    --score4: #1A6B3A; --score4-bg: #E8F5ED;
+    --mono: 'DM Mono', monospace;
+    --serif: 'Fraunces', Georgia, serif;
+    --radius: 8px;
+    --radius-lg: 14px;
+  }
+
+  body {
+    font-family: var(--mono);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header h1 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #fff;
+  }
+
+  header span {
+    font-size: 11px;
+    opacity: 0.65;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1.5px solid var(--border);
+    background: var(--surface);
+    padding: 0 32px;
+  }
+
+  .tab {
+    padding: 14px 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2.5px solid transparent;
+    margin-bottom: -1.5px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .tab:hover:not(.active) { color: var(--text); }
+
+  .role-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 100px;
+    padding: 4px 12px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .role-pill .dot {
+    width: 6px; height: 6px;
+    background: #7FFFA0;
+    border-radius: 50%;
+  }
+
+  .role-pill .dot.off { background: #FFB070; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 32px; }
+
+  .pane { display: none; }
+  .pane.active { display: block; }
+
+  label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  input[type="text"], textarea, select {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s;
+    resize: vertical;
+  }
+
+  input[type="text"]:focus, textarea:focus, select:focus {
+    border-color: var(--accent-mid);
+    box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.08);
+  }
+
+  textarea { line-height: 1.6; }
+
+  .field { margin-bottom: 22px; }
+
+  .hint { font-size: 11px; color: var(--text-hint); margin-top: 5px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+
+  .btn {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+    font-weight: 500;
+  }
+
+  .btn:active { transform: scale(0.98); }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+
+  .btn-ghost:hover { background: var(--surface2); }
+
+  .btn-copy {
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid rgba(45,90,61,0.2);
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+
+  .btn-copy:hover { opacity: 0.8; }
+  .btn-copy.copied { background: var(--score4-bg); color: var(--score4); }
+
+  .row { display: flex; gap: 16px; }
+  .row .field { flex: 1; }
+
+  .roles-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .role-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .role-item:hover { border-color: var(--accent-mid); background: var(--accent-light); }
+  .role-item.selected { border-color: var(--accent); background: var(--accent-light); }
+
+  .role-item-name { font-weight: 500; font-size: 13px; }
+  .role-item-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .role-item-actions { display: flex; gap: 8px; }
+
+  .badge {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    border-radius: 100px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .badge-active { background: var(--accent-light); color: var(--accent); }
+  .badge-inactive { background: var(--surface2); color: var(--text-muted); }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  .output-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .output-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .output-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .output-body {
+    padding: 18px 20px;
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--text);
+    white-space: pre-wrap;
+    word-break: break-word;
+    min-height: 80px;
+  }
+
+  .score-display {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+
+  .score-1 { background: var(--score1-bg); color: var(--score1); border: 1px solid rgba(192,57,43,0.2); }
+  .score-2 { background: var(--score2-bg); color: var(--score2); border: 1px solid rgba(230,126,34,0.2); }
+  .score-3 { background: var(--score3-bg); color: var(--score3); border: 1px solid rgba(39,174,96,0.2); }
+  .score-4 { background: var(--score4-bg); color: var(--score4); border: 1px solid rgba(26,107,58,0.2); }
+
+  .spinner {
+    display: inline-block;
+    width: 16px; height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .empty-state {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--text-hint);
+  }
+
+  .empty-state .icon { font-size: 32px; margin-bottom: 12px; }
+  .empty-state p { font-size: 13px; }
+
+  .warning-banner {
+    background: var(--warn-light);
+    border: 1px solid rgba(139,69,19,0.2);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--warn);
+    margin-bottom: 20px;
+  }
+
+  .success-banner {
+    background: var(--accent-light);
+    border: 1px solid rgba(45,90,61,0.2);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .copy-all-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .role-selector-bar {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .role-selector-bar label { margin: 0; white-space: nowrap; }
+
+  .role-selector-bar select { flex: 1; }
+
+  .criteria-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+
+  .criteria-tag {
+    font-size: 11px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 3px 10px;
+    color: var(--text-muted);
+  }
+
+  .criteria-tag .remove {
+    margin-left: 6px;
+    cursor: pointer;
+    color: var(--danger);
+    font-weight: bold;
+  }
+
+  .criteria-input-row { display: flex; gap: 8px; }
+  .criteria-input-row input { flex: 1; }
+
+  .section-subtitle {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .no-roles-msg {
+    text-align: center;
+    padding: 32px;
+    color: var(--text-hint);
+    font-size: 13px;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Interview Summary Tool</h1>
+  <div class="role-pill">
+    <span class="dot" id="headerDot"></span>
+    <span id="headerRoleName">No role selected</span>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('setup')">Role Setup</button>
+  <button class="tab" onclick="switchTab('score')">Score Transcript</button>
+</div>
+
+<!-- SETUP TAB -->
+<div class="pane active" id="pane-setup">
+  <div class="container">
+
+    <div id="savedRolesSection" style="margin-bottom:28px;">
+      <div class="card-title" style="font-family:var(--serif);font-weight:500;font-size:16px;margin-bottom:14px;">Saved Roles</div>
+      <div id="rolesList" class="roles-list">
+        <div class="no-roles-msg">No roles saved yet. Create one below.</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="card-title" style="font-family:var(--serif);font-weight:500;font-size:16px;margin-bottom:6px;" id="formTitle">Create New Role</div>
+    <p class="section-subtitle">Enter the role details once. These will be used to evaluate every transcript you score.</p>
+
+    <div class="row">
+      <div class="field">
+        <label>Role Title</label>
+        <input type="text" id="roleTitle" placeholder="e.g. Senior Frontend Engineer">
+      </div>
+      <div class="field">
+        <label>Hiring Manager</label>
+        <input type="text" id="roleHM" placeholder="e.g. Andre">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Job Description</label>
+      <textarea id="roleJD" rows="8" placeholder="Paste the full job description here..."></textarea>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px;">
+        <button class="btn btn-ghost" id="parseJDBtn" onclick="parseJD()" style="font-size:11px;padding:7px 14px;">
+          ✦ Auto-extract criteria from JD + Notes
+        </button>
+        <span id="parseMsg" style="font-size:11px;color:var(--text-muted);display:none;"></span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Must-Have Criteria <span style="text-transform:none;font-size:10px;color:var(--text-hint)">(Press Enter to add)</span></label>
+      <div class="criteria-input-row">
+        <input type="text" id="criteriaInput" placeholder="e.g. Consumer product experience" onkeydown="addCriteria(event)">
+        <button class="btn btn-ghost" onclick="addCriteriaBtn()">Add</button>
+      </div>
+      <div class="criteria-tags" id="criteriaTags"></div>
+    </div>
+
+    <div class="field">
+      <label>Nice-to-Have Criteria <span style="text-transform:none;font-size:10px;color:var(--text-hint)">(Press Enter to add)</span></label>
+      <div class="criteria-input-row">
+        <input type="text" id="niceInput" placeholder="e.g. Experience with Elasticsearch" onkeydown="addNice(event)">
+        <button class="btn btn-ghost" onclick="addNiceBtn()">Add</button>
+      </div>
+      <div class="criteria-tags" id="niceTags"></div>
+    </div>
+
+    <div class="field">
+      <label>Red Flags / Disqualifiers</label>
+      <textarea id="roleRedFlags" rows="3" placeholder="e.g. No consumer product experience, excessive job hopping (3+ companies in 3 years), no React experience..."></textarea>
+      <p class="hint">These will be specifically checked against each transcript.</p>
+    </div>
+
+    <div class="field">
+      <label>Comp Range</label>
+      <input type="text" id="roleComp" placeholder="e.g. $160k–$190k base + equity">
+    </div>
+
+    <div class="field">
+      <label>Additional Notes for Evaluator</label>
+      <textarea id="roleNotes" rows="3" placeholder="Any other context: team culture, growth stage, what this role is solving for..."></textarea>
+    </div>
+
+    <div style="display:flex;gap:10px;align-items:center;">
+      <button class="btn btn-primary" id="saveRoleBtn" onclick="saveRole()">Save Role</button>
+      <button class="btn btn-ghost" id="cancelEditBtn" onclick="cancelEdit()" style="display:none;">Cancel</button>
+      <span id="saveMsg" style="font-size:12px;color:var(--accent);display:none;">✓ Saved!</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- SCORE TAB -->
+<div class="pane" id="pane-score">
+  <div class="container">
+
+    <div class="role-selector-bar">
+      <label>Active Role:</label>
+      <select id="roleSelect" onchange="onRoleChange()">
+        <option value="">— Select a role —</option>
+      </select>
+    </div>
+
+    <div id="noRoleWarning" class="warning-banner" style="display:none;">
+      ⚠ No role selected. Go to Role Setup and create or select a role first.
+    </div>
+
+    <div id="roleSnapshot" style="display:none;margin-bottom:20px;">
+      <div class="card" style="padding:16px 20px;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted);margin-bottom:10px;font-weight:500;">Scoring against</div>
+        <div style="font-size:15px;font-family:var(--serif);font-weight:500;" id="snapshotTitle"></div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" id="snapshotHM"></div>
+        <div id="snapshotCriteria" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;"></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Interview Transcript</label>
+      <textarea id="transcript" rows="16" placeholder="Paste the full interview transcript here...&#10;&#10;Interviewer: Tell me about your background...&#10;Candidate: Sure, I've been working in frontend engineering for..."></textarea>
+      <p class="hint">Paste raw transcript. The AI will extract relevant signals and map them to each Ashby feedback field.</p>
+    </div>
+
+    <div style="display:flex;gap:10px;margin-bottom:32px;align-items:center;">
+      <button class="btn btn-primary" id="analyzeBtn" onclick="analyzeTranscript()">
+        Generate Feedback
+      </button>
+      <button class="btn btn-ghost" onclick="clearOutput()">Clear</button>
+    </div>
+
+    <!-- OUTPUT -->
+    <div id="outputArea" style="display:none;">
+      <div class="copy-all-row">
+        <button class="btn btn-copy" onclick="copyAll()">Copy All Fields</button>
+      </div>
+
+      <!-- 1-Liner -->
+      <div class="output-section">
+        <div class="output-header">
+          <span class="output-label">Candidate Summary (1-liner)</span>
+          <button class="btn btn-copy" onclick="copySection('oneliner')">Copy</button>
+        </div>
+        <div class="output-body" id="out-oneliner" style="font-style:italic;color:var(--text-muted);font-size:13px;"></div>
+      </div>
+
+      <!-- Technical Experience -->
+      <div class="output-section">
+        <div class="output-header">
+          <span class="output-label">Technical Experience</span>
+          <button class="btn btn-copy" onclick="copySection('tech')">Copy</button>
+        </div>
+        <div class="output-body" id="out-tech"></div>
+      </div>
+
+      <!-- Why Scribd -->
+      <div class="output-section">
+        <div class="output-header">
+          <span class="output-label">Why Scribd / Looking to Make a Change</span>
+          <button class="btn btn-copy" onclick="copySection('why')">Copy</button>
+        </div>
+        <div class="output-body" id="out-why"></div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="output-section">
+        <div class="output-header">
+          <span class="output-label">Timeline</span>
+          <button class="btn btn-copy" onclick="copySection('timeline')">Copy</button>
+        </div>
+        <div class="output-body" id="out-timeline"></div>
+      </div>
+
+      <!-- Compensation -->
+      <div class="output-section">
+        <div class="output-header">
+          <span class="output-label">Compensation</span>
+          <button class="btn btn-copy" onclick="copySection('comp')">Copy</button>
+        </div>
+        <div class="output-body" id="out-comp"></div>
+      </div>
+
+      <!-- Score -->
+      <div class="output-section">
+        <div class="output-header">
+          <span class="output-label">Overall Score & Recommendation</span>
+          <button class="btn btn-copy" onclick="copySection('score')">Copy</button>
+        </div>
+        <div class="output-body" id="out-score"></div>
+        <div id="rescore-area" style="border-top:1px solid var(--border);padding:16px 20px;display:none;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted);font-weight:500;margin-bottom:8px;">Re-score with Resume</div>
+          <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">Paste the candidate's resume below. The AI will reassess the score only — all other fields stay as-is.</p>
+          <textarea id="resumeInput" rows="6" placeholder="Paste resume text here..." style="width:100%;font-family:var(--mono);font-size:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:10px;color:var(--text);resize:vertical;outline:none;"></textarea>
+          <div style="display:flex;gap:8px;margin-top:10px;align-items:center;">
+            <button class="btn btn-primary" id="rescoreBtn" onclick="rescoreWithResume()" style="font-size:12px;padding:8px 16px;">Re-assess Score</button>
+            <span id="rescoreMsg" style="font-size:11px;color:var(--text-muted);display:none;"></span>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--border);padding:10px 20px;">
+          <button class="btn btn-ghost" style="font-size:11px;padding:6px 12px;" onclick="toggleRescore()">+ Re-score with Resume</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="emptyOutput">
+      <div class="empty-state">
+        <div class="icon">◎</div>
+        <p>Select a role, paste a transcript, and click Generate Feedback.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let roles = JSON.parse(localStorage.getItem('interviewRoles') || '[]');
+let activeRoleId = localStorage.getItem('activeRoleId') || null;
+let editingId = null;
+let mustHave = [];
+let niceToHave = [];
+
+function saveRoles() {
+  localStorage.setItem('interviewRoles', JSON.stringify(roles));
+  localStorage.setItem('activeRoleId', activeRoleId || '');
+}
+
+function uuid() { return Date.now().toString(36) + Math.random().toString(36).slice(2); }
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+  document.querySelector(`.tab[onclick*="${tab}"]`).classList.add('active');
+  document.getElementById(`pane-${tab}`).classList.add('active');
+  if (tab === 'score') renderScorePane();
+}
+
+function renderRolesList() {
+  const container = document.getElementById('rolesList');
+  if (!roles.length) {
+    container.innerHTML = '<div class="no-roles-msg">No roles saved yet. Create one below.</div>';
+    return;
+  }
+  container.innerHTML = roles.map(r => `
+    <div class="role-item ${activeRoleId === r.id ? 'selected' : ''}" id="ri-${r.id}">
+      <div onclick="setActive('${r.id}')">
+        <div class="role-item-name">${r.title}</div>
+        <div class="role-item-meta">HM: ${r.hm || '—'} · Comp: ${r.comp || '—'}</div>
+      </div>
+      <div class="role-item-actions">
+        <span class="badge ${activeRoleId === r.id ? 'badge-active' : 'badge-inactive'}">${activeRoleId === r.id ? 'Active' : 'Inactive'}</span>
+        <button class="btn btn-ghost" style="font-size:11px;padding:5px 10px;" onclick="editRole('${r.id}')">Edit</button>
+        <button class="btn btn-ghost" style="font-size:11px;padding:5px 10px;color:var(--danger);" onclick="deleteRole('${r.id}')">Delete</button>
+      </div>
+    </div>
+  `).join('');
+  updateHeader();
+}
+
+function setActive(id) {
+  activeRoleId = id;
+  saveRoles();
+  renderRolesList();
+}
+
+function updateHeader() {
+  const role = roles.find(r => r.id === activeRoleId);
+  const dot = document.getElementById('headerDot');
+  const name = document.getElementById('headerRoleName');
+  if (role) {
+    dot.classList.remove('off');
+    name.textContent = role.title;
+  } else {
+    dot.classList.add('off');
+    name.textContent = 'No role selected';
+  }
+}
+
+function addCriteria(e) { if (e.key === 'Enter') { e.preventDefault(); addCriteriaBtn(); } }
+function addNice(e) { if (e.key === 'Enter') { e.preventDefault(); addNiceBtn(); } }
+
+function addCriteriaBtn() {
+  const val = document.getElementById('criteriaInput').value.trim();
+  if (!val) return;
+  mustHave.push(val);
+  document.getElementById('criteriaInput').value = '';
+  renderTags('criteriaTags', mustHave, mustHave);
+}
+
+function addNiceBtn() {
+  const val = document.getElementById('niceInput').value.trim();
+  if (!val) return;
+  niceToHave.push(val);
+  document.getElementById('niceInput').value = '';
+  renderTags('niceTags', niceToHave, niceToHave);
+}
+
+function renderTags(containerId, arr, ref) {
+  const c = document.getElementById(containerId);
+  c.innerHTML = arr.map((t, i) => `
+    <span class="criteria-tag">${t} <span class="remove" onclick="removeTag(${i},'${containerId}',${ref===mustHave?'true':'false'})">×</span></span>
+  `).join('');
+}
+
+function removeTag(i, containerId, isMust) {
+  if (isMust) { mustHave.splice(i, 1); renderTags('criteriaTags', mustHave, mustHave); }
+  else { niceToHave.splice(i, 1); renderTags('niceTags', niceToHave, niceToHave); }
+}
+
+function saveRole() {
+  const title = document.getElementById('roleTitle').value.trim();
+  if (!title) { alert('Please enter a role title.'); return; }
+  const role = {
+    id: editingId || uuid(),
+    title,
+    hm: document.getElementById('roleHM').value.trim(),
+    jd: document.getElementById('roleJD').value.trim(),
+    mustHave: [...mustHave],
+    niceToHave: [...niceToHave],
+    redFlags: document.getElementById('roleRedFlags').value.trim(),
+    comp: document.getElementById('roleComp').value.trim(),
+    notes: document.getElementById('roleNotes').value.trim(),
+  };
+  if (editingId) {
+    const idx = roles.findIndex(r => r.id === editingId);
+    roles[idx] = role;
+    editingId = null;
+  } else {
+    roles.push(role);
+    if (!activeRoleId) activeRoleId = role.id;
+  }
+  saveRoles();
+  resetForm();
+  renderRolesList();
+  document.getElementById('saveMsg').style.display = 'inline';
+  setTimeout(() => document.getElementById('saveMsg').style.display = 'none', 2000);
+}
+
+function resetForm() {
+  document.getElementById('roleTitle').value = '';
+  document.getElementById('roleHM').value = '';
+  document.getElementById('roleJD').value = '';
+  document.getElementById('roleRedFlags').value = '';
+  document.getElementById('roleComp').value = '';
+  document.getElementById('roleNotes').value = '';
+  mustHave = []; niceToHave = [];
+  renderTags('criteriaTags', mustHave, mustHave);
+  renderTags('niceTags', niceToHave, niceToHave);
+  document.getElementById('formTitle').textContent = 'Create New Role';
+  document.getElementById('cancelEditBtn').style.display = 'none';
+  editingId = null;
+}
+
+function editRole(id) {
+  const r = roles.find(x => x.id === id);
+  if (!r) return;
+  editingId = id;
+  document.getElementById('roleTitle').value = r.title;
+  document.getElementById('roleHM').value = r.hm || '';
+  document.getElementById('roleJD').value = r.jd || '';
+  document.getElementById('roleRedFlags').value = r.redFlags || '';
+  document.getElementById('roleComp').value = r.comp || '';
+  document.getElementById('roleNotes').value = r.notes || '';
+  mustHave = [...(r.mustHave || [])];
+  niceToHave = [...(r.niceToHave || [])];
+  renderTags('criteriaTags', mustHave, mustHave);
+  renderTags('niceTags', niceToHave, niceToHave);
+  document.getElementById('formTitle').textContent = `Editing: ${r.title}`;
+  document.getElementById('cancelEditBtn').style.display = 'inline-block';
+  document.querySelector('#pane-setup .container').scrollTop = 9999;
+  document.getElementById('roleTitle').scrollIntoView({ behavior: 'smooth' });
+}
+
+function cancelEdit() { resetForm(); }
+
+function deleteRole(id) {
+  if (!confirm('Delete this role?')) return;
+  roles = roles.filter(r => r.id !== id);
+  if (activeRoleId === id) activeRoleId = roles[0]?.id || null;
+  saveRoles();
+  renderRolesList();
+}
+
+function renderScorePane() {
+  const sel = document.getElementById('roleSelect');
+  sel.innerHTML = '<option value="">— Select a role —</option>';
+  roles.forEach(r => {
+    const opt = document.createElement('option');
+    opt.value = r.id;
+    opt.textContent = r.title;
+    if (r.id === activeRoleId) opt.selected = true;
+    sel.appendChild(opt);
+  });
+  onRoleChange();
+}
+
+function onRoleChange() {
+  const id = document.getElementById('roleSelect').value;
+  activeRoleId = id || null;
+  saveRoles();
+  updateHeader();
+  const role = roles.find(r => r.id === id);
+  const snapshot = document.getElementById('roleSnapshot');
+  const warn = document.getElementById('noRoleWarning');
+  if (role) {
+    snapshot.style.display = 'block';
+    warn.style.display = 'none';
+    document.getElementById('snapshotTitle').textContent = role.title;
+    document.getElementById('snapshotHM').textContent = `Hiring Manager: ${role.hm || 'N/A'} · Comp range: ${role.comp || 'N/A'}`;
+    const ct = document.getElementById('snapshotCriteria');
+    const tags = (role.mustHave || []).map(t => `<span class="criteria-tag" style="background:var(--accent-light);color:var(--accent);border-color:rgba(45,90,61,0.2)">✓ ${t}</span>`).join('') +
+      (role.niceToHave || []).map(t => `<span class="criteria-tag">+ ${t}</span>`).join('');
+    ct.innerHTML = tags || '<span class="criteria-tag">No criteria specified</span>';
+  } else {
+    snapshot.style.display = 'none';
+    warn.style.display = roles.length ? 'block' : 'none';
+  }
+}
+
+async function parseJD() {
+  const jd = document.getElementById('roleJD').value.trim();
+  const notes = document.getElementById('roleNotes').value.trim();
+  if (!jd && !notes) { alert('Paste a job description first.'); return; }
+
+  const btn = document.getElementById('parseJDBtn');
+  const msg = document.getElementById('parseMsg');
+  btn.disabled = true;
+  btn.textContent = 'Parsing...';
+  msg.style.display = 'inline';
+  msg.textContent = 'Reading JD and notes...';
+
+  const prompt = `You are a technical recruiting expert. Read the job description and any additional notes below, then extract structured hiring criteria.
+
+Return ONLY a valid JSON object with these keys:
+- mustHave: string[] (3–6 items max — the true non-negotiables that would disqualify a candidate if missing. Be specific and concise, e.g. "React depth", "Consumer product experience", "People management of engineers". Not vague things like "communication skills".)
+- niceToHave: string[] (2–5 items — genuine differentiators, not requirements. E.g. "Search/Discovery domain", "TypeScript", "Startup experience".)
+- redFlags: string (A single paragraph of specific disqualifiers to watch for in a prescreen. E.g. "No consumer product experience, primarily internal tooling or B2B SaaS; job hopping over 3 companies in 3 years; React mentioned only in passing with no depth.")
+
+Be opinionated. Focus on what actually matters for the role. No filler, no generic soft skills.
+Output ONLY valid JSON. No markdown fences, no preamble.
+
+JOB DESCRIPTION:
+${jd}
+
+ADDITIONAL NOTES:
+${notes || 'None'}`;
+
+  try {
+    const res = await fetch('http://localhost:3131/proxy', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 800,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      throw new Error(`API error ${res.status}: ${JSON.stringify(data)}`);
+    }
+    const raw = data.content?.find(b => b.type === 'text')?.text || '';
+    const clean = raw.replace(/```json[\s\S]*?```|```[\s\S]*?```/g, m => m.replace(/```json\n?|```\n?/g, '')).trim();
+    let parsed;
+    try {
+      parsed = JSON.parse(clean);
+    } catch (parseErr) {
+      throw new Error(`JSON parse failed. Raw response: ${raw.slice(0, 300)}`);
+    }
+
+    mustHave = parsed.mustHave || [];
+    niceToHave = parsed.niceToHave || [];
+    renderTags('criteriaTags', mustHave, mustHave);
+    renderTags('niceTags', niceToHave, niceToHave);
+    if (parsed.redFlags) document.getElementById('roleRedFlags').value = parsed.redFlags;
+
+    msg.textContent = '✓ Criteria extracted — review and adjust below.';
+    msg.style.color = 'var(--accent)';
+  } catch (err) {
+    msg.textContent = 'Error: ' + err.message.slice(0, 120);
+    msg.style.color = 'var(--danger)';
+    console.error('parseJD error:', err);
+  }
+
+  btn.disabled = false;
+  btn.textContent = '✦ Auto-extract criteria from JD + Notes';
+  setTimeout(() => { msg.style.display = 'none'; msg.style.color = 'var(--text-muted)'; }, 4000);
+}
+
+async function analyzeTranscript() {
+  const roleId = document.getElementById('roleSelect').value;
+  const role = roles.find(r => r.id === roleId);
+  const transcript = document.getElementById('transcript').value.trim();
+
+  if (!role) { alert('Please select a role first.'); return; }
+  if (!transcript) { alert('Please paste a transcript.'); return; }
+
+  const btn = document.getElementById('analyzeBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Analyzing...';
+  clearOutput(true);
+
+  const systemPrompt = `You are an expert technical recruiter assistant. Your job is to analyze interview transcripts and produce succinct, ATS-ready feedback summaries for each category. Be concise, specific, and evidence-based. Draw only from what was actually discussed in the transcript. Never pad with filler.
+
+IMPORTANT CONTEXT: This is a live prescreen conversation, not a resume review. Candidates will not recite their full background unprompted. Do not penalize for things not explicitly stated — score on what was demonstrated and reasonably inferred from context. A candidate who describes building grocery expansion features at Amazon is demonstrating data-driven, zero-to-one product work even if they don't say "AI/ML." Read between the lines appropriately.
+
+You will evaluate the candidate against the role criteria and output a JSON object with exactly these keys:
+- candidateName: string (Extract the candidate's full name from the transcript. If unclear, return "Unknown".)
+- oneLiner: string (One factual sentence, no opinions. Format: "[X] years in [domain], currently [Title] at [Company], [strongest alignment signal]." Max 25 words.)
+- technical: string (Structured bullet summary of the candidate's experience as discussed in the transcript. Organize by theme, not chronology. Use this nested format with literal "• " and "  ◦ " characters:
+
+• [Theme, e.g. "Consumer product experience at scale"]
+  ◦ [Specific detail from transcript]
+  ◦ [Specific detail from transcript]
+• [Next theme]
+  ◦ [Detail]
+
+Themes to cover if discussed: product domains/surfaces owned, specific systems or features built, AI/ML/data-driven work, UX/design collaboration, zero-to-one or ambiguous problem spaces, customer-centric approach. Only include themes that actually came up. Factual only — no gaps, no opinions, no missing-experience commentary.)
+- why: string (Why interested in Scribd and/or motivating the change. Factual, transcript only.)
+- timeline: string (Availability/notice period/start date. If not discussed: "Not discussed.")
+- comp: string (Comp expectations reported factually. Do NOT factor into score.)
+- score: number (1, 2, 3, or 4 — see rubric. Based ONLY on must-have criteria. Comp never factors in.)
+- scoreLabel: string ("Strong No" | "No" | "Yes" | "Strong Yes")
+- scoreRationale: string (2-3 sentences referencing specific transcript signals. Be calibrated — a prescreen is limited signal. Infer reasonably from what was described. Do not mention comp.)
+
+Scoring rubric:
+1 = Strong No: Clear misalignment on multiple must-haves, or red flags that make the role obviously wrong
+2 = No: Meaningful gaps in must-have criteria that the conversation did not address at all
+3 = Yes: Sufficient signal on must-haves to warrant advancing; minor gaps acceptable at prescreen stage
+4 = Strong Yes: Strong explicit alignment across all must-haves, high-confidence advance
+
+Comp is NEVER a factor in scoring.
+
+Output ONLY valid JSON. No markdown fences, no preamble.`;
+
+  const userPrompt = `ROLE: ${role.title}
+HIRING MANAGER: ${role.hm || 'N/A'}
+COMP RANGE: ${role.comp || 'Not specified'}
+
+JOB DESCRIPTION:
+${role.jd || 'Not provided'}
+
+MUST-HAVE CRITERIA:
+${(role.mustHave || []).map(c => `- ${c}`).join('\n') || 'None specified'}
+
+NICE-TO-HAVE:
+${(role.niceToHave || []).map(c => `- ${c}`).join('\n') || 'None specified'}
+
+RED FLAGS / DISQUALIFIERS:
+${role.redFlags || 'None specified'}
+
+ADDITIONAL NOTES:
+${role.notes || 'None'}
+
+TRANSCRIPT:
+${transcript}
+
+Please analyze and return the JSON feedback object.`;
+
+  try {
+    const res = await fetch('http://localhost:3131/proxy', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 4096,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: userPrompt }]
+      })
+    });
+
+    const data = await res.json();
+    const raw = data.content?.find(b => b.type === 'text')?.text || '';
+    console.log('RAW RESPONSE:', raw);
+    console.log('STOP REASON:', data.stop_reason);
+    const clean = raw.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/```\s*$/i, '').trim();
+    const parsed = JSON.parse(clean);
+    renderOutput(parsed, role);
+  } catch (err) {
+    alert('Error analyzing transcript. Please try again.\n\n' + err.message);
+    console.error(err);
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = 'Generate Feedback';
+}
+
+function renderOutput(data, role) {
+  document.getElementById('outputArea').style.display = 'block';
+  document.getElementById('emptyOutput').style.display = 'none';
+
+  const name = data.candidateName || 'Unknown';
+  document.getElementById('out-oneliner').textContent = data.oneLiner || '—';
+  document.getElementById('out-tech').textContent = data.technical || '—';
+  document.getElementById('out-why').textContent = data.why || '—';
+  document.getElementById('out-timeline').textContent = data.timeline || '—';
+  document.getElementById('out-comp').textContent = data.comp || '—';
+
+  window.currentScoreData = { rationale: data.scoreRationale || '' };
+  renderScore(data.score, data.scoreRationale || '');
+
+  const copyAllBtn = document.querySelector('.copy-all-row');
+  copyAllBtn.innerHTML = `<span style="font-size:13px;font-weight:500;color:var(--text)">${name}</span><div style="display:flex;gap:8px;"><button class="btn btn-copy" onclick="copyAll()">Copy All Fields</button></div>`;
+}
+
+function renderScore(s, rationale) {
+  const labels = { 1: 'Strong No', 2: 'No', 3: 'Yes', 4: 'Strong Yes' };
+  const scoreEl = document.getElementById('out-score');
+  scoreEl.innerHTML = `
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+      <span class="score-display score-${s}">${s} — ${labels[s]}</span>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <span style="font-size:11px;color:var(--text-muted);letter-spacing:0.05em;text-transform:uppercase;">Override:</span>
+        ${[1,2,3,4].map(n => `<button onclick="overrideScore(${n})" style="
+          font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:6px;cursor:pointer;
+          border:1px solid ${n===s ? 'var(--accent)' : 'var(--border)'};
+          background:${n===s ? 'var(--accent-light)' : 'transparent'};
+          color:${n===s ? 'var(--accent)' : 'var(--text-muted)'};
+          font-weight:${n===s ? '500' : '400'};
+        ">${n}</button>`).join('')}
+      </div>
+    </div>
+    <div id="score-rationale-text" style="white-space:pre-wrap;">${rationale}</div>`;
+  window.currentScoreData.score = s;
+  window.currentScoreData.label = labels[s];
+}
+
+function toggleRescore() {
+  const area = document.getElementById('rescore-area');
+  area.style.display = area.style.display === 'none' ? 'block' : 'none';
+}
+
+async function rescoreWithResume() {
+  const resume = document.getElementById('resumeInput').value.trim();
+  if (!resume) { alert('Paste the resume first.'); return; }
+
+  const roleId = document.getElementById('roleSelect').value;
+  const role = roles.find(r => r.id === roleId);
+  const transcript = document.getElementById('transcript').value.trim();
+  if (!role || !transcript) { alert('Role and transcript are required.'); return; }
+
+  const btn = document.getElementById('rescoreBtn');
+  const msg = document.getElementById('rescoreMsg');
+  btn.disabled = true;
+  btn.textContent = 'Re-assessing...';
+  msg.style.display = 'inline';
+  msg.textContent = 'Comparing transcript + resume against criteria...';
+
+  const prompt = `You are an expert technical recruiter. A candidate completed a prescreen interview. You have both the transcript and their resume. Your job is to reassess ONLY the score — do not rewrite any other feedback.
+
+Use the transcript as the primary signal for how the candidate communicates and thinks. Use the resume to fill in factual gaps (e.g. specific technologies, AI/ML experience) that the candidate may not have explicitly restated in conversation. Do not penalize for things not said in the prescreen if the resume clearly evidences them.
+
+Return ONLY a JSON object with these keys:
+- score: number (1, 2, 3, or 4)
+- scoreLabel: string ("Strong No" | "No" | "Yes" | "Strong Yes")
+- scoreRationale: string (2-3 sentences. Reference both transcript signals AND resume evidence where relevant. Do not mention comp.)
+
+Scoring rubric:
+1 = Strong No: Clear misalignment on multiple must-haves
+2 = No: Meaningful gaps in must-have criteria even accounting for both sources
+3 = Yes: Sufficient signal across transcript + resume to advance; minor gaps acceptable
+4 = Strong Yes: Strong alignment across all must-haves from both sources
+
+ROLE: ${role.title}
+MUST-HAVE CRITERIA:
+${(role.mustHave || []).map(c => `- ${c}`).join('\n')}
+
+NICE-TO-HAVE:
+${(role.niceToHave || []).map(c => `- ${c}`).join('\n')}
+
+RED FLAGS:
+${role.redFlags || 'None'}
+
+NOTES:
+${role.notes || 'None'}
+
+TRANSCRIPT:
+${transcript}
+
+RESUME:
+${resume}
+
+Output ONLY valid JSON. No markdown fences, no preamble.`;
+
+  try {
+    const res = await fetch('http://localhost:3131/proxy', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 500,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const raw = data.content?.find(b => b.type === 'text')?.text || '';
+    const clean = raw.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/```\s*$/i, '').trim();
+    const parsed = JSON.parse(clean);
+    window.currentScoreData.rationale = parsed.scoreRationale || window.currentScoreData.rationale;
+    renderScore(parsed.score, parsed.scoreRationale || window.currentScoreData.rationale);
+    msg.textContent = '✓ Score updated.';
+    msg.style.color = 'var(--accent)';
+  } catch (err) {
+    msg.textContent = 'Error: ' + err.message.slice(0, 100);
+    msg.style.color = 'var(--danger)';
+    console.error(err);
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Re-assess Score';
+  setTimeout(() => { msg.style.display = 'none'; }, 4000);
+}
+
+function overrideScore(n) {
+  renderScore(n, window.currentScoreData.rationale);
+}
+
+function clearOutput(keepArea) {
+  if (!keepArea) {
+    document.getElementById('outputArea').style.display = 'none';
+    document.getElementById('emptyOutput').style.display = 'block';
+  }
+  ['oneliner','tech','why','timeline','comp','score'].forEach(k => {
+    const el = document.getElementById(`out-${k}`);
+    if (el) el.textContent = '';
+  });
+}
+
+function copySection(key) {
+  const el = document.getElementById(`out-${key}`);
+  const sectionLabels = { oneliner: 'Candidate Summary', tech: 'Technical Experience', why: 'Why Scribd / Looking to Make a Change', timeline: 'Timeline', comp: 'Compensation', score: 'Score & Recommendation' };
+  let text;
+  if (key === 'score' && window.currentScoreData) {
+    const { score, label, rationale } = window.currentScoreData;
+    text = `${score} — ${label}\n\n${rationale}`;
+  } else {
+    text = el.innerText || el.textContent || '';
+  }
+  navigator.clipboard.writeText(`${sectionLabels[key]}:\n${text}`).then(() => {
+    const btns = document.querySelectorAll('.btn-copy');
+    btns.forEach(b => { if (b.getAttribute('onclick')?.includes(key)) { b.textContent = 'Copied!'; b.classList.add('copied'); setTimeout(() => { b.textContent = 'Copy'; b.classList.remove('copied'); }, 1500); }});
+  });
+}
+
+function copyAll() {
+  const scoreText = window.currentScoreData
+    ? `${window.currentScoreData.score} — ${window.currentScoreData.label}\n\n${window.currentScoreData.rationale}`
+    : (document.getElementById('out-score')?.innerText || '—');
+
+  const sections = [
+    { label: 'Candidate Summary', id: 'out-oneliner' },
+    { label: 'Technical Experience', id: 'out-tech' },
+    { label: 'Why Scribd / Looking to Make a Change', id: 'out-why' },
+    { label: 'Timeline', id: 'out-timeline' },
+    { label: 'Compensation', id: 'out-comp' },
+  ];
+  const text = sections.map(s => {
+    const el = document.getElementById(s.id);
+    return `${s.label}:\n${el?.innerText || el?.textContent || '—'}`;
+  }).join('\n\n---\n\n') + `\n\n---\n\nScore & Recommendation:\n${scoreText}`;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-all-row .btn-copy');
+    btn.textContent = 'Copied All!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy All Fields'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function seedRoles() {
+  if (!localStorage.getItem('rolesSeedV1')) {
+    const seeded = [
+      {
+        id: uuid(),
+        title: 'Senior Frontend Engineer',
+        hm: 'Andre',
+        jd: `We're looking for a Senior Frontend Engineer to join Scribd's Search & Discovery team. You'll build and own high-impact consumer-facing features that help millions of readers find content they love.\n\nResponsibilities:\n- Build performant, accessible UI components and features in React\n- Partner closely with design, product, and backend engineers\n- Own features end-to-end from architecture through delivery\n- Contribute to frontend standards, tooling, and code quality\n- Mentor junior engineers\n\nRequirements:\n- 5+ years of frontend engineering experience\n- Deep React expertise (hooks, context, performance optimization)\n- Strong consumer product experience — you've shipped features used by real users at scale\n- Comfort working across the stack when needed, but frontend is your home\n- Experience with modern JS/TS, CSS, testing frameworks\n- Strong communication and cross-functional collaboration skills`,
+        mustHave: ['Consumer product experience', 'React depth'],
+        niceToHave: ['Search/Discovery domain experience', 'TypeScript', 'A/B testing / experimentation'],
+        redFlags: 'No consumer product experience (only internal tools or B2B SaaS), excessive job hopping (3+ companies in under 3 years), primarily full-stack with weak frontend depth, no React experience',
+        comp: '$160k–$190k base + equity',
+        notes: 'Andre cares a lot about consumer product instincts — candidates should be able to speak to how their work affected end users. Full-stack is fine but frontend must be the clear strength. Search/Discovery domain a bonus but not required.',
+      },
+      {
+        id: uuid(),
+        title: 'Senior Manager, TPM',
+        hm: 'Ed',
+        jd: `Scribd is looking for a Senior Manager of Technical Program Management to lead and grow the TPM function. You'll drive large-scale technical initiatives across engineering, product, and the business.\n\nResponsibilities:\n- Lead a team of TPMs across multiple product and platform areas\n- Drive complex, cross-functional programs from planning through delivery\n- Partner with engineering leadership to define roadmap priorities and remove blockers\n- Build scalable processes for program management across the org\n- Communicate program status, risks, and tradeoffs to senior stakeholders\n\nRequirements:\n- 8+ years of technical program management experience\n- 2+ years managing TPMs or program managers\n- Strong technical fluency — able to engage credibly with engineers on architecture and tradeoffs\n- Proven track record delivering large, complex programs at scale\n- Excellent stakeholder management and executive communication skills`,
+        mustHave: ['Technical program management'],
+        niceToHave: ['People management of TPMs', 'Platform or infrastructure programs', 'Consumer product company experience'],
+        redFlags: 'Pure project management without technical depth, no cross-functional program leadership at scale, only managed individual contributor workstreams rather than complex multi-team programs',
+        comp: '$180k–$220k base + equity',
+        notes: "Ed is looking for someone who can both lead and do — this isn't a pure people manager role. The candidate should have strong opinions on how to run programs and be comfortable pushing back on engineering leadership when needed.",
+      }
+    ];
+    seeded.forEach(r => roles.push(r));
+    activeRoleId = seeded[0].id;
+    saveRoles();
+    localStorage.setItem('rolesSeedV1', '1');
+  }
+
+  if (!localStorage.getItem('rolesSeedV2')) {
+    const pmRole = {
+      id: uuid(),
+      title: 'Senior Product Manager',
+      hm: 'Jordan',
+      jd: `Scribd is evolving from one of the world's largest document libraries into a platform where active knowledge building happens. With a library of 300 million human-powered documents and 250+ million monthly visitors, our next chapter focuses on helping users move from simply finding source material to building deep, actionable knowledge. As a Senior Product Manager, you will lead this zero-to-one transformation, leveraging ML and LLMs to create workflows that feel effortless while remaining grounded, attributable, and trustworthy.\n\nYou will partner closely with Design, Engineering, Machine Learning, and Data Science teams to turn advanced technical capabilities into intuitive experiences that users rely on and return to.\n\nYou Will:\n- Develop and set the long-term product vision, strategy, and roadmap for core platform features\n- Define and track success metrics for core user journeys at the company level\n- Balance short-term wins with long-term vision\n- Construct a product roadmap using domain knowledge and partnerships to prioritize opportunities\n- Communicate with clarity and influence across product, engineering, design, sales, marketing, and executive stakeholders\n\nYou Have:\n- Minimum 5 years of product management experience\n- Strong analytical and strategic thinking skills with a data-driven approach\n- Comfort in the unknown and a track record of thriving amid ambiguity\n- Demonstrated ability to lead cross-functional initiatives and influence without authority\n- Familiarity with both quantitative (A/B testing, analytics) and qualitative (user testing, interviews) research methods`,
+      mustHave: [
+        'AI, ML, or algorithm-driven product experience (does not need to be pure LLM — AI-powered features, ML recommendations, or data-driven personalization counts)',
+        'External consumer product experience (not internal tooling or B2B SaaS)',
+        'Consumer UX sensibility and design instincts',
+        'Comfort with ambiguity and zero-to-one building',
+      ],
+      niceToHave: [
+        'Search, discovery, ranking, or recommendation product experience',
+        'Subscription or engagement funnel ownership',
+        'Proactive idea generation without stakeholder-driven roadmap',
+      ],
+      redFlags: 'No AI, ML, or data-driven product experience of any kind; only internal tooling or B2B SaaS product experience; needs a fully-defined roadmap or heavy stakeholder direction to operate; no consumer UX instincts — has only built for internal users or stakeholders.',
+      comp: '$139k–$216.5k CA / $114.5k–$205.5k US (outside CA)',
+      notes: "Scribd is moving from a passive document repository to an active AI-powered workspace — think GraphQL, AI/LLM chat, multi-document browsing, saved lists, and AI-driven suggestions. Jordan needs someone who has shipped AI/LLM-driven product features for real external consumers. Search/discovery/ranking experience is a nice-to-have (Discovery team overlap), not required. This is a PRESCREEN TRANSCRIPT — do not penalize for absence of metrics or outcome numbers; those live on the resume. Probe for: AI/LLM product intuition, consumer design sensibility, comfort operating with ambiguity and blurry team boundaries. Jordan is open to high-potential candidates with shorter track records.",
+    };
+    if (!roles.find(r => r.title === 'Senior Product Manager' && r.hm === 'Jordan')) {
+      roles.push(pmRole);
+      saveRoles();
+    }
+    localStorage.setItem('rolesSeedV2', '1');
+  }
+}
+
+seedRoles();
+renderRolesList();
+updateHeader();
+</script>
+</body>
+</html>

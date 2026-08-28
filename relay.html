@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><title>Relay</title></head>
+<body>
+<script>
+window.addEventListener('message', async (event) => {
+  if (!event.origin.includes('brainner.ai')) return;
+  const { resumeUrl, candidateId, noResume } = event.data || {};
+  if (!candidateId) return;
+
+  if (noResume || !resumeUrl) {
+    await fetch('/store-text', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: '', source: 'no_iframe', candidateId })
+    }).catch(() => {});
+    event.source.postMessage({ type: 'TEXT_STORED', candidateId, source: 'no_iframe' }, event.origin);
+    return;
+  }
+
+  try {
+    const resp = await fetch('/resume-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: resumeUrl })
+    });
+    const data = await resp.json();
+    const text = data.text || '';
+    // Detect XML error responses (expired S3 URL)
+    const isError = text.startsWith('<?xml') || text.startsWith('<Error') || text.length < 50;
+    const source = isError ? 'expired_url' : (data.source || 'pdf');
+    await fetch('/store-text', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text: isError ? '' : text,
+        source,
+        candidateId
+      })
+    });
+    event.source.postMessage({ type: 'TEXT_STORED', candidateId, source }, event.origin);
+  } catch (e) {
+    await fetch('/store-text', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: '', source: 'error', error: e.message, candidateId })
+    }).catch(() => {});
+    event.source.postMessage({ type: 'TEXT_STORED', candidateId, source: 'error' }, event.origin);
+  }
+});
+</script>
+</body>
+</html>

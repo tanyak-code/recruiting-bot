@@ -1,0 +1,1060 @@
+{
+  "asOf": "2026-07-02T05:41:48.254Z",
+  "job": {
+    "openedAt": null
+  },
+  "totalApplications": 8369,
+  "byStage": {
+    "Archived": 4754,
+    "Application Review": 3542,
+    "Secondary Review": 42,
+    "Recruiter Screen": 19,
+    "Technical/Skills Screen": 1,
+    "Direct Candidate Outreach": 5,
+    "Team Interview": 2,
+    "Case Study/Presentation": 1,
+    "Hiring Manager Interview": 1,
+    "Hiring Manager Resume Review": 1,
+    "To Be Archived & Dispo": 1
+  },
+  "byStatus": {
+    "Archived": 4754,
+    "Active": 3567,
+    "Lead": 48
+  },
+  "bySource": {
+    "Indeed Listings": 1385,
+    "Applied": 5070,
+    "Linkedin Job Wrapping": 1845,
+    "Referral Link": 13,
+    "Referral": 7,
+    "Ashby Chrome Extension": 8,
+    "Levels.fyi": 2,
+    "Juicebox": 34,
+    "Public Booking Link": 4,
+    "unknown": 1
+  },
+  "byArchiveReason": {
+    "Lacks Skills/Qualifications": 3822,
+    "Visa": 439,
+    "Withdrew - Accepted Another Offer": 3,
+    "Not Interested after Outreach": 10,
+    "Withdrew - Timing": 2,
+    "Location": 455,
+    "Withdrew - Position Not a Match": 5,
+    "Different Scribd Role ": 1,
+    "Strong Candidate to Revisit ": 3,
+    "Did Not Respond to Outreach": 3,
+    "Skills not a match - General": 3,
+    "Withdrew - Compensation": 4,
+    "Other - See Notes": 4
+  },
+  "byMonth": {
+    "2026-03": 3408,
+    "2026-04": 2212,
+    "2026-05": 1373,
+    "2026-06": 1329,
+    "2026-07": 47
+  },
+  "advancedCandidates": [
+    {
+      "applicationId": "140ee271-9607-4de2-8269-6fc2e691ba8a",
+      "name": "Andrea Abode",
+      "email": "andifabode@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-02T17:34:00.752Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "7a510b1a-e3e0-4feb-b962-939fafff4d9f",
+      "name": "Prabhjeet Grewal",
+      "email": "psgrewal44@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-02T23:36:16.679Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "887e0b0e-3502-42a1-bc1c-ddbe278b8b47",
+      "name": "Brad Etheridge-Kavanaugh",
+      "email": "bretheridge1@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-03T00:56:32.065Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "c006e7b9-a3a4-4a51-b95d-4ba2b4507039",
+      "name": "Anand Vinjamuri",
+      "email": "vvs_anand@yahoo.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-03T04:39:55.404Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "0679510b-9706-4e5d-b29d-88e1d89bd99b",
+      "name": "Tegan Barry",
+      "email": "tabarry@me.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-03-03T19:49:28.252Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "616ba23b-1431-4d69-b782-52107643f970",
+      "name": "Zhihua Yuan",
+      "email": "seelight@live.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-04T06:43:53.184Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "21072346-bcc2-4b50-9264-ca050053f378",
+      "name": "Swati Makkar",
+      "email": "swat.makkar@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-04T18:21:26.048Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "5538b771-bc6f-4f35-81bf-4a7075c1583f",
+      "name": "Juanita Lee",
+      "email": "juanitalee@protonmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-03-04T22:17:29.360Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "5f11cf6c-8a98-4589-badc-ccceef11fc56",
+      "name": "Helder Carvalheira",
+      "email": "hcarvalheira28@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-05T16:27:17.863Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "84963b52-c81e-4d87-b6b0-5e9badcbaa99",
+      "name": "Ampreet Virk",
+      "email": "ampreetvirk@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-05T21:47:59.519Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "7012713a-5105-4937-8aa8-480e10b8cecc",
+      "name": "Margaret Andraka",
+      "email": "andraka.margaret@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-03-06T03:33:14.082Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "68950aea-139f-4f30-b1fe-7c31a57de77b",
+      "name": "Vandana Sharma",
+      "email": "vandanasharma05@yahoo.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-03-09T15:28:11.670Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "2cde591e-9a59-4eb9-a538-3722fbca9e73",
+      "name": "Dana de Andres",
+      "email": "deandres.dana@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-03-10T04:26:36.429Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "4a38ffd0-bd53-4921-95d1-06ab5b047367",
+      "name": "Jose Jimenez",
+      "email": "jjimenezjr@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-10T20:24:26.162Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "da7f0709-3a67-4bb5-b84e-c72972939979",
+      "name": "Douglas Mirro",
+      "email": "dmirro@easytechtalk.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-10T21:46:21.946Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "af487b9b-88fb-4a57-b82c-2043f3bf8232",
+      "name": "Rujuta Biware",
+      "email": "biwarerujuta@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-18T20:22:21.801Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "d008926b-f00e-4442-8989-82ffa05266de",
+      "name": "Monica Ramone",
+      "email": "monicaramone@yahoo.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-03-20T21:55:53.229Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "ef9897c5-dfd8-4df6-a7d6-2968e228eb93",
+      "name": "Shuchika Gupta",
+      "email": "dia.gupta@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-03-24T21:31:08.064Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "d9017237-b43a-416b-be18-d5cf5e191871",
+      "name": "Kyle Hollenbeck",
+      "email": "khollenj@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-03-31T16:30:11.449Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "876f549f-509a-41db-a004-e5a5fbea0c8a",
+      "name": "Edward Buturla",
+      "email": "ed.buturla@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-02T16:12:35.005Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "5ce516b1-c315-4cc3-8bd3-99f63cccde4e",
+      "name": "Chris Hubbard",
+      "email": "chrisconsiders@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-02T16:30:43.307Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "6a499185-9609-4b03-a1fd-b16738504594",
+      "name": "Deepali Neb",
+      "email": "deepalineb@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-06T16:05:55.324Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "bbab3ba6-06e4-4bb5-98f3-b61d257465b3",
+      "name": "Joel Andrew Soukup",
+      "email": "joel.soukup@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-07T18:44:37.690Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "acdb0f29-2ec6-4a28-bda7-156302920993",
+      "name": "Gregory Mahar",
+      "email": "Gmahar23@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-09T19:37:17.416Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "c8e0ca4d-a19c-438e-add1-d9c5334548c0",
+      "name": "Charles Hall",
+      "email": "cmauryhall@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-11T16:50:40.997Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "25129941-1afa-4c7e-8e39-53804c8cb9d0",
+      "name": "Brian Wu",
+      "email": "pai.wu@hotmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-13T16:03:20.756Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "f0fb87d0-8b7d-4c20-9062-54c67f4343a5",
+      "name": "Benjamin Andrews",
+      "email": "benjamin.andrews.879@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-13T19:29:42.269Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "f5f50ae5-3e5f-48c6-8f1a-f4daa5afc525",
+      "name": "Charlotte Tan",
+      "email": "charlotte.w.tan@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-14T17:15:38.427Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "f00e48f1-8045-4edd-a4d9-a4a03e5d2750",
+      "name": "Emily Vickers",
+      "email": "eev928@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-14T20:11:21.957Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "47b33205-c245-42dd-9dee-89f24c1cfe37",
+      "name": "Pooven Pillay",
+      "email": "pooven12@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-15T02:21:15.510Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "8b7b04f6-4147-4d6d-9f99-bc00a63e70c9",
+      "name": "Kelsey Lisenbe",
+      "email": "kblisenbe@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Linkedin Job Wrapping",
+      "createdAt": "2026-04-15T02:59:40.039Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "7ae91d28-2fbc-4f4c-b8bb-ad999bbb39a7",
+      "name": "Mahvish Siddiqui",
+      "email": "mahvish.siddiqui@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-15T04:42:23.124Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "c055f716-d6ea-410b-aff7-5551ca779849",
+      "name": "Jakeb Howard",
+      "email": "jakebhoward@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-15T16:58:54.041Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "a2768454-f93c-415f-917e-978680bbfd59",
+      "name": "Sandhya Sridharan",
+      "email": "sandhya.sdhar@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-16T16:03:10.944Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "6dbae8d4-b9c8-44ab-ac3f-995d25769ff6",
+      "name": "Mamta Singh",
+      "email": "mamta_singh02@yahoo.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-04-22T03:28:05.986Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "12260333-23f4-4a86-939a-ea658217e021",
+      "name": "Divakar Bv",
+      "email": "divakarbv@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-22T13:20:35.941Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "e4464a24-2199-487a-b3d0-af68f9c99bab",
+      "name": "David Chan",
+      "email": "dchanx@outlook.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-04-23T01:33:39.324Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "53767f0d-3490-47d1-aace-d3e3cedb3f9a",
+      "name": "Neha Uikey",
+      "email": "nehauikey@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-23T05:51:35.345Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "8a3533af-a1c8-4d3d-8d9b-b91e3fe04f8e",
+      "name": "John Plesnarski",
+      "email": "chip.plesnarski@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-23T20:12:13.438Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "344cae12-045d-4679-9f40-bc12e3aca2cc",
+      "name": "Brandon Yen",
+      "email": "brandonaiumiyen@gmail.com",
+      "stage": "Team Interview",
+      "status": "Active",
+      "source": "Referral Link",
+      "createdAt": "2026-04-24T00:40:25.405Z",
+      "archiveReason": null,
+      "feedback": [
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-09T04:56:52.831Z",
+          "values": {
+            "4a1c5fbf-8a75-40dd-b264-7f706210d479": "Senior TPM with direct experience leading AI-driven automation and large cross-functional programs at Block and Lyft.",
+            "8640a825-8c6b-40ef-a366-fab5caea521e": "08039c57-6feb-4a4a-ba01-3721a2417b7e",
+            "9e80ab14-b370-453b-9076-d9d46e80e8cc": "d43c32aa-9998-4551-8bc9-084352fd82e1",
+            "44bbbe10-2bc0-4aa9-8fa4-284623eb0a59": "f53b7ece-5f4e-41a8-8d79-b1deac2ce144",
+            "f92106a2-c43a-4c16-b4e4-feb71196b011": "0b0c9a4d-eb32-4b27-80c3-3b8fa8cd48c1",
+            "overall_recommendation": "3",
+            "9295a80c-3917-44ee-b759-2f5ed0aad598": " - Actively interviewing with one other company, but only at the initial stages and not in final rounds yet.",
+            "13228a6e-51b1-4b56-8fc1-b9204fd119b2": " - Seeking growth, broader scope, and opportunities to work with different teams; also motivated by recent company-wide layoffs at Block.",
+            "1ed7997c-7c8d-4e93-8c91-bfb06a0e130a": "38f4bc24-d3d8-4745-b8dd-36210b57bafb",
+            "65908ba5-d7e0-4d5f-9a6f-a8da3f2b9dbc": "SEA",
+            "78f3ff6a-7874-4c3e-b212-34fac24a82d2": "Specific Technical Experience:\n\n - Led AI for Customer Success program at Block, introducing automation into internal tooling for customer success and account management, resulting in significant operational savings and improved metrics (average handling time, CSAT) (06:30, 07:10).\n\n - Built an internal mapping product at Lyft to replace Google Maps, leading to substantial cost savings and technical ownership over roadmap, user stories, and requirements.\n\n - Experience integrating AI into workflows, leveraging tools like Claude for MVP prototyping and workflow automation.\n\n - Regularly synthesizes and summarizes information from multiple sources (Slack, Google Docs) using AI, and builds reports for upward communication.\n\n - Uses data-driven approaches to identify operational pain points and create proposals for process/tooling improvements.\n\n - Experience with internal and external tooling, automation, and cloud-based solutions.\n\nManagement Experience - specific people management/direct reports:\n\n - Founded and led a TPM mentorship program at Block, including manual and automated mentor-mentee matching.\n\n - Actively mentored three junior TPMs, focusing on influence without authority and technical skills (e.g., system design, understanding engineering docs).\n\n - No direct report management discussed in the transcript; mentorship and program leadership highlighted.\n\nAI in TPM - How AI impacts the TPM role:\n\n - Views AI as a force multiplier for TPMs, enabling automation of manual workflows, improved information synthesis, and rapid MVP development for internal tools.\n\n - Uses AI for summarization, reporting, and building prototypes to address operational pain points and present solutions to leadership.\n\nExperience working with product teams:\n\n - Worked closely with product, engineering, and data science teams at both Block and Lyft.\n\n - Described collaborating with stakeholders to gather feedback, define requirements, and deliver impactful programs.\n\nExperience working on a consumer facing product:\n\n - Led the launch of Lyft’s Transit feature and internal mapping product, both directly impacting end users of the Lyft app.",
+            "a66c36af-f451-4a3b-a35b-78903729e7bf": " - Stated base salary expectation of at least $200,000, considering stock options are pre-IPO and not RSUs; open to 15% bonus on top.\n\n \n "
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-22T22:52:35.359Z",
+          "values": {
+            "3608f04d-25a2-40db-a669-899557a98eb3": "Smart, structured candidate who gave the right answers to every question. The open question is whether he's the right fit for this specific role or better suited for another. Definitely worth moving forward to find out.",
+            "b68aae58-38f8-45da-bfb0-43c1b783fc86": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "7cbe7b0b-f2f1-4459-96c7-278f56b9aa05": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "ddf281a7-dfec-423d-8036-c34e3e37196b": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "96fabe0f-53d9-4c6c-8158-c2b69b3368a6": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "76a91e13-bfc9-457f-8760-6c9dc0cd66d3": "See below",
+            "ef797525-33f7-4163-b509-86c8454b31e7": "STRENGTHS\n\nFraming and structure. Brandon consistently led with a brief theoretical framing before diving into specifics, making it immediately clear he understood what was being asked before answering it. It made every answer feel precise and grounded, and never once felt like stalling.\n\nPeople development instincts. He was the first interviewee to actually articulate the distinct growth dimensions for a TPM (program sense, business acumen, leadership influence, and technical depth) and used that framework to structure his coaching example. The instincts are clearly there even without formal management experience.\n\nProduct and engineering fluency. Brandon spoke intelligently about the product/eng dynamic: PMs tend to want to test and iterate broadly, while engineers prefer a narrower scope they can execute well. His approach, working with product to prioritize asks so the team could still explore a few high-conviction options, showed real maturity in navigating that tension without flattening it.\n\nAI perspective. His framing, that the bottleneck for development is shifting away from engineers, and that anyone can build now, including TPMs, was sharp and original. He backed it up with a compelling example: building a tool that allowed customers to troubleshoot issues with AI assistance before being routed to a support agent, saving significant time on customer support calls. Practical, specific, and differentiated.\n\n\nTHINGS TO NOTE\n\nNo formal people management experience. Brandon has never been a direct people manager, which is worth flagging. That said, he was a founding member of the TPM mentorship community at Block and gave compelling examples of developing peers. The instincts seem strong here, even if the formal experience isn't there yet.\n\nMost recent role is internal/operational. His recent work has been less direct-to-consumer. He does have D2C experience earlier in his background, and we should encourage him to lean on those examples in future rounds with the team.\n\nWorth considering for the D&A/CBS role. If Brandon turns out not to be the right fit for the Premium TPM role, he'd be a strong candidate for the D&A/CBS opening. His data-focused approach and systems thinking feel well-suited for that context.",
+            "overall_recommendation": "3"
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-26T21:33:29.426Z",
+          "values": {
+            "3608f04d-25a2-40db-a669-899557a98eb3": "Strong executor, seems to have decent strategic instincts ",
+            "b68aae58-38f8-45da-bfb0-43c1b783fc86": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "7cbe7b0b-f2f1-4459-96c7-278f56b9aa05": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "ddf281a7-dfec-423d-8036-c34e3e37196b": "80f13c8f-38ca-4838-b58a-8ab25db90b92",
+            "96fabe0f-53d9-4c6c-8158-c2b69b3368a6": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "76a91e13-bfc9-457f-8760-6c9dc0cd66d3": "Showed solid evidence of navigating ambiguity and driving clarity in unstructured environments. Without a product team in place, he independently owned PRD-level documentation and proactively defined the TPM/PM boundary before it became a friction point — drafting a formal proposal rather than waiting for conflict to surface. Used an impact/effort framework to advocate for a direction on a product decision outside his direct scope, which shows initiative and comfort influencing without authority.",
+            "ef797525-33f7-4163-b509-86c8454b31e7": "Big company background only (Block, Lyft) — worth probing for adaptability to a smaller, faster-moving environment if that's a concern. Strong storytelling and self-awareness about his role; he articulates the TPM/PM split clearly and has a sensible model for ownership. Data-minded when pushing for direction, which is a good sign. The one gap: communication upward was harder to get concrete examples on. He referenced a \"3 Ps\" framework and knows to lead with business impact, but the depth of his upward/outward communication style wasn't fully fleshed out.",
+            "overall_recommendation": "3"
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-27T23:10:54.270Z",
+          "values": {
+            "overall_recommendation": "3"
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-07-01T21:27:33.550Z",
+          "values": {
+            "f48381d7-789d-4d09-8b83-2890240d7eb7": "Not enough depth or experience from Brandon",
+            "39690672-9094-4293-bda8-96229a41ba1e": "80f13c8f-38ca-4838-b58a-8ab25db90b92",
+            "2d9a8254-a843-4e04-9e9f-cfe96d03d9c5": "80f13c8f-38ca-4838-b58a-8ab25db90b92",
+            "7694c681-1ffe-4dd6-9c9c-821f1241d8a3": "80f13c8f-38ca-4838-b58a-8ab25db90b92",
+            "9e9021f0-2942-4ae3-8021-b9f9cfcf3f56": "80f13c8f-38ca-4838-b58a-8ab25db90b92",
+            "170cf718-e685-433f-9fe4-493a77296d6c": "Brandon needed prompting to give an example for every single question. Even after prompting for more information, reframing the question, and asking for result impact he would answer generically.\n\nHe gave the same example in different questions and he never fully answered by follow-up questions. In response to a question about a cross-functional project and establishing a cohesive team environment, he went straight into assuming what each role typically wanted for a long time without specificity. He couldn't describe the problem, business impact, his role, and what was motivating the behavior.",
+            "172726e8-60ef-4d1a-999e-16e4181444ad": "Brandon's example about mentoring felt shallow for example having TPMs work in his C-Ops tooling support portfolio. After several follow-ups about how he worked with the people in his portfolio, he kept anchoring on giving people work relevant to the business objectives. Very little management perspective or experience.\n\nOverall he seemed stuck in role dynamics at his previous roles and gave very broad assumptions on how engineering, product, and TPM work together in addition to D&S and leadership. It felt reductive without looking for opportunity. Any examples of resolving conflict were dismissed as \"this was solved because I wrote a proposal\" in the motivating team through a challenging period.\n\nThe question and answer period at the end felt odd like he was trying to bargain for frank answers about the role, career growth, and inter role dynamics. It didn't seem like he is ready for this role, understands the postitive upside of this role, and is stuck in the old company dynamics.",
+            "overall_recommendation": "2"
+          }
+        }
+      ]
+    },
+    {
+      "applicationId": "88ffcf56-cdc3-49f4-baa0-5bbc7e9ca2d6",
+      "name": "Krishnamurthy Sriram",
+      "email": "rham.sriram@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-24T02:42:25.386Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "b0bb4a5f-5be4-40dc-8897-67ced56d955a",
+      "name": "Harvey Kamionka",
+      "email": "hakamionka@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-25T22:32:58.635Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "a8106b2a-ca57-45e1-b4fe-1160743f017c",
+      "name": "Sondrea Smith",
+      "email": "smith.sondrea@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-27T00:56:57.324Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "4a2fbd90-44ea-49d3-bf24-6aa8c053124b",
+      "name": "Jaspreet Singh",
+      "email": "jsparry07@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-28T16:01:33.074Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "a48b4af2-c639-4130-b228-493783f06bbc",
+      "name": "Brenda Quan",
+      "email": "brendakayquan@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-04-29T20:30:08.883Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "334e6840-2d41-4fac-af31-b6ef864ba61f",
+      "name": "Mike Johnston",
+      "email": "mjohnstonresume@pm.me",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-04-30T18:51:30.288Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "32925790-dda4-4a05-bb21-896bdee86779",
+      "name": "Jon Bach",
+      "email": "jbtestpilot@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-05-02T20:32:05.090Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "f4905d1b-8f3d-4815-888f-f070a851d5e0",
+      "name": "shashi iyer",
+      "email": "shashikaushik@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-05-02T22:11:58.052Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "eb9e868f-ab10-4792-adda-31435cb0f80d",
+      "name": "Kami Talebi",
+      "email": "Kami.Talebi@icloud.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-05-04T13:50:23.338Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "a77f2f48-ee6c-4cc1-bda6-fcfea82acaa3",
+      "name": "Ryan Rubin",
+      "email": "rubinryand@gmail.com",
+      "stage": "Secondary Review",
+      "status": "Lead",
+      "source": "Applied",
+      "createdAt": "2026-05-04T22:49:52.832Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "26b8ca23-f624-4482-a6fe-f0e576d55cae",
+      "name": "Christopher Sloyer",
+      "email": "sloyer.chris@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-05-07T20:19:55.623Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "117b8b83-d039-4550-8ef8-bb6360f0f701",
+      "name": "Alicia Pinkard",
+      "email": "ajpinkard@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Indeed Listings",
+      "createdAt": "2026-05-09T18:53:11.479Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "0977c9f8-635b-4521-a2b0-13543db01027",
+      "name": "Shivankush Aras",
+      "email": "shivaras108@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-05-12T13:46:36.889Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "87edef43-b0ed-4719-b7a4-7f59300d5560",
+      "name": "Lauren Bernstein",
+      "email": "laurenbernstein11@gmail.com",
+      "stage": "Case Study/Presentation",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-05-19T02:13:15.455Z",
+      "archiveReason": null,
+      "feedback": [
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-05-29T18:34:04.507Z",
+          "values": {
+            "4a1c5fbf-8a75-40dd-b264-7f706210d479": "Strong 3, possible 4. Extensive technical program management experience in SaaS and product engineering environments, with hands-on and leadership roles across multiple organizations.",
+            "8640a825-8c6b-40ef-a366-fab5caea521e": "08039c57-6feb-4a4a-ba01-3721a2417b7e",
+            "9e80ab14-b370-453b-9076-d9d46e80e8cc": "d43c32aa-9998-4551-8bc9-084352fd82e1",
+            "44bbbe10-2bc0-4aa9-8fa4-284623eb0a59": "f53b7ece-5f4e-41a8-8d79-b1deac2ce144",
+            "f92106a2-c43a-4c16-b4e4-feb71196b011": "e810d389-fef4-4f7e-8311-4fe449d89aa7",
+            "overall_recommendation": "3",
+            "9295a80c-3917-44ee-b759-2f5ed0aad598": " - Candidate is early in the interview process and is just starting to explore opportunities, not far along with other companies yet.",
+            "13228a6e-51b1-4b56-8fc1-b9204fd119b2": " - Interested in the player/coach model, continuing in SaaS, and excited about combining hands-on work with people management; values the opportunity to work at a smaller, AI-forward company and build on prior experience in similar environments.",
+            "1ed7997c-7c8d-4e93-8c91-bfb06a0e130a": "38f4bc24-d3d8-4745-b8dd-36210b57bafb",
+            "65908ba5-d7e0-4d5f-9a6f-a8da3f2b9dbc": "LAX",
+            "78f3ff6a-7874-4c3e-b212-34fac24a82d2": " - Specific Technical Experience:\n   \n   - Led technical program management for large-scale product engineering organizations (e.g., 2,500+ person org at Block/Square).\n   \n   - Managed and delivered complex cross-functional software implementations, including new product development, platform migrations, and international expansions (e.g., \"we were essentially responsible for any of the largest, most like cross functional, cross team software implementations\" (04:38), \"expanding into a new market...very time crunched international expansion\" (10:02)).\n   \n   - Deep experience in strategic planning, roadmapping, and process improvement for product and engineering teams.\n   \n   - Extensive collaboration with product, engineering, design, and data science; emphasizes objective, business-focused decision-making.\n   \n   - Has worked in both startup and large company environments, adapting to various levels of process and structure.\n\n - Management Experience - specific people management/direct reports:\n   \n   - Managed and coached teams of TPMs, including leading a team of 10 TPMs at Block/Square; has held management roles for at least the past eight years, always combining management with individual contributor work.\n\n - AI in TPM - How AI impacts the TPM role:\n   \n   - Used AI daily for efficiency (e.g., synthesizing data, drafting communications, automating workflows); built custom AI tools; sees AI as a force multiplier for TPMs and organizations; excited about scaling AI-driven processes and integrating AI into program management at both individual and org-wide levels.\n\n - Specific work with product management teams\n   \n   - Partnered closely with product management teams, emphasizing a collaborative, objective approach focused on business and user needs rather than aligning solely with engineering or any single function.\n   \n   - Provided a detailed example of working with product to deliver a time-sensitive international expansion, where candidate advocated for product priorities and negotiated with engineering to deliver a critical feature by launch, even if it required a temporary, non-optimal technical solution (\"product came in, they told us what we had to do and ultimately I made sure that the engineering team was still able to deliver that on time\" (10:02)).\n   \n   - Described regular collaboration with product and design partners within squad structures, highlighting the necessity of cross-functional teamwork for consumer-facing product development (\"we have to work hand in hand with our product and design partners...we can't get work done without each other\" (07:51)).\n   \n   - Stressed that technical program management should anchor on customer and business needs, acting as a neutral party to drive the best outcomes for the overall program.",
+            "a66c36af-f451-4a3b-a35b-78903729e7bf": "$200k"
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-12T19:00:46.224Z",
+          "values": {
+            "3608f04d-25a2-40db-a669-899557a98eb3": "Very strong, well-rounded candidate across all key dimensions, with a few notes/feedback. Move to the panel round.",
+            "b68aae58-38f8-45da-bfb0-43c1b783fc86": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "7cbe7b0b-f2f1-4459-96c7-278f56b9aa05": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "ddf281a7-dfec-423d-8036-c34e3e37196b": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "96fabe0f-53d9-4c6c-8158-c2b69b3368a6": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "76a91e13-bfc9-457f-8760-6c9dc0cd66d3": "See below",
+            "ef797525-33f7-4163-b509-86c8454b31e7": "Strengths\n\nManaging through chaos. A compelling example. She joined Block mid-stride and Covid created an immediate crisis: an e-commerce feature for online selling that was going to take four months needed to ship in two weeks, with sellers suddenly dependent on pickup and delivery. Lauren was clearly operating across both product and engineering, surfacing risks, managing dependencies, and keeping the focus on business priorities rather than just operational ones. Exactly the kind of example we're looking for.\n\nProduct and engineering partnership. She spoke fluently about the natural tension between product optimizing for time to market and engineering optimizing for the right technical solution. Her specific example (identifying the biggest launch risk as too much parallel eng work creating broken flows, and rallying the team around business outcomes and user experience to create a sense of shared purpose) showed real cross-functional instinct and maturity.\n\nPeople development. A nuanced coaching example. Her TPM had been set up to fail, dropped into a team that had never worked with a TPM, saddled with unrealistic expectations around owning the full project portfolio and doing heavy admin work. But Lauren also identified what the TPM themselves needed to change: being more vocal, operating from a strategic driver POV rather than a reactive one. She got to the root cause, moved them to a better-suited part of the org, and saw a remarkable turnaround. The combination of systemic diagnosis and individual coaching is the right instinct.\n\nAI and the future of the role. Strong answer: spoke to automating repetitive work to free up judgment, and backed it up with a concrete example of building a summary dashboard for ongoing programs.\n\nFlags to Address\n\nProcess simplification example missed the mark. She started well, describing a burdensome annual planning process that created false precision and wasted effort. But rather than describing how she removed or simplified it herself, the story turned into: the leader who created the process left, the company removed it, chaos ensued, and Lauren added a new lightweight quarterly planning cadence. Everything in the example made sense, but it's not actually an example of Lauren proactively simplifying or removing process: it's an example of her adding process back after someone else removed it. We should encourage her to find an example where she was the one to cut overhead, or where she enabled a more flexible and adaptive approach in partnership with other teams. In our role, showing that we don't just add overhead but can actively remove it is an important signal.\n\nManagement approach had limits. Defaulting to moving her TPM to a better-suited team worked in context, but that option won't always exist. Sometimes you have to make it work with the stakeholders you have, and it would be good to hear examples of that. One other note: her framing of a good TPM goal as \"this program would fall apart without you\" is worth gently pushing back on. That's a single point of failure, not a success. Our goal should be to make programs organized enough that they can run without us, so we can hand them off and move to the next most complex challenge.\n\nSummary\n\nLauren is a strong candidate with real range: strategic, execution-oriented, and good with people. The flags are there but addressable. Excited to see her in the panel round.",
+            "overall_recommendation": "4"
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-23T21:14:10.922Z",
+          "values": {
+            "d2233257-8446-4b33-a5ac-2cb1a794310e": "Strong Four. Candidate has clear breadth of experience across complex and highly change-prone program spaces. Had plenty of examples of high stakes pivots and navigating partnership with Sr. LT.",
+            "1a1a785d-e9a5-4192-8f72-18e50a08a279": "5a6a6a71-6ada-4b47-9c03-88d08d9f8357",
+            "d074c7ed-c499-4e26-8609-f11aa211cb08": "5a6a6a71-6ada-4b47-9c03-88d08d9f8357",
+            "9dc5d320-6fd6-4d3a-a856-824d7403e058": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "bcca4e48-fa23-477a-86d5-9ab51d924bac": "5a6a6a71-6ada-4b47-9c03-88d08d9f8357",
+            "d0f34199-36a4-4c7f-a6e7-12a748bfc2ad": "Candidate demonstrated multiple examples of GRIT, inclusive of stepping into a high-risk program space within the span of their onboarding at a new company. They were able to walk through how they built credibility quickly, were able to influence a diverse set of stakeholders while building rapport with executive LT and implementing new solutions to get Square’s ecommerce up and running in <2 weeks from zero-to-one.",
+            "f9caf008-f315-435e-b231-b4927ac5739e": "Extremely well rounded candidate with ample examples of leadership, navigating complex programs, and ensuring bottoms up and tops down rigor was maintained throughout. Candidate was able to also clearly discuss examples of player/coach execution, inclusive of how they were able to navigate competing priorities while anchoring primarily on business and customer outcomes. Multiple clear examples of influencing through the lens of business priorities and maintaining alignment across resistant stakeholders via data.",
+            "overall_recommendation": "4"
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-23T22:23:48.331Z",
+          "values": {
+            "f48381d7-789d-4d09-8b83-2890240d7eb7": "Great Candidate",
+            "39690672-9094-4293-bda8-96229a41ba1e": "5a6a6a71-6ada-4b47-9c03-88d08d9f8357",
+            "2d9a8254-a843-4e04-9e9f-cfe96d03d9c5": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "7694c681-1ffe-4dd6-9c9c-821f1241d8a3": "5a6a6a71-6ada-4b47-9c03-88d08d9f8357",
+            "9e9021f0-2942-4ae3-8021-b9f9cfcf3f56": "5a6a6a71-6ada-4b47-9c03-88d08d9f8357",
+            "170cf718-e685-433f-9fe4-493a77296d6c": "Lauren's most comprehensive example was launching new square products in European markets. This crossed around 10 different engineering teams, GTM, Tax, Legal and other partners. This was the first time expanding into other markets and she was the TPM driving the project and had hard deadlines. Some of the TPM efforts that had outsize suffess in her opinion were\n\n - Bringing the engeers on different teams separate, yet related initiatives to hold accountable\n\n - sending weekly status updates to executives\n\nPractices that needed to evolve along with the project\n\n - Including wireframe mock up reviews in addition to written word requirements especially in 0 -> 1 launches.",
+            "172726e8-60ef-4d1a-999e-16e4181444ad": "Lauren showed strong signs across the behavioral and leadership axis'. I would be really happy to have her on the team.\n\nThe examples were not STAR format and needed additional prompting to get to the specific results and bounds of her answers; however, the philosophy and general approach to each was comprehensive of the steps I value in the TPM role. She had insights into what is needed culturally within a team to then be go into their respective areas. She also went through examples related to adapting to the environment, how to bring intentionalty to fostering culture in a remote environment, helping her team navigate frequent and significant strategic directions at Block, when to engage marketing with product launches, and launching square products in europe across an xfn team.",
+            "overall_recommendation": "4"
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-23T23:20:32.760Z",
+          "values": {
+            "5e6827cd-ae8b-4bae-aced-89c12a66caee": "Strong operational instincts and real scale experience, but the product partnership framing was facilitation-heavy and there's no clear read on whether she thrives at the IC level without a large team.",
+            "73ee6dd3-48f6-4c7e-a946-78461005e02c": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "985f345c-1e02-4a4b-940d-329946ecdf34": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "a4b2b42a-742f-46f6-8d1f-d35cb9f45148": "80f13c8f-38ca-4838-b58a-8ab25db90b92",
+            "7035f22d-76e3-42d2-bf3c-d5b061d6b745": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "c05e26ab-1fc4-46e2-9a7e-32a4ba748de7": "The COVID ecommerce pivot showed results-focus under pressure — she drove a weeks-long ship by extending existing fulfillment infrastructure rather than building from scratch, and maintained daily exec updates throughout. The early-career failure example was the strongest team-focus moment: she named herself as the root cause of the executive sponsor conflict, identified a specific behavioral gap, and applied the learning across every program since.",
+            "3072b686-c78b-4120-8bca-aac286269058": "Lauren came in with strong upward communication instincts and credible change management experience at scale. The main concern for this round is her framing of the product partnership role — she described it as \"neutral and objective,\" which positions her more as a facilitator than someone who actively empowers product teams to move better or differently. Her three main stories were all reactive (a global crisis, a top-down reorg, a post-acquisition integration), which leaves the proactive operating mode unverified. This seems to be a pattern with candidates - and it comes through in the presentations too. Are we doing something wrong here or are expectations mismatched?\n\nThere's also an open question on team size fit: her biggest examples involved managing 10 TPMs across a large org, and while she expressed enthusiasm for going small, she didn't give a concrete picture of what she finds energizing at the individual contributor level. Worth probing both in a follow-up.\n\nHappy to do the presentation though and see how she does! I think she's a strong 3.",
+            "overall_recommendation": "3"
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-24T00:04:03.099Z",
+          "values": {
+            "e715f9b8-830a-4993-afe2-d586c181f922": "Leading candidate of the loop on this competency, with creator-level operating-model substance at $1B+ scale and the strongest in-room TPM-craft demonstration.",
+            "d914a464-68fc-411e-81f2-8d3762f10e76": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "052e0e36-3aa6-4314-8fbb-a3122add257e": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "7b33e54c-1c61-46d1-96c1-d37aa4620f80": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "464d6a02-1a5a-4ce1-9b94-56234295892f": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "b110f169-da06-4d91-9eaf-e538807729ae": "Lauren's strongest GRIT examples were the Square R&D governance redesign, the printer-reliability OKR tiger-team intervention, and the absorbed TPM she coached through a reorg.\n\nOn the R&D governance, two executives came to her with a narrow ask for a shared planning tool after Block functionalized from 20 GM-led product groups into one engineering, product, and design org; she expanded the ask into a full tool-and-process change, moved the company from annual to quarterly planning, drafted exec-fronted communication so the org would read it as a leadership change rather than a TPM push, and invested in trainings and office hours to keep engineers' day-to-day workflow undisrupted.\n\nOn the printer-reliability OKR, she noticed flat progress despite multi-team effort, used the monthly OKR review forum to reframe the conversation away from default-resolve hope toward a structural tiger-team intervention, and the resulting conversation surfaced a different solution than the default path.\n\nOn the absorbed TPM, she diagnosed the specific gap (strong PM craft, no engineering confidence), built a three-prong coaching approach (shadowing senior TPMs, reframing the role toward active technical engagement, targeted self-learning), and progressively scaled the difficulty of the mentee's programs from low-risk starters to more complex work, culminating in the mentee finding her career path and landing a TPM offer in an engineering-focused role at another company.",
+            "6e78c927-1f76-4b5d-82d1-c3e7c7611d99": "My focus was on Eng Strategy & Execution, specifically: (1) higher-level vision and strategy, (2) bubbling project-level signal into an exec-level program health view, (3) anticipating Eng-org needs at the 1+ year horizon, (4) being a thought partner to Eng leaders, and (5) management.\n\nEvaluation Rubric: Each scenario-based question below was evaluated using a Red, Yellow, Green rubric:\n\n 1. Green: Strong signal. Concrete example with named context, clear ownership, explicit tradeoffs, and evolution or learning. Strategic opinion shows up, not just process.\n\n 2. Yellow: Acceptable but incomplete signal. Sound instincts or frameworks, but thin on specifics, or answered a nearby question rather than the one asked. Viewed as developmental rather than risky.\n\n 3. Red: Concerning signal. Abstract, deflects ownership, minimizes impact, or cannot produce a real example.\n\n\nQUESTION 1: OPERATING MODEL DESIGN UNDER STRATEGY\n\n\"At Block you architected Square's global R&D governance aligning $1B+ in annual investment across 1,500 engineers to business OKRs, and separately you developed the Block Engineering TPM Career Ladder across the company for 50+ TPMs. Pick whichever example you want and walk me through the decision: what was the situation that made this shape of program the right answer at that moment, how you arrived at it, and a year or two in, what did you know coming out the other side that you did not know going in?\"\n\nResult: Green\n\nShe picked the R&D governance work and grounded the diagnosis in a specific corporate moment. Block had operated as an \"ecosystem of startups\" with 20 different GM-led product groups, each with its own resourcing and P&L. Two years ago the company functionalized: merged the 20 groups into one engineering, product, and design org. The functionalization broke the implicit coordination model, and two executives came to her with a narrow ask (a shared planning tool to house all the roadmaps). Her strategic move was to expand the ask: just implementing a tool was not going to be enough, what they needed was a planning process around it. She moved the company from an annual to a quarterly planning cadence (her judgment was that 11-month-out predictions were no longer landing well as the industry accelerated). She launched the tool and process together, drafted exec-fronted communication so the org would not read it as a TPM-pushed change, and invested heavily in change management (trainings, office hours, Slack channels, FAQ) to keep engineers' day-to-day workflow undisrupted. Her retrospective: implementing process at scale requires repositioning your mental model from small-org buy-in to large-org change management, and accepting that you will not make everyone happy.\n\nKey positives:\n\n - Specific company-moment diagnosis (functionalization from 20 GM-led groups to one org broke the coordination model)\n\n - Real strategic-design choice (expand the tool ask into a tool-plus-process change, move to quarterly cadence, exec-fronted comms, change-management investment)\n\n - Explicit retrospective with a real lesson (mental-model shift required for large-org change vs small-org familiarity)\n\n - Creator-pattern work throughout (she expanded the scope, chose the cadence, designed the comms approach)\n\nWhat was less concrete:\n\n - The \"what alternatives did you consider and reject\" dimension was light. Why quarterly specifically (vs half-yearly), why this tool (vs others), and what she deliberately deprioritized did not surface explicitly.\n\n - The retrospective leaned defensive at the close (\"there are just going to be naysayers, that is part of the process\"). That is true, but it is a different shape from a specific lesson she would apply differently next time.\n\nThe strongest Q1 of the loop. Creator-level operating-model work at $1B+ scale with a clear diagnosis, named design choices, and a real retrospective. Adrian's Q1 was Yellow with Green elements; Ariela's was Yellow with the Fox-adaptation transparency; Lauren's is full Green.\n\n\nQUESTION 2: EXEC-LEVEL ROLLUP, TRANSLATING PROJECT SIGNAL\n\n\"Your resume describes designing and facilitating Product Execution Reviews, OKR Reviews, and Reliability Reviews at Square, establishing executive-level visibility into system health and goal tracking. Give me a concrete example of a program where a skip-level or exec was about to draw the wrong conclusion because of how status was being rolled up to them. What was the information gap, what did you change about the rollup, and what is now non-negotiable in how you report program health up?\"\n\nResult: Yellow leaning Green\n\nShe told the printer-reliability OKR story. Square serves restaurants, and back-of-house networking issues kept stalling order receipts from printing. The OKR was being tracked monthly, and the numbers were not moving. Leadership's implicit conclusion was that the existing org structure would resolve it as long as it stayed listed and tracked as an OKR. Lauren caught the pattern (flat progress despite people across multiple teams working on it) and used the OKR review forum to reframe the conversation: do we need to look at this structurally rather than expecting it to resolve itself? She proposed a tiger team (small team dedicated for a defined period, accepting that resources would have to come from other parts of the business). Product and others chimed in once the structural question was on the table (the competitive context around Toast as a restaurant-tech threat became part of the conversation), and the team landed on a different solution than the default-resolve path.\n\nKey positives:\n\n - Real named example with specific technical context (back-of-house printer reliability, networking issues, restaurant context)\n\n - Caught a default-optimism pattern in the rollup (exec implicit conclusion that the existing structure would resolve the OKR)\n\n - Used the exec review forum as a catalyst for structural rethinking rather than as a status read-out\n\n - Real outcome (the conversation sparked led to a different solution)\n\nWhat was less concrete:\n\n - The shape is adjacent to the question. The failure mode was less about a misleading rollup and more about exec implicit hope that tracking alone would resolve a stalled OKR. Lauren caught that hope and reframed it, which is real exec-comms judgment, but it is a different shape from Adrian's CFO Nelson story or Ariela's Motion Canvas value-units rebuild.\n\n - The \"what is now non-negotiable in how you report program health up\" dimension was not directly answered. The implicit non-negotiable (use OKR forums to prompt structural rethinking when progress is flat) is there but unstated.\n\nReal exec-comms judgment with a clean structural-intervention move. Yellow leaning Green because the question's failure-mode-rollup framing landed sideways rather than dead-center.\n\n\nQUESTION 3: BEING A THOUGHT PARTNER TO ENG, 1+ YEAR HORIZON\n\n\"Tell me about a time you saw a structural need in the engineering org 6 to 12 months before anyone else was flagging it. Maybe a capability gap, a platform risk, a team-shape problem, an org-design issue. How did you form the view, what did you propose, and how did the eng leadership receive it?\"\n\nResult: Green\n\nShe gave two examples that both hit the foresight dimension. The larger-scale one was an org-design call: Square's roadmap was product-dictated, and from conversations with engineers (including ICs, not just senior leadership) she developed the view that tech debt was accumulating because engineering-driven initiatives could not bubble up through the existing planning process. As she was designing the new quarterly planning process she brought this to the head of product and won an allocation in the roadmap for engineering-driven initiatives (tech debt, performance, reliability) that previously had no path. The smaller-scale one was an architecture-risk call: working on Square's international expansion into Ireland, France, and Spain, she identified the hard-coded address form as a refactor candidate, explicitly framed against a 6-to-12-month horizon (would the team accumulate more tech debt on the highest-revenue surface of the product if they expanded into new markets without refactoring first), and made the call with the tech lead to refactor before expanding rather than after.\n\nKey positives:\n\n - Two examples, both hitting the foresight dimension. The larger one is an org-design call (roadmap-process gap), the smaller one is a platform-risk call (architecture refactor before international expansion)\n\n - The smaller example explicitly named the \"6 to 12 months from now\" timeframe in her own words\n\n - Both forms-of-view came from her vantage point (engineer conversations for the larger; tech-lead conversation for the smaller) rather than being handed to her\n\n - Both produced real outcomes (engineering-driven roadmap allocation; pre-expansion refactor)\n\nWhat was less concrete:\n\n - The \"how did eng leadership receive it\" dimension was light on the larger example (agreement was reached but pushback dynamics were not described)\n\n - The \"have you been wrong about one of these\" probe was not asked, so the humility-and-learning dimension is unverified\n\nComparable to Adrian's platform-team CTO escalation and Ariela's Volumetric Capture hiring-constraint story. Green-band Q3 with two examples, which is more than any other candidate provided.\n\n\nQUESTION 4: PLAYER/COACH DEPTH\n\n\"You managed 10 TPMs at L5-L7 levels at Block and you built the Block Engineering TPM Career Ladder across the company for 50+ TPMs. Pick one specific TPM you hired or coached who grew significantly under you. Walk me through what you did, what you learned about your own coaching style, and how you think about the difference between managing engineers and managing a TPM team. Then tell me how the experience of building the Career Ladder changed how you coach individual TPMs day-to-day.\"\n\nResult: Green\n\nShe told the story of a TPM she absorbed during a reorg. The TPM had a strong program management background but had not worked closely with engineering before; the reorg put her in that position for the first time. Lauren's read of the gap was specific (strong PM craft, hardworking, good communicator, but no engineering confidence). Her response had three explicit prongs: (1) shadowing senior TPMs in engineering meetings to absorb how they navigated technical conversations, (2) reframing the role away from \"schedule meetings and take notes\" toward active engagement (helping make tradeoffs, surfacing risks engineers might see but not voice), and (3) targeted self-learning via trainings. She also scaffolded the work: started the mentee with smaller, lower-risk programs to build confidence, then progressively expanded scope. Outcome: the mentee just got a TPM offer at another company in an engineering-focused role, and told Lauren she had found her career path.\n\nKey positives:\n\n - Named mentee with named career outcome (offer at another company in an engineering-focused TPM role)\n\n - Specific three-prong coaching approach with rationale for each prong\n\n - Explicit reframing of the role away from logistics toward active technical engagement\n\n - Scaffolded difficulty progression as a deliberate coaching choice\n\nWhat was less concrete:\n\n - The engineer-vs-TPM management distinction in the question was not directly addressed. The mentee was a PM transitioning into TPM work, not the engineer-management dimension specifically.\n\n - The \"how did building the Career Ladder change how you coach individual TPMs day-to-day\" probe was not directly answered. The mentee story stood alone rather than connecting to the systemic work.\n\nReal coaching depth with a named mentee outcome. Tied with Ariela's Backup A for the strongest player/coach demonstration of the loop, though Ariela explicitly addressed the engineer-vs-TPM framework while Lauren addressed PM-to-TPM transition.\n\n\nADDITIONAL THOUGHTS\n\nHer intro was clean and well-structured, hitting the relevant arc. Time-and-coverage management was strong throughout: she stayed within reasonable depth on each answer and did not run long the way some prior candidates did. Her examples were drawn from real situations she had lived; whether each example was comprehensive against the specific question dimensions was a different matter, but the underlying experience was real.\n\nThe candidate-question segment was the strongest in-room moment for the TPM-craft dimension. After her first question and my answer, she took what I said and reflected it back in TPM-lens at a high level, teasing apart the bottlenecks and problematic areas I had described. That kind of real-time synthesis of an engineering leader's strategic concerns into TPM-craft problems she would own is exactly the work a Senior Manager TPM does at this level, and she did it unprompted in a single conversational beat.\n\nShe came across as confident, professional, and mature. I could see myself working with her and her working well with the rest of my team, which is the strongest in-room fit signal I have flagged for any candidate in this loop.\n\nSoft body-language observation worth noting and not over-reading: she appeared slightly deeper in thought before answering Q2 than before Q1, and moved into Q3 with visible eagerness. The pattern is consistent with the per-question rubric (Q2 landed sideways from the question center, Q3 landed cleanly), so the body language and the substance corroborate each other.\n\nThe implementer-vs-creator probe lands clearly on the creator side. Across her answers she described decisions she made, design choices she expanded, and structural moves she initiated, rather than describing processes she found and operated within. The \"we\" framing showed up but less heavily than in Adrian, Deep, or Jared. She was more comfortable saying \"what I did was...\" and \"I made sure to...\" than the average candidate in this loop, which made the individual ownership of design choices easier to read.\n\nOne concern worth flagging that I did not have time to probe directly. Lauren is coming from much bigger companies (Block/Square at $1B+ R&D scope across 1,500-engineer orgs), and Scribd is materially scrappier by design. We move fast, pivot, roll up sleeves as needed, and that hands-on energy is part of the engineering DNA here. Her most recent role at Block was leading 10 TPMs, which is closer to pure-manager scope than to the player/coach shape this role calls for. Her demeanor in the room was calm, stoic, and professional throughout, and none of her answers surfaced a moment of getting into the thick of things at the hands-on level. Every story she told operated at the strategic, structural, or coaching level rather than at the IC-execution level. This is partly intuition and could be over-reading a stoic communication style, but worth flagging because the player half of the player/coach framing is the half that is least obvious from her resume and least probed in my interview.",
+            "overall_recommendation": "3"
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-07-01T20:56:05.914Z",
+          "values": {
+            "overall_recommendation": "3",
+            "feedback": "This was just a prep call, but Lauren handled it well and asked all the right questions."
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-07-02T00:10:26.966Z",
+          "values": {
+            "overall_recommendation": "2",
+            "3d8f2226-5da1-4831-93d8-ce15d6cf6994": "Overall Impression\n\nLauren remains one of the strongest candidates we've seen from a structural and organizational standpoint. But flexibility and proactiveness are critical attributes for a TPM at Scribd, and the final round made clear she doesn't fully have it. Regretfully, a no.\n\nWhat Held Up\n\nThe presentation was organized, well-prepared, and easy to follow. Lauren clearly put in real work.\n\nWhere It Fell Short\n\nThe same core issue as her earlier rounds, amplified. The presentation followed a very classic, rigorous program structure from initiation to conclusion: well-executed, but without a distinct or original take. What was notably absent was any meaningful discussion of where she adapted, where she pulled back structure, or where she proactively shaped the direction of the program rather than responding to external inputs. This is exactly what I flagged directly with Lauren in a conversation ahead of the presentation: I was as specific and directive as I could be about the importance of showing flexibility and proactive shaping. She acknowledged it as good feedback. And then the presentation didn't reflect it. That gap is hard to explain away, and tells me she may not have truly operated this way in her previous roles, not just that she didn't communicate it well.\n\nThe AI slide was surprisingly thin. Given how much Lauren had spoken about working with AI, the \"now with AI\" slide at the end was underwhelming; basic ideas like summarizing reporting, alongside suggestions that were clearly out of scope for a TPM (like finding and addressing bugs, which sits with engineering). It didn't match the fluency she had implied earlier.\n\nQ&A solidified the concern. Lauren frequently referred back to the presentation rather than adding new thinking, and her answers felt defensive at times. The most telling moment was her response to Aroash's question on escalations. Aroash was likely probing for Lauren's proactiveness in surfacing issues and exercising judgment. Instead, Lauren interpreted the question as concern that she might be making too much noise, and oriented her answer around avoiding bothering leadership. When asked a follow-up (whether she wished she had escalated anything) she said no, and framed solving problems independently as a point of pride. That's the wrong instinct. Escalation, done well and at the right moment, is a tool, not a failure. The fact that she doesn't seem to see it that way is a meaningful flag.\n\nSummary\n\nLauren is genuinely strong on structure and organization. But the final round confirmed what earlier rounds hinted at: flexibility, proactive shaping, and knowing when to deviate from the plan aren't fully in her toolkit. For this role, that matters too much to overlook."
+          }
+        }
+      ]
+    },
+    {
+      "applicationId": "571300c9-bc11-4579-8ff8-c8598778b287",
+      "name": "Nidhi Chaudhary",
+      "email": "nidhi913@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Referral Link",
+      "createdAt": "2026-05-21T12:06:10.741Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "72be6c45-1e50-4622-bac1-0ba91b257fab",
+      "name": "Nidhi Jain",
+      "email": "jainnidhi7@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-05-27T00:47:39.725Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "0a601168-e48a-4378-b5bb-a7611eeff876",
+      "name": "Sheldon Stovall",
+      "email": "sheldon.stovall@gmail.com",
+      "stage": "Hiring Manager Interview",
+      "status": "Active",
+      "source": "Juicebox",
+      "createdAt": "2026-05-28T14:12:09.472Z",
+      "archiveReason": null,
+      "feedback": [
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-10T03:38:17.771Z",
+          "values": {
+            "4a1c5fbf-8a75-40dd-b264-7f706210d479": "Senior TPM with experience leading large-scale consumer-facing programs, market expansions, cross-functional delivery, operational excellence, and growing influence through mentorship and AI-driven process improvements.",
+            "8640a825-8c6b-40ef-a366-fab5caea521e": "08039c57-6feb-4a4a-ba01-3721a2417b7e",
+            "9e80ab14-b370-453b-9076-d9d46e80e8cc": "d43c32aa-9998-4551-8bc9-084352fd82e1",
+            "44bbbe10-2bc0-4aa9-8fa4-284623eb0a59": "f53b7ece-5f4e-41a8-8d79-b1deac2ce144",
+            "f92106a2-c43a-4c16-b4e4-feb71196b011": "e810d389-fef4-4f7e-8311-4fe449d89aa7",
+            "overall_recommendation": "3",
+            "9295a80c-3917-44ee-b759-2f5ed0aad598": " 1. Not actively pursuing a change due to dissatisfaction; stated he enjoys his current role at FanDuel.\n\n 2. No competing offers or deadlines currently in process.\n\n 3. Confirmed there is no rush on his side to complete the interview process.",
+            "13228a6e-51b1-4b56-8fc1-b9204fd119b2": " 1. Interested in Scribd's focus on AI and sees AI as a major part of the future of technology.\n\n 2. Excited by the opportunity to join a company with significant growth runway and make an immediate impact.\n\n 3. Attracted to the increased scope, responsibility, and opportunity to contribute to long-term company growth.\n\n 4. Interested in helping shape AI-powered products and organizational practices.",
+            "1ed7997c-7c8d-4e93-8c91-bfb06a0e130a": "38f4bc24-d3d8-4745-b8dd-36210b57bafb",
+            "65908ba5-d7e0-4d5f-9a6f-a8da3f2b9dbc": "ATL",
+            "78f3ff6a-7874-4c3e-b212-34fac24a82d2": " 1. Specific Technical Experience:\n    \n    - Senior TPM at FanDuel supporting consumer products across Sportsbook, Casino, and Cross-Sell initiatives.\n    \n    - Leads end-to-end delivery of strategic programs, serving as the coordination point between Product, Commercial, and Engineering teams.\n    \n    - Experience launching new regulated markets, including leading rollout planning and execution for Alberta following FanDuel's Ontario launch.\n    \n    - Builds business cases, defines program objectives, aligns stakeholders, translates requirements into engineering execution plans, and manages delivery through launch and operationalization.\n    \n    - Strong experience driving cross-functional initiatives involving executive leadership, commercial teams, product teams, engineering organizations, and operations.\n    \n    - Extensive operational excellence experience, including incident management, service management, operational health reporting, launch readiness, escalation processes, and support model design.\n    \n    - Experience defining operational structures, RACIs, support processes, and long-term ownership models for newly launched products and features.\n    \n    - Uses AI to automate incident reporting, operational communications, and organizational updates distributed through email and Slack.\n    \n    - Comfortable leveraging enterprise AI tools including Claude and ChatGPT.\n    \n    - Experience presenting program health, risks, incidents, and operational metrics to leadership forums and governance boards.\n    \n    - Demonstrated ability to influence prioritization by building business cases and aligning engineering teams around customer impact and business outcomes.\n    \n    Examples discussed:\n    \n    - Rewards Club / Rewards Hub initiative (07:37–09:13): Led business case development, requirements definition, engineering coordination, delivery planning, testing, launch readiness, and operational support processes.\n    \n    - Alberta market expansion (11:30–12:50): Led rollout of FanDuel's product and technology stack into a newly legalized market, including organizational planning, resource allocation, and scalability considerations.\n    \n    - Incident Management & AI Automation (18:12–20:20): Uses AI to automate operational reporting and communications related to incidents, platform health, and organizational awareness.\n\n 2. Management Experience:\n    \n    - No formal direct reports discussed.\n    \n    - Currently mentors and coaches junior Product Managers and Program Managers.\n    \n    - Provides career development guidance, promotion advocacy, TPM best practices, and cross-functional leadership coaching.\n    \n    - Sits in influential leadership and governance functions, including service management and incident review boards.\n    \n    - Demonstrated interest in TPM talent development and building TPM career pipelines.\n\n 3. AI in TPM – How AI Impacts the TPM Role:\n    \n    - Views AI as a critical component of the future of technology organizations.\n    \n    - Actively uses Claude and ChatGPT in daily work.\n    \n    - Leverages AI to automate incident reporting, communications, and operational updates.\n    \n    - Believes AI should be used to optimize TPM productivity and improve organizational efficiency.\n    \n    - Expressed enthusiasm for helping organizations adopt AI-driven workflows and improve operational output through AI tooling.\n\n 4. Consumer Product Experience:\n    \n    - Significant consumer product experience through FanDuel's Sportsbook, Casino, Cross-Sell, Rewards, and Market Expansion initiatives.\n    \n    - Works on products focused on customer acquisition, engagement, retention, loyalty, and user experience.\n    \n    - Experience evaluating customer impact, market opportunities, feature adoption, and business outcomes.\n    \n    - Demonstrated customer-centric thinking when discussing prioritization, market localization, rewards programs, and customer-facing feature launches.",
+            "a66c36af-f451-4a3b-a35b-78903729e7bf": " 1. Indicated interest toward the upper end of the compensation range.\n\n 2. Stated compensation is important but is more focused on scope, growth opportunity, impact, and expanded responsibility.\n\n 3. No specific compensation target provided"
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-30T00:00:55.532Z",
+          "values": {
+            "3608f04d-25a2-40db-a669-899557a98eb3": "Smart candidate who had a good interview but likely isn't the right fit ",
+            "b68aae58-38f8-45da-bfb0-43c1b783fc86": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "7cbe7b0b-f2f1-4459-96c7-278f56b9aa05": "80f13c8f-38ca-4838-b58a-8ab25db90b92",
+            "ddf281a7-dfec-423d-8036-c34e3e37196b": "80f13c8f-38ca-4838-b58a-8ab25db90b92",
+            "96fabe0f-53d9-4c6c-8158-c2b69b3368a6": "dc7c2338-c510-454a-9a5f-e3f2787a6b62",
+            "76a91e13-bfc9-457f-8760-6c9dc0cd66d3": "See below",
+            "ef797525-33f7-4163-b509-86c8454b31e7": "Sheldon – Interview Feedback\n\nOverall Impression\n\nSmart, well-prepared candidate with good TPM instincts, but operating at a level below what this role requires. Not the right fit for the Senior Manager position, though worth keeping in mind for the CBS/D&A TPM role.\n\nStrengths\n\nSheldon interviewed well. Responses were structured, time-bound, and always on topic: never rambled, never went long. He came prepared with good questions and a clear understanding of the role. He also came across as genuinely passionate about the TPM craft, with the sense that he's reflected on it beyond his day-to-day, which is an appealing quality.\n\nWithin his program experience, he demonstrated solid collaboration instincts: a good example of driving buy-in between product and engineering on mobile feature prioritization showed real judgment and cross-functional maturity.\n\nWhere He Fell Short\n\nDepth over breadth. The bulk of Sheldon's recent experience seems to be centered on a single program: launching FanDuel in a specific Canadian province. He has accumulated good instincts within that context, but this role requires someone managing a portfolio of programs and building process and systems across a wide area of ownership. That's a different operating model, and it wasn't evident he's worked at that level.\n\nNo formal management experience. He has coached more junior TPMs, and the examples he shared showed good judgment, particularly around helping early-career TPMs evolve from being glorified assistants to driving real value. But the seniority gap between who he's coached and who he'd be managing at Scribd is significant.\n\nOverall operating level. The cumulative impression was of a strong senior TPM rather than a senior manager. The skills are real, but they're calibrated to a different scope.\n\nRecommendation\n\nDon't move forward on this role, but be explicit with Sheldon that this is a scope and role/level mismatch, not a reflection of his ability. He could be a strong fit for the CBS/D&A TPM role (P4), and we should let him know we may reach out for that if he's open to it.",
+            "overall_recommendation": "2"
+          }
+        }
+      ]
+    },
+    {
+      "applicationId": "d0cb3e5d-b745-4b68-bac0-7a411ca1d757",
+      "name": "Rudy Caguiat",
+      "email": "rgcaguiat@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Juicebox",
+      "createdAt": "2026-06-01T16:54:04.812Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "f709912d-089c-4e4f-938e-2e256e766dad",
+      "name": "Anna Bressi",
+      "email": "anna.bressi@gmail.com",
+      "stage": "Team Interview",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-06-04T21:47:45.045Z",
+      "archiveReason": null,
+      "feedback": [
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-22T18:41:35.410Z",
+          "values": {
+            "4a1c5fbf-8a75-40dd-b264-7f706210d479": "Senior TPM with extensive experience leading consumer-facing product and technical programs, strong cross-functional partnership, and hands-on AI adoption in program management.",
+            "8640a825-8c6b-40ef-a366-fab5caea521e": "08039c57-6feb-4a4a-ba01-3721a2417b7e",
+            "9e80ab14-b370-453b-9076-d9d46e80e8cc": "d43c32aa-9998-4551-8bc9-084352fd82e1",
+            "44bbbe10-2bc0-4aa9-8fa4-284623eb0a59": "f53b7ece-5f4e-41a8-8d79-b1deac2ce144",
+            "f92106a2-c43a-4c16-b4e4-feb71196b011": "e810d389-fef4-4f7e-8311-4fe449d89aa7",
+            "overall_recommendation": "3",
+            "9295a80c-3917-44ee-b759-2f5ed0aad598": " - Actively interviewing at two other companies: final round at Pinterest on Monday, and second stage at Coupang (five-round process, early stage).\n\n - No offers currently on the table; expects Pinterest process to take at least three weeks for an offer, Coupang will take longer (five rounds) ( ).",
+            "13228a6e-51b1-4b56-8fc1-b9204fd119b2": " - Looking for a role with a focus on technical and product management, leveraging experience in AI, program strategy, and cross-functional leadership.\n\n - Interested in roles that combine strategy and execution, and that value mentorship and program ownership ( ).",
+            "1ed7997c-7c8d-4e93-8c91-bfb06a0e130a": "38f4bc24-d3d8-4745-b8dd-36210b57bafb",
+            "65908ba5-d7e0-4d5f-9a6f-a8da3f2b9dbc": "SEA",
+            "78f3ff6a-7874-4c3e-b212-34fac24a82d2": " - Specific Technical Experience:\n   \n   - Has managed end-to-end delivery of complex, cross-functional programs in both consumer-facing and technical infrastructure spaces ( ).\n   \n   - Experience working with engineering teams of various sizes (from small ML/GenAI teams to full engineering orgs), including direct collaboration with SVP-level leaders ( ).\n   \n   - Led programs involving AI/ML integration, product quality, and customer feedback systems ( ).\n   \n   - Drove process automation (e.g., reducing JIRA triage from 8 hours to 30 minutes per week using AI tooling) ( ).\n   \n   - Hands-on in technical standups, T-shirt sizing, and long-term planning ( ).\n\n - Management Experience - specific people management/direct reports:\n   \n   - Managed teams of program and project managers (e.g., at SmugMug, led a team of five), and at Remitly mentored 35 TPMs.\n   \n   - Has direct management and coaching experience, including mentoring TPMs to adopt new tools and approaches ( ).\n\n - AI in TPM - How AI impacts the TPM role:\n   \n   - Has driven AI adoption by modeling usage, creating educational materials, and building AI-driven tools to automate manual processes.\n   \n   - Encourages TPMs to identify manual processes and use AI to free up time for higher-value work.\n   \n   - Believes leaders should use AI themselves to set an example and guide effective adoption ( ).\n\n - Consumer Product Experience:\n   \n   - Most roles have been in consumer-facing product environments, with some experience in technical infrastructure (notably at Amazon in Offensive Products).\n   \n   - Experience includes launching new consumer features, improving customer experience, and working with product/engineering teams on end-user impact ( ).",
+            "a66c36af-f451-4a3b-a35b-78903729e7bf": " - Open to hearing Scribd's pay band; aware that compensation varies by company size (e.g., Amazon/Pinterest vs. Scribd).\n\n - Confirmed that Scribd's range ($125K–$217K base, 15% bonus, significant equity) is in line with expectations and comparable to Pinterest ( ).\n\n \n "
+          }
+        },
+        {
+          "interviewer": null,
+          "stage": null,
+          "overall": null,
+          "submittedAt": "2026-06-30T21:49:19.520Z",
+          "values": {
+            "3608f04d-25a2-40db-a669-899557a98eb3": "One of the best candidates we've seen for the role so far. Strong yes for the next round. ",
+            "b68aae58-38f8-45da-bfb0-43c1b783fc86": "5a6a6a71-6ada-4b47-9c03-88d08d9f8357",
+            "7cbe7b0b-f2f1-4459-96c7-278f56b9aa05": "5a6a6a71-6ada-4b47-9c03-88d08d9f8357",
+            "ddf281a7-dfec-423d-8036-c34e3e37196b": "5a6a6a71-6ada-4b47-9c03-88d08d9f8357",
+            "96fabe0f-53d9-4c6c-8158-c2b69b3368a6": "5a6a6a71-6ada-4b47-9c03-88d08d9f8357",
+            "76a91e13-bfc9-457f-8760-6c9dc0cd66d3": "See below",
+            "ef797525-33f7-4163-b509-86c8454b31e7": "Overall Impression\n\nOne of the best candidates we've seen for this role. Rare combination of structure, natural delivery, and genuine strategic depth. Strong yes, and given where we are in the process with Lauren, I'd recommend skipping the Emily round and moving straight to a panel, ideally scheduled for Monday.\n\nStrengths\n\nPresence and delivery. Anna was structured and organized throughout, but never once felt like she was reading from prepared remarks. Answers were crisp and to the point: never rambled, never padded. That combination of polish and naturalness has been quite rare throughout the process.\n\nAcross-the-board strength. She gave strong answers on every dimension: organizing chaos, influencing stakeholders, building bridges between parties with seemingly mutually exclusive goals, simplifying and removing process, coaching underperformers, and the evolving role of TPM in an AI world. What struck me was how instantly she could connect each question to what it meant from the perspective of a TPM leader, and produce a lived, specific example that made clear she'd thought through the issue before.\n\nThe process simplification example was the standout. This is the area where TPMs most commonly struggle, and Anna's answer was the strongest we've heard on it. She inherited a Voice of Customer program that had become enormously burdensome: teams doing manual work to surface large volumes of customer feedback in a way that overwhelmed executives without driving real decisions. She rebuilt it from the ground up: brought in AI tooling to distill and deduplicate feedback, compressed the output to 5-10 monthly trends with a clear yes/no/maybe framing on whether to act, and reduced exec touchpoints to a monthly business review. In the process, she surfaced a $25k per day issue with Stripe wallet. That's the kind of proactive, strategic thinking this role needs.\n\nRecommended Guidance Before the Panel\n\nBeyond the standard overview of who she'll be speaking with and what they're focused on, emphasize two things: proactiveness, and a willingness to deviate from formal structure and adapt when the situation calls for it. Those are some of the qualities the panel will be looking for that most candidates stumble over, and Anna should come ready to speak to them directly.",
+            "overall_recommendation": "4"
+          }
+        }
+      ]
+    },
+    {
+      "applicationId": "66ee58bf-e911-4e75-887f-0e33e4139a58",
+      "name": "Soumik Dasgupta",
+      "email": "soumikdg1986@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Juicebox",
+      "createdAt": "2026-06-09T17:19:27.566Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "f446e7e4-699d-426f-8d3f-f575f0d04b2d",
+      "name": "Nechama O'Brien",
+      "email": "obrien.nama@gmail.com",
+      "stage": "Hiring Manager Resume Review",
+      "status": "Active",
+      "source": "Referral Link",
+      "createdAt": "2026-06-09T22:00:02.148Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "27f5990f-812f-4523-b888-4f9ad9ed5530",
+      "name": "Kieu Lam",
+      "email": "kiwikieu@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-06-11T20:59:10.922Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "0144f128-d83d-48dd-9f51-9819f64f2910",
+      "name": "Lakshminarayan Mukundan",
+      "email": "lakshmi.tpsc@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-06-14T22:11:36.520Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "9f0779b0-fd0f-4c50-b6f0-599a65cabdc6",
+      "name": "Geoffrey Goss",
+      "email": "geoff@duckwerks.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-06-16T21:22:39.698Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "1cb0ae97-d48c-42b1-8a18-e8c2549c980b",
+      "name": "Andrea Lam",
+      "email": "andrea.justine.lam@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-06-27T00:19:19.475Z",
+      "archiveReason": null,
+      "feedback": []
+    },
+    {
+      "applicationId": "04309b04-13d2-4831-b261-5f7fae82c9b4",
+      "name": "Harold Brian Dibble",
+      "email": "hbdibble@gmail.com",
+      "stage": "Recruiter Screen",
+      "status": "Active",
+      "source": "Applied",
+      "createdAt": "2026-07-01T12:50:06.863Z",
+      "archiveReason": null,
+      "feedback": []
+    }
+  ]
+}

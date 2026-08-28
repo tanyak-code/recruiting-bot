@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///Users/tanya/Downloads/interview-summarizer_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Summarizer</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f4f0; color: #1a1a1a; min-height: 100vh; }
+
+header { background: #fff; border-bottom: 1px solid #e0ddd6; padding: 12px 24px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 10; }
+header h1 { font-size: 15px; font-weight: 600; }
+.role-tabs { display: flex; gap: 6px; }
+.role-tab { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid #e0ddd6; background: transparent; color: #6a6a68; transition: all 0.15s; }
+.role-tab:hover { background: #f5f4f0; }
+.role-tab.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+
+.layout { display: grid; grid-template-columns: 380px 1fr; min-height: calc(100vh - 53px); }
+
+.sidebar { background: #fff; border-right: 1px solid #e0ddd6; padding: 20px; display: flex; flex-direction: column; gap: 14px; position: sticky; top: 53px; height: calc(100vh - 53px); overflow-y: auto; }
+.panel-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9a9590; margin-bottom: 6px; }
+
+textarea { width: 100%; background: #faf9f6; border: 1px solid #e0ddd6; border-radius: 8px; color: #1a1a1a; font-family: inherit; font-size: 13px; line-height: 1.6; padding: 10px 12px; outline: none; resize: vertical; transition: border-color 0.15s; }
+textarea:focus { border-color: #aaa8a0; background: #fff; }
+textarea::placeholder { color: #c0bdb6; font-size: 12px; }
+.transcript-area { min-height: 340px; }
+
+.btn-run { width: 100%; padding: 12px; background: #1a1a1a; color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-run:hover { background: #333; }
+.btn-run:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-run .spinner { width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; display: none; }
+.btn-run.loading .spinner { display: block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.shortcut-hint { text-align: center; font-size: 11px; color: #c0bdb6; }
+.divider { border: none; border-top: 1px solid #f0ede6; }
+
+.results-panel { padding: 28px; overflow-y: auto; }
+.empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; gap: 10px; color: #c0bdb6; text-align: center; }
+.empty-state p { font-size: 13px; max-width: 240px; line-height: 1.5; }
+
+.summary-card { background: #fff; border: 1px solid #e0ddd6; border-radius: 12px; overflow: hidden; margin-bottom: 16px; }
+
+.card-header { padding: 16px 20px; border-bottom: 1px solid #f0ede6; display: flex; align-items: center; gap: 14px; }
+.score-ring { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; flex-shrink: 0; border: 2px solid; }
+.ring-4 { border-color: #3B6D11; color: #3B6D11; background: #EAF3DE; }
+.ring-3 { border-color: #3B6D11; color: #3B6D11; background: #EAF3DE; }
+.ring-2 { border-color: #854F0B; color: #854F0B; background: #FAEEDA; }
+.ring-1 { border-color: #A32D2D; color: #A32D2D; background: #FCEBEB; }
+.header-info { flex: 1; }
+.candidate-name { font-size: 16px; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
+.candidate-role { font-size: 12px; color: #9a9590; }
+.score-badge { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; flex-shrink: 0; }
+.badge-4, .badge-3 { background: #EAF3DE; color: #3B6D11; }
+.badge-2 { background: #FAEEDA; color: #854F0B; }
+.badge-1 { background: #FCEBEB; color: #A32D2D; }
+
+.card-body { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+
+.section { display: flex; flex-direction: column; gap: 6px; }
+.section-title { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9a9590; }
+.section-content { font-size: 13px; color: #1a1a1a; line-height: 1.65; }
+.section-content.oneliner { font-weight: 500; color: #1a1a1a; }
+
+.flag { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 500; margin-right: 6px; margin-bottom: 4px; }
+.flag-warn { background: #FAEEDA; color: #854F0B; }
+.flag-ok { background: #EAF3DE; color: #3B6D11; }
+.flag-neutral { background: #f0ede6; color: #5a5650; }
+
+.copy-btn { align-self: flex-start; padding: 7px 14px; background: transparent; border: 1px solid #e0ddd6; border-radius: 6px; font-size: 12px; color: #6a6a68; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+.copy-btn:hover { background: #f5f4f0; border-color: #aaa8a0; }
+.copy-btn.copied { color: #3B6D11; border-color: #3B6D11; }
+
+.error-banner { background: #FCEBEB; border: 1px solid #F7C1C1; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #A32D2D; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Interview Summarizer</h1>
+  <div class="role-tabs">
+    <button class="role-tab active" id="tab-andre" onclick="switchRole(&#39;andre&#39;)">Andre · Sr Frontend Eng</button>
+    <button class="role-tab" id="tab-ed" onclick="switchRole(&#39;ed&#39;)">Ed · Sr Manager TPM</button>
+  </div>
+</header>
+
+<div class="layout">
+  <div class="sidebar">
+    <div>
+      <div class="panel-label">Paste prescreen transcript</div>
+      <textarea class="transcript-area" id="transcript" placeholder="Paste the full transcript here — raw text is fine."></textarea>
+    </div>
+    <button class="btn-run" id="runBtn" onclick="summarize()">
+      <div class="spinner"></div>
+      <span class="btn-label">Summarize →</span>
+    </button>
+    <div class="shortcut-hint">or press ⌘ + Enter</div>
+    <hr class="divider">
+    <div style="font-size:12px;color:#9a9590;line-height:1.7">
+      <div style="font-weight:600;color:#1a1a1a;margin-bottom:6px;font-size:12px">Output sections</div>
+      1. One-liner technical summary<br>
+      2. Timeline &amp; other interviews<br>
+      3. Why Scribd / this role<br>
+      4. Work authorization &amp; visa<br>
+      5. Full summary (technical + consumer product)<br>
+      &nbsp;&nbsp;&nbsp;+ Management exp <em>(TPM only)</em><br>
+      &nbsp;&nbsp;&nbsp;+ AI in TPM <em>(TPM only)</em><br>
+      6. Compensation expectations<br>
+      7. Score (1–4) using role criteria
+    </div>
+  </div>
+
+  <div class="results-panel" id="resultsPanel">
+    <div class="empty-state">
+      <p>Paste a prescreen transcript on the left and hit Summarize.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const PROXY = "http://localhost:3131";
+
+const PROMPTS = {
+  andre: {
+    role: "Senior Frontend Engineer at Scribd (Signup & Activation / Growth Engineering)",
+    scoringCriteria: `4 = Strong Yes: 6+ yrs qualifying frontend exp + React/TS + consumer-facing product + growth engineering (signup, activation, A/B testing, conversion, trial-to-paid)
+3 = Yes: 6+ yrs + React/TS + consumer-facing product. Growth signal not required.
+2 = No: Marketing/B2B/platform/infra only. OR full-stack leaning with no frontend history. OR 5-6 yrs exp.
+1 = Strong No: Under 5 yrs qualifying exp. OR no consumer product. OR missing both React and TypeScript. OR 3+ roles under 36 months in last 7 years.
+Note: Compensation mentioned in transcript should be noted factually but NOT affect the score.`,
+    extraSections: ""
+  },
+  ed: {
+    role: "Senior Manager, Technical Program Management at Scribd",
+    scoringCriteria: `4 = Strong Yes: TPM scope + data-driven with quantified outcomes + managed TPMs/staff + explicit cross-functional work with Product AND Design AND Engineering + consumer-facing product in most recent 3+ years. FAANG or similar = strong plus.
+3 = Yes: Most of the above but missing one signal — consumer product not dominant/recent, OR cross-functional implied not explicit, OR light management experience.
+2 = No: B2B/platform/migration/infra only. OR engineering-silo TPM never partnered with Product or Design. OR pure project coordination. OR no management experience.
+1 = Strong No: Purely project coordination. OR only engineering orgs. OR B2B/platform only, no consumer product. OR no technical fluency.
+Note: Compensation mentioned in transcript should be noted factually but NOT affect the score.`,
+    extraSections: `"managementExperience": "<bullet points on their management background, team size, how they develop people. Each bullet on a new line starting with ->",
+    "aiInTPM": "<bullet points on how they talk about AI affecting the TPM role, comfort level, examples of using AI in their work. Each bullet on a new line starting with ->",`
+  }
+};
+
+let activeRole = "andre";
+
+function switchRole(role) {
+  activeRole = role;
+  document.getElementById("tab-andre").classList.toggle("active", role === "andre");
+  document.getElementById("tab-ed").classList.toggle("active", role === "ed");
+}
+
+async function summarize() {
+  const transcript = document.getElementById("transcript").value.trim();
+  if (!transcript) return;
+
+  const btn = document.getElementById("runBtn");
+  btn.disabled = true;
+  btn.classList.add("loading");
+  btn.querySelector(".btn-label").textContent = "Summarizing...";
+
+  const panel = document.getElementById("resultsPanel");
+  panel.innerHTML = "";
+
+  try {
+    const config = PROMPTS[activeRole];
+
+    const prompt = `You are a senior technical recruiter summarizing a prescreen call for a ${config.role}.
+
+Extract the following from the transcript. If something wasn't discussed, write "Not discussed".
+
+SCORING CRITERIA (use this to assign score):
+${config.scoringCriteria}
+
+Respond ONLY with a JSON object, no markdown:
+{
+  "candidateName": "<full name or 'Candidate'>",
+  "currentRole": "<current title and company>",
+  "oneLiner": "<one sentence summarizing their technical background>",
+  "timeline": "<are they actively interviewing? how far along with other companies? any offers? when are they available to start?>",
+  "whyScribd": "<why are they interested in Scribd and this role? what are they looking for in their next move?>",
+  "workAuth": "<US work authorization status, visa type if applicable, expiration date if mentioned, sponsorship needed yes/no>",
+  "summary": "<bullet points: overall technical background, depth of experience, consumer product experience (call it out explicitly or note the absence), key strengths and gaps. Each bullet on a new line starting with ->",
+  ${config.extraSections}
+  "compensation": "<their compensation expectations — base, equity, total comp — exactly as stated. Do not editorialize.>",
+  "score": <1|2|3|4>,
+  "scoreLabel": "<Strong No|No|Yes|Strong Yes>",
+  "scoreReason": "<2-3 sentences explaining why this score, referencing specific things from the transcript>"
+}
+
+TRANSCRIPT:
+${transcript.slice(0, 12000)}`;
+
+    const res = await fetch(PROXY + "/claude", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-6",
+        max_tokens: 2000,
+        messages: [{ role: "user", content: prompt }]
+      })
+    });
+
+    const data = await res.json();
+    const raw = data.content?.[0]?.text ?? "{}";
+    const result = JSON.parse(raw.replace(/```json|```/g, "").trim());
+    result._role = activeRole;
+
+    renderSummary(result, panel);
+
+  } catch(e) {
+    panel.innerHTML = `<div class="error-banner">Something went wrong: ${e.message}</div>`;
+  } finally {
+    btn.disabled = false;
+    btn.classList.remove("loading");
+    btn.querySelector(".btn-label").textContent = "Summarize →";
+  }
+}
+
+function renderSummary(r, panel) {
+  const score = r.score ?? 1;
+  const scoreLabel = r.scoreLabel ?? "Strong No";
+  const isTPM = r._role === "ed";
+
+  const copyText = buildCopyText(r, isTPM);
+
+  panel.innerHTML = `
+    <div class="summary-card">
+      <div class="card-header">
+        <div class="score-ring ring-${score}">${score}</div>
+        <div class="header-info">
+          <div class="candidate-name">${esc(r.candidateName ?? "Candidate")}</div>
+          <div class="candidate-role">${esc(r.currentRole ?? "")}</div>
+        </div>
+        <div class="score-badge badge-${score}">${esc(scoreLabel)}</div>
+      </div>
+      <div class="card-body">
+
+        <div class="section">
+          <div class="section-title">Technical Summary</div>
+          <div class="section-content oneliner">${esc(r.oneLiner ?? "")}</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Full Summary</div>
+          <div class="section-content">${esc(r.summary ?? "")}</div>
+        </div>
+
+        ${isTPM && r.managementExperience ? `
+        <div class="section">
+          <div class="section-title">Management Experience</div>
+          <div class="section-content">${esc(r.managementExperience)}</div>
+        </div>` : ""}
+
+        ${isTPM && r.aiInTPM ? `
+        <div class="section">
+          <div class="section-title">AI in TPM</div>
+          <div class="section-content">${esc(r.aiInTPM)}</div>
+        </div>` : ""}
+
+        <div class="section">
+          <div class="section-title">Why Scribd / This Role</div>
+          <div class="section-content">${esc(r.whyScribd ?? "")}</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Timeline & Other Interviews</div>
+          <div class="section-content">${esc(r.timeline ?? "")}</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Work Authorization</div>
+          <div class="section-content">${esc(r.workAuth ?? "")}</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Compensation</div>
+          <div class="section-content">${esc(r.compensation ?? "")}</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Score Rationale</div>
+          <div class="section-content">${esc(r.scoreReason ?? "")}</div>
+        </div>
+
+        <button class="copy-btn" id="copyBtn" onclick="copyToClipboard('${encodeURIComponent(copyText)}')">Copy for Ashby</button>
+
+      </div>
+    </div>`;
+}
+
+function buildCopyText(r, isTPM) {
+  const lines = [];
+  lines.push(`CANDIDATE: ${r.candidateName ?? ""}`);
+  lines.push(`ROLE: ${r.currentRole ?? ""}`);
+  lines.push(`SCORE: ${r.score} - ${r.scoreLabel}`);
+  lines.push("");
+  lines.push(`TECHNICAL SUMMARY`);
+  lines.push(r.oneLiner ?? "");
+  lines.push("");
+  lines.push(`FULL SUMMARY`);
+  lines.push(r.summary ?? "");
+  if (isTPM && r.managementExperience) {
+    lines.push("");
+    lines.push(`MANAGEMENT EXPERIENCE`);
+    lines.push(r.managementExperience);
+  }
+  if (isTPM && r.aiInTPM) {
+    lines.push("");
+    lines.push(`AI IN TPM`);
+    lines.push(r.aiInTPM);
+  }
+  lines.push("");
+  lines.push(`WHY SCRIBD / THIS ROLE`);
+  lines.push(r.whyScribd ?? "");
+  lines.push("");
+  lines.push(`TIMELINE & OTHER INTERVIEWS`);
+  lines.push(r.timeline ?? "");
+  lines.push("");
+  lines.push(`WORK AUTHORIZATION`);
+  lines.push(r.workAuth ?? "");
+  lines.push("");
+  lines.push(`COMPENSATION`);
+  lines.push(r.compensation ?? "");
+  lines.push("");
+  lines.push(`SCORE RATIONALE`);
+  lines.push(r.scoreReason ?? "");
+  return lines.join("\n");
+}
+
+function copyToClipboard(encoded) {
+  const text = decodeURIComponent(encoded);
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById("copyBtn");
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    setTimeout(() => {
+      btn.textContent = "Copy for Ashby";
+      btn.classList.remove("copied");
+    }, 2000);
+  });
+}
+
+function esc(s) {
+  if (!s) return "";
+  const escaped = String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  // Convert -> bullet lines to HTML list items
+  if (escaped.includes("-&gt;")) {
+    const lines = escaped.split("\n").map(line => {
+      const trimmed = line.trim();
+      if (trimmed.startsWith("-&gt;")) {
+        return `<div style="display:flex;gap:6px;margin-bottom:4px"><span style="color:#9a9590;flex-shrink:0">•</span><span>${trimmed.slice(5).trim()}</span></div>`;
+      }
+      return trimmed ? `<div style="margin-bottom:4px">${trimmed}</div>` : "";
+    }).filter(Boolean);
+    return lines.join("");
+  }
+  return escaped;
+}
+
+document.addEventListener("keydown", e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === "Enter") summarize();
+});
+</script>
+
+
+</body></html>
